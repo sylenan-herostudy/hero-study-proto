@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вход · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar></hs-topbar>
+<hs-header></hs-header>
+
+<main class="section">
+  <div class="container" style="max-width:420px">
+    <div class="card">
+      <h1 style="font-size:28px">Вход в личный кабинет</h1>
+      <p class="muted mt-2">Доступ для клиентов Hero Study.</p>
+      <form class="mt-5" data-mock-submit>
+        <div class="field"><label>Email</label><input class="input" type="email" placeholder="name@university.kz"></div>
+        <div class="field"><label>Пароль</label><input class="input" type="password" placeholder="••••••••"></div>
+        <div class="between mb-4"><label class="checkline" style="padding:0"><input type="checkbox"> Запомнить</label><a class="arrow-link" href="#">Забыли пароль?</a></div>
+        <button class="btn btn--primary btn--block" type="submit"><span class="spinner"></span> Войти</button>
+      </form>
+      <p class="center muted mt-4">или войти через</p>
+      <div class="cluster mt-3" style="justify-content:center"><a class="btn" href="account-dashboard.html">Google</a><a class="btn" href="account-dashboard.html">Microsoft</a></div>
+      <p class="note note--margin mt-4">Демо: любой вход ведёт в дашборд. Поддерживаются SSO и 2FA (экран настройки 2FA — в hi-fi).</p>
+      <p class="center mt-4"><a class="arrow-link" href="account-dashboard.html">Войти как демо-клиент →</a></p>
+    </div>
+  </div>
+</main>
+
+<hs-footer></hs-footer>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>

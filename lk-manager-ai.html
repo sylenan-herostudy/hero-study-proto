@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЛК менеджера вуза · AI-чат (макет) · Hero Study</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+<link rel="stylesheet" href="css/ai-chat.css">
+</head>
+<body data-ai-role="manager">
+
+<header class="header"><div class="container">
+  <span class="brand">Hero <b>Study</b> Space</span>
+  <span class="tag" style="margin-left:8px">прототип ЛК</span>
+  <div class="header__actions">
+    <span class="muted" style="font-size:13px">Роль: Менеджер вуза</span>
+    <span class="ph ph--avatar"></span>
+  </div>
+</div></header>
+
+<main class="app">
+  <aside class="side">
+    <p class="eyebrow mb-3">ЛК менеджера</p>
+    <a class="is-active" href="lk-manager-ai.html">Дашборд</a>
+    <a href="#">Журнал</a>
+    <a href="#">Нагрузка ППС</a>
+    <a href="#">Заявки</a>
+    <a href="#">Студенты</a>
+    <a href="#">Отчёты</a>
+    <hr style="border:none;border-top:1px solid var(--line);margin:12px 0">
+    <p class="eyebrow mb-3">Другие ЛК (макеты)</p>
+    <a href="lk-student-ai.html">ЛК студента</a>
+    <a href="lk-teacher-ai.html">ЛК преподавателя</a>
+  </aside>
+
+  <div class="app__main">
+    <p class="crumbs"><a href="index.html">Главная</a> / ЛК менеджера / Дашборд</p>
+    <h1 style="font-size:28px">Панель менеджера</h1>
+
+    <div class="note note--margin">Макет сквозного AI-чата для менеджера. Сценарии автоматизации
+      (посещаемость, нагрузка, статусы) показаны как <b>действия с подтверждением</b> — этап 3 ТЗ.</div>
+
+    <div class="grid mt-6">
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Журнал — на сегодня</h4><span class="badge badge--warn">12 групп</span></div>
+        <p class="muted mt-2">Посещаемость можно проставить через ассистента</p>
+      </div></div>
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Нагрузка кафедр</h4><span class="badge">в работе</span></div>
+        <p class="muted mt-2">ИС · ВТ · ПИ — распределение через ассистента</p>
+      </div></div>
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Новые заявки</h4><span class="card__kpi" style="font-size:22px">7</span></div>
+        <p class="muted mt-2">Без статуса — можно проставить пакетно</p>
+      </div></div>
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Отчёты</h4><a class="arrow-link" href="#">Все →</a></div>
+        <p class="muted mt-2">Сводки и выгрузки</p>
+      </div></div>
+    </div>
+
+    <p class="muted mt-6" style="font-size:13px">Команды вида «выставь посещаемость», «обработай нагрузку»,
+      «поставь статус заявкам» ассистент выполняет с предпросмотром и подтверждением.</p>
+  </div>
+</main>
+
+<script defer src="js/ai-chat.js"></script>
+</body>
+</html>

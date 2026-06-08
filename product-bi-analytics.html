@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero BI Analytics · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar product="bi"></hs-topbar>
+<hs-header active="products"></hs-header>
+
+<main>
+  <!-- 1. HERO -->
+  <section class="hero section">
+    <div class="container grid">
+      <div class="lg:col-6 col-6">
+        <span class="note note--accent mb-4">accent: orange · BI Analytics · контент из деки «Hero BI Analytics»</span>
+        <h1 class="mt-3">Hero BI Analytics — система поддержки принятия решений для вашего вуза</h1>
+        <p class="sub mt-4">Дашборды и прогнозы в реальном времени на чистых данных Hero Study. Качественный датасет · интеграция с государственными системами · автоматизация отчётности.</p>
+        <div class="cluster"><a class="btn btn--primary btn--lg" href="consultation.html">Посмотреть демо</a><a class="btn btn--lg" href="consultation.html">Получить консультацию</a></div>
+      </div>
+      <div class="lg:col-6 col-6"><div class="ph ph--chart">Дашборд BI (анимированные графики)</div></div>
+    </div>
+  </section>
+
+  <!-- 2. ИСТОЧНИК ПРАВДЫ -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Фундамент</p><h2>Точная аналитика начинается с чистых данных</h2><p>Без Hero Study как «источника правды» точная аналитика невозможна. Только на чистых данных строятся точные прогнозы.</p></div>
+      <div class="grid">
+        <div class="lg:col-3 col-6"><div class="card"><h4>Исключение ошибок</h4><p class="muted mt-2">Автоматический сбор данных исключает «человеческий фактор» и ручное сведение Excel-таблиц.</p></div></div>
+        <div class="lg:col-3 col-6"><div class="card"><h4>Единая экосистема</h4><p class="muted mt-2">Модули LMS, SIS, HR и Finance работают в связке, формируя непротиворечивые отчёты в реальном времени.</p></div></div>
+        <div class="lg:col-3 col-6"><div class="card"><h4>Валидация</h4><p class="muted mt-2">Система автоматически проверяет полноту данных (ПИНФЛ, паспорт, приказы) перед построением отчётов.</p></div></div>
+        <div class="lg:col-3 col-6"><div class="card"><h4>Чистый датасет</h4><p class="muted mt-2">Охват всего цикла: Приём → Студент → Выпускник, устраняя фрагментацию данных.</p></div></div>
+      </div>
+      <div class="grid mt-5">
+        <div class="col-6"><div class="ph ph--chart">100% — заполнение ведомостей (контроль процесса)</div></div>
+        <div class="col-6"><div class="ph ph--chart">Качество заполнения журналов (мониторинг полноты)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ЧТО ПОКАЗЫВАЕТ АНАЛИТИКА (табы) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Зоны аналитики</p><h2>Вся деятельность вуза — в одном окне</h2></div>
+      <div data-tabset>
+        <div class="tabs">
+          <button class="tab" data-tab="abit" aria-selected="true">Абитуриенты</button>
+          <button class="tab" data-tab="stud" aria-selected="false">Студенты</button>
+          <button class="tab" data-tab="plan" aria-selected="false">Учебный план</button>
+          <button class="tab" data-tab="pps" aria-selected="false">ППС</button>
+          <button class="tab" data-tab="sci" aria-selected="false">Наука</button>
+        </div>
+
+        <div data-panel="abit"><div class="grid">
+          <div class="lg:col-5 col-6">
+            <div class="card mb-3"><h4>География</h4><p class="muted mt-2">Тепловая карта поступающих по регионам страны и другим странам.</p></div>
+            <div class="card mb-3"><h4>Качество приёма</h4><p class="muted mt-2">Анализ баллов ЕГЭ/тестов, конверсия заявок в зачисления.</p></div>
+            <div class="card"><h4>Социальный срез</h4><p class="muted mt-2">Учёт льготников, гендерный состав, типы оплаты (грант/контракт).</p></div>
+          </div>
+          <div class="lg:col-7 col-6"><div class="ph ph--chart">Количество новых регистраций по дням</div></div>
+        </div></div>
+
+        <div data-panel="stud" hidden><div class="grid">
+          <div class="lg:col-5 col-6">
+            <div class="card mb-3"><h4>Успеваемость</h4><p class="muted mt-2">Динамика GPA, мониторинг академических задолженностей (Retake).</p></div>
+            <div class="card"><h4>Посещаемость</h4><p class="muted mt-2">Фиксация присутствия через QR-коды и FaceID.</p></div>
+          </div>
+          <div class="lg:col-7 col-6"><div class="ph ph--chart">Обучающиеся по курсам · разрез по образовательным программам</div></div>
+        </div></div>
+
+        <div data-panel="plan" hidden><div class="grid">
+          <div class="lg:col-5 col-6">
+            <div class="card mb-3"><h4>Диагностика учебного плана</h4><p class="muted mt-2">Рейтинг дисциплин-аутсайдеров — быстро находит «узкие места» в расписании или преподавательском составе.</p></div>
+            <div class="card"><h4>Анализ вовлечённости</h4><p class="muted mt-2">Реальная нагрузка студентов и сезонность активности — основа для корректировки расписания.</p></div>
+          </div>
+          <div class="lg:col-7 col-6"><div class="ph ph--chart">Heatmap посещаемости занятий по дням (сентябрь–декабрь)</div></div>
+        </div></div>
+
+        <div data-panel="pps" hidden><div class="grid">
+          <div class="lg:col-5 col-6">
+            <div class="card"><h4>Нагрузка и KPI</h4><p class="muted mt-2">Автоматический расчёт учебной нагрузки (часы), выполнение индивидуальных планов, рейтинг ППС на основе опросов студентов.</p></div>
+          </div>
+          <div class="lg:col-7 col-6"><div class="ph ph--chart">Количество нанятых ППС по годам</div></div>
+        </div></div>
+
+        <div data-panel="sci" hidden><div class="grid">
+          <div class="lg:col-5 col-6">
+            <div class="card mb-3"><h4>Научная деятельность</h4><p class="muted mt-2">Учёт публикаций (Scopus / Web of Science), цитируемости и грантовой активности кафедр.</p></div>
+            <div class="card"><h4>Контроль качества</h4><p class="muted mt-2">Контроль заполнения журналов и силлабусов, мониторинг своевременности выставления оценок.</p></div>
+          </div>
+          <div class="lg:col-7 col-6"><div class="ph ph--chart">Доля ППС с учёной степенью PhD</div></div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ПУЛЬС ПРОЦЕССА -->
+  <section class="section section--tint">
+    <div class="container grid">
+      <div class="lg:col-6 col-6">
+        <p class="eyebrow">Прозрачность</p>
+        <h2>Держать руку на пульсе образовательного процесса</h2>
+        <p class="sub mt-4">«Вертолётный взгляд» на дисциплину в вузе без необходимости запрашивать сводки у кафедр.</p>
+        <div class="card mt-4"><h4>Исключение приписок</h4><p class="muted mt-2">Данные агрегируются напрямую из цифрового следа в системе — ручная корректировка посещаемости «задним числом» невозможна.</p></div>
+      </div>
+      <div class="lg:col-6 col-6"><div class="ph ph--chart">Студенты по статусам: Обучается · Отчислен · Академ. отпуск</div></div>
+    </div>
+  </section>
+
+  <!-- 5. ДАШБОРД РЕКТОРА -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Для руководителя</p><h2>Дашборд ректора — «пульс университета» в реальном времени</h2></div>
+      <div class="grid">
+        <div class="lg:col-4 col-6">
+          <div class="card mb-3"><h4>Финансы</h4><p class="muted mt-2">План/факт по оплате контрактов, дебиторская задолженность, структура расходов.</p></div>
+          <div class="card mb-3"><h4>Инфраструктура</h4><p class="muted mt-2">Загрузка аудиторного фонда, мониторинг заселения общежитий.</p></div>
+          <div class="card"><h4>Стратегия</h4><p class="muted mt-2">Выполнение целевых показателей развития университета.</p></div>
+        </div>
+        <div class="lg:col-4 col-6"><div class="ph ph--screen">Дашборд на планшете руководителя</div></div>
+        <div class="lg:col-4 col-6"><div class="card" style="height:100%"><h4>Индивидуальные дашборды</h4><p class="muted mt-2">Аналитика под уникальные задачи вуза:</p><ul class="mt-3"><li>Кастомные дашборды для ректората и деканов</li><li>Мониторинг KPI сотрудников и студентов</li><li>Визуализация финансовых и академических показателей</li></ul></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ОТЧЁТНОСТЬ И НАЦ. РЕЙТИНГИ -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Государство</p><h2>Обязательная отчётность и национальные рейтинговые системы</h2></div>
+      <div class="grid">
+        <div class="lg:col-6 col-6"><div class="card"><h4>BI-аналитика по национальным рейтингам</h4><p class="muted mt-2">Аналитика национальных метрик для государственных систем.</p></div></div>
+        <div class="lg:col-6 col-6"><div class="card"><h4>Валидация данных — «Светофор»</h4><p class="muted mt-2">Автоматическая проверка данных на ошибки (отсутствие ПИНФЛ, фото, приказа) перед отправкой в Министерство.</p></div></div>
+        <div class="lg:col-6 col-6"><div class="card"><h4>Национальный рейтинг</h4><p class="muted mt-2">Авто-расчёт индикаторов для Национального рейтинга вузов. Прогнозирование позиций университета по текущим показателям.</p></div></div>
+        <div class="lg:col-6 col-6"><div class="card"><h4>Отчёты Министерства образования</h4><p class="muted mt-2">Генерация всех обязательных статистических форм по клику, с гарантией точности данных.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. АВТОМАТИЗАЦИЯ -->
+  <section class="section">
+    <div class="container grid">
+      <div class="lg:col-6 col-6"><div class="card"><h4>Информирование без задержек</h4><p class="muted mt-2">Отчёты формируются с заданной регулярностью (ежедневно, еженедельно) и рассылаются ключевым должностным лицам на email или в мессенджер (Telegram).</p></div></div>
+      <div class="lg:col-6 col-6"><div class="card"><h4>Контроль на кончиках пальцев</h4><p class="muted mt-2">Все графики и дашборды строятся на основе БД университета в реальном времени. Руководитель видит ситуацию «здесь и сейчас», а не по устаревшим справкам.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 8. СВЯЗКА С SS -->
+  <section class="section section--tint">
+    <div class="container grid">
+      <div class="lg:col-6 col-6"><p class="eyebrow">Экосистема</p><h2>Работает поверх Hero Study Space без интеграций</h2><p class="sub mt-4">BI берёт данные напрямую из модулей управления — от приёмной кампании до академических результатов.</p></div>
+      <div class="lg:col-6 col-6"><div class="ph">Диаграмма: BI + Study Space</div></div>
+    </div>
+  </section>
+
+  <!-- 9. CTA -->
+  <section class="section center"><div class="container">
+    <h2>Будущее вашего университета с Hero BI Analytics</h2>
+    <div class="cluster mt-4" style="justify-content:center"><span class="chip">Точные данные</span><span class="chip">Прозрачные процессы</span><span class="chip">Эффективные решения</span></div>
+    <a class="btn btn--primary btn--lg mt-5" href="consultation.html">Попробуйте BI на данных вашего вуза</a>
+  </div></section>
+</main>
+
+<hs-footer></hs-footer>
+<hs-stickycta label="Демо BI Analytics"></hs-stickycta>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>

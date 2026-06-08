@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero Study · AI-слой — портал (схемы · ТЗ · прототипы)</title>
+<style>
+  :root{
+    --ink:#18181b; --ink-2:#52525b; --line:#e4e4e7; --paper:#fff; --paper-2:#f4f4f5;
+    --accent:#2563eb; --accent-weak:#eef2ff;
+    --ff:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0;font-family:var(--ff);color:var(--ink);background:var(--paper);
+    display:flex;flex-direction:column;min-height:100vh}
+  a{color:var(--accent)}
+  .top{padding:14px 20px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+  .brand{font-weight:800;font-size:18px;letter-spacing:-.02em}
+  .brand b{color:var(--accent)}
+  .top .sub{color:var(--ink-2);font-size:13px}
+  .top .badge{margin-left:auto;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+    color:#854d0e;background:#fffbeb;border:1px solid #fde68a;border-radius:999px;padding:3px 10px}
+  .tabs{display:flex;gap:2px;padding:0 12px;border-bottom:1px solid var(--line);overflow-x:auto;background:var(--paper-2)}
+  .tab{appearance:none;border:none;background:none;font:inherit;font-weight:600;color:var(--ink-2);
+    padding:12px 16px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap}
+  .tab:hover{color:var(--ink)}
+  .tab.is-active{color:var(--accent);border-bottom-color:var(--accent)}
+  .stage{flex:1;min-height:0;position:relative}
+  .panel{position:absolute;inset:0;display:none}
+  .panel.is-active{display:block}
+  .panel iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+  /* overview */
+  .doc{position:absolute;inset:0;overflow:auto;padding:32px 22px 64px}
+  .doc .wrap{max-width:880px;margin:0 auto}
+  .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-2);font-weight:700}
+  .doc h1{font-size:32px;letter-spacing:-.02em;margin:.3em 0 .2em;max-width:22ch}
+  .lead{color:var(--ink-2);font-size:17px;max-width:62ch}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:26px 0}
+  .card{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--paper)}
+  .card h3{margin:0 0 6px;font-size:16px}
+  .card p{margin:0;color:var(--ink-2);font-size:14px}
+  .card button{margin-top:12px}
+  .btn{appearance:none;font:inherit;font-weight:600;font-size:14px;border:1px solid var(--accent);
+    background:var(--accent);color:#fff;border-radius:8px;padding:8px 14px;cursor:pointer}
+  .btn--ghost{background:transparent;color:var(--accent)}
+  .note{background:#fffbeb;border:1px dashed #e8d48a;color:#6b5d2e;border-radius:10px;padding:12px 14px;font-size:14px;margin:8px 0 24px}
+  .kv{font-size:14px;color:var(--ink-2);margin:6px 0}
+  .kv b{color:var(--ink)}
+  .subtabs{display:flex;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--paper-2);flex-wrap:wrap}
+  .subtab{appearance:none;border:1px solid var(--line);background:var(--paper);font:inherit;font-size:13px;font-weight:600;
+    color:var(--ink);border-radius:999px;padding:6px 14px;cursor:pointer}
+  .subtab.is-active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .protos{position:absolute;inset:0;display:flex;flex-direction:column}
+  .protos .frame{flex:1;min-height:0}
+  .protos iframe{width:100%;height:100%;border:0}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <span class="brand">Hero <b>Study</b> · AI-слой</span>
+  <span class="sub">Hero AI Assistant — схемы, ТЗ, прототипы · обновлено 2026-06-03</span>
+  <span class="badge">Внутренний материал</span>
+</div>
+
+<nav class="tabs" id="tabs">
+  <button class="tab is-active" data-target="overview">Обзор</button>
+  <button class="tab" data-target="summary">Саммари встречи</button>
+  <button class="tab" data-target="tz">ТЗ</button>
+  <button class="tab" data-target="schemes">Схемы</button>
+  <button class="tab" data-target="protos">Прототипы ЛК</button>
+</nav>
+
+<div class="stage">
+
+  <!-- OVERVIEW -->
+  <section class="panel is-active" data-panel="overview">
+    <div class="doc"><div class="wrap">
+      <p class="eyebrow">Hero AI Assistant</p>
+      <h1>AI-слой Hero Study: единый ассистент в личных кабинетах</h1>
+      <p class="lead">Один AI-слой, агностичный к сущности (студент / преподаватель / менеджер) и к
+        модели (OpenAI / Anthropic / своя Qwen), поверх базы знаний. Сначала «рельсы» и сквозной чат,
+        затем — голос и действия в интерфейсе.</p>
+
+      <div class="note">Это внутренний материал по публичной ссылке: доступен любому, у кого есть адрес.
+        Прототипы — кликабельные lo-fi-макеты без бэкенда (ответы имитируются).</div>
+
+      <div class="cards">
+        <div class="card"><h3>Саммари встречи</h3><p>Решения встречи 2026-06-03: рельсы, дробление, ППС — после кабинета.</p>
+          <button class="btn btn--ghost" data-go="summary">Открыть →</button></div>
+        <div class="card"><h3>Техническое задание</h3><p>Архитектура, этапы, нефункциональные требования, чек-лист.</p>
+          <button class="btn btn--ghost" data-go="tz">Открыть →</button></div>
+        <div class="card"><h3>Схемы</h3><p>Бэкенд (жизненный цикл запроса), слой базы знаний, уровни дообучения.</p>
+          <button class="btn btn--ghost" data-go="schemes">Открыть →</button></div>
+        <div class="card"><h3>Прототипы ЛК</h3><p>Сквозной AI-чат в трёх кабинетах: студент, преподаватель, менеджер.</p>
+          <button class="btn btn--ghost" data-go="protos">Открыть →</button></div>
+      </div>
+
+      <p class="eyebrow">Коротко о решениях</p>
+      <p class="kv">• <b>Рельсы</b> — AI-слой как отдельный переносимый модуль (по образцу IGPA).</p>
+      <p class="kv">• <b>Агностичность</b> — один сервис на все сущности и модели; смена модели конфигом.</p>
+      <p class="kv">• <b>База знаний</b> — «наша экспертиза» под каждую роль; обновление без переобучения (RAG).</p>
+      <p class="kv">• <b>Этапы</b> — рельсы → чат во всех 3 ЛК → голос → действия в интерфейсе.</p>
+      <p class="kv">• <b>Ограничения</b> — дробим на 1–2 функции до конца года; ППС — после кабинета ППС; приоритет — стабильность ядра.</p>
+    </div></div>
+  </section>
+
+  <!-- SUMMARY -->
+  <section class="panel" data-panel="summary">
+    <iframe data-src="summary.html" title="Саммари встречи"></iframe>
+  </section>
+
+  <!-- TZ -->
+  <section class="panel" data-panel="tz">
+    <iframe data-src="tz.html" title="Техническое задание"></iframe>
+  </section>
+
+  <!-- SCHEMES -->
+  <section class="panel" data-panel="schemes">
+    <iframe data-src="architecture-schemes.html" title="Схемы"></iframe>
+  </section>
+
+  <!-- PROTOS -->
+  <section class="panel" data-panel="protos">
+    <div class="protos">
+      <div class="subtabs" id="subtabs">
+        <button class="subtab is-active" data-frame="lk-student-ai.html">ЛК студента</button>
+        <button class="subtab" data-frame="lk-teacher-ai.html">ЛК преподавателя</button>
+        <button class="subtab" data-frame="lk-manager-ai.html">ЛК менеджера</button>
+      </div>
+      <div class="frame"><iframe id="protoFrame" title="Прототип ЛК"></iframe></div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  (function(){
+    var tabs=document.getElementById('tabs');
+    var panels=document.querySelectorAll('.panel');
+    function activate(target){
+      document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('is-active',t.dataset.target===target);});
+      panels.forEach(function(p){
+        var on=p.dataset.panel===target;
+        p.classList.toggle('is-active',on);
+        if(on){
+          var f=p.querySelector('iframe[data-src]');
+          if(f && !f.src) f.src=f.dataset.src;
+          if(target==='protos'){var pf=document.getElementById('protoFrame'); if(!pf.src) pf.src='lk-student-ai.html';}
+        }
+      });
+    }
+    tabs.addEventListener('click',function(e){var b=e.target.closest('.tab'); if(b) activate(b.dataset.target);});
+    document.querySelectorAll('[data-go]').forEach(function(b){
+      b.addEventListener('click',function(){activate(b.dataset.go);});
+    });
+    var sub=document.getElementById('subtabs');
+    sub.addEventListener('click',function(e){
+      var b=e.target.closest('.subtab'); if(!b) return;
+      sub.querySelectorAll('.subtab').forEach(function(s){s.classList.toggle('is-active',s===b);});
+      document.getElementById('protoFrame').src=b.dataset.frame;
+    });
+  })();
+</script>
+</body>
+</html>

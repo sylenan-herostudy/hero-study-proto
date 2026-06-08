@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тех. поддержка · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar></hs-topbar>
+<hs-header active="support"></hs-header>
+
+<main>
+  <section class="hero section">
+    <div class="container center">
+      <p class="eyebrow">Тех. поддержка</p>
+      <h1>Мы рядом 24/7. Расскажите, что случилось — решим вместе.</h1>
+      <p class="note" style="display:inline-block;margin-top:16px">SLA: ответ в течение 4 рабочих часов</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid">
+        <div class="lg:col-4 col-4"><div class="card center"><div class="card__icon" style="margin-inline:auto">💬</div><h3>Чат-бот</h3><p class="muted mt-2">Быстрый ответ на типовые вопросы</p><button class="btn mt-3" data-chat-open>Открыть чат</button></div></div>
+        <div class="lg:col-4 col-4"><div class="card center"><div class="card__icon" style="margin-inline:auto">🎫</div><h3>Оставить тикет</h3><p class="muted mt-2">Нашли баг? Есть вопрос? Опишите ниже</p><a class="btn mt-3" href="#ticket">К форме</a></div></div>
+        <div class="lg:col-4 col-4"><div class="card center"><div class="card__icon" style="margin-inline:auto">📚</div><h3>Справочный центр</h3><p class="muted mt-2">Может, ответ уже есть здесь</p><a class="btn mt-3" href="help-center.html">Открыть базу</a></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Тикет-форма с состояниями -->
+  <section class="section section--tint" id="ticket">
+    <div class="container">
+      <div class="section-head"><h2>Форма обращения</h2><p>Демо состояний: default → loading → success → error.</p></div>
+      <form class="card" data-mock-submit style="max-width:620px">
+        <div class="cluster mb-4">
+          <button class="btn btn--sm" type="button" data-set-state="default">default</button>
+          <button class="btn btn--sm" type="button" data-set-state="loading">loading</button>
+          <button class="btn btn--sm" type="button" data-set-state="success">success</button>
+          <button class="btn btn--sm" type="button" data-set-state="error">error</button>
+        </div>
+        <div class="field"><label>Тема <span class="req">*</span></label><input class="input" required></div>
+        <div class="grid" style="gap:16px">
+          <div class="field col-6"><label>Категория</label><select class="select"><option>Study Space</option><option>BI Analytics</option><option>Hero OS AI</option><option>Workspace</option><option>Биллинг</option><option>Интеграции</option></select></div>
+          <div class="field col-6"><label>Приоритет</label><select class="select"><option>Низкий</option><option>Средний</option><option>Высокий</option><option>Критичный</option></select></div>
+        </div>
+        <div class="field"><label>Вложения</label><input class="input" type="file"></div>
+        <div class="field"><label>Описание <span class="req">*</span></label><textarea class="textarea" required></textarea></div>
+        <button class="btn btn--primary" type="submit"><span class="spinner"></span> Отправить тикет</button>
+        <p class="note mt-4" data-on-state="success" hidden>✓ Тикет #10231 создан. Ответим в течение 4 рабочих часов.</p>
+        <p class="note mt-4" data-on-state="error" hidden>✕ Не удалось отправить. Проверьте соединение и попробуйте снова.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container center"><h2>Закрыли тикет — оцените поддержку</h2>
+      <div class="cluster mt-4" style="justify-content:center"><button class="btn">😞</button><button class="btn">😐</button><button class="btn">🙂</button><button class="btn btn--primary">😀</button></div>
+      <p class="note note--margin mt-3">CSAT-виджет показывается после закрытия тикета.</p>
+    </div>
+  </section>
+</main>
+
+<hs-footer></hs-footer>
+
+<!-- Чат-бот -->
+<button class="chatfab" data-chat-open aria-label="Открыть чат">💬</button>
+<div class="chatpanel">
+  <header>Задай свой вопрос</header>
+  <div class="body">
+    <div class="bubble bubble--bot">Здравствуйте! Чем помочь? Выберите вопрос:</div>
+    <button class="chip" data-chat-q="Зайдите в Роли и доступы → Пользователи → Добавить.">Как настроить роль</button>
+    <button class="chip" data-chat-q="Используйте модуль Приёмная комиссия → Импорт из Excel.">Импорт студентов</button>
+    <button class="chip" data-chat-q="В BI: «Создать дашборд» → перетащите метрики.">BI: создать дашборд</button>
+  </div>
+</div>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>

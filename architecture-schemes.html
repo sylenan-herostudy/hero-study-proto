@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-слой Hero Study · схемы (бэкенд · база знаний · дообучение)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+<style>
+  .dgm{display:flex;flex-direction:column;gap:10px;align-items:stretch;max-width:920px}
+  .box{border:1px solid var(--line);border-radius:var(--r-md);background:var(--paper);
+    padding:12px 14px;box-shadow:var(--shadow-1)}
+  .box b{display:block;color:var(--ink);font-size:15px}
+  .box small,.box .mut{color:var(--ink-2);font-size:13px}
+  .box--hd{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .box--hd b{color:#fff}
+  .box--accent{border-color:var(--accent);background:var(--accent-weak)}
+  .arrow{align-self:center;color:var(--ink-2);font-size:20px;line-height:1}
+  .arrow small{display:block;font-size:12px;color:var(--ink-2);text-align:center}
+  .row{display:flex;gap:10px;flex-wrap:wrap}
+  .row>.box{flex:1 1 200px}
+  .conn{align-self:center;color:var(--ink-2);font-size:18px;padding:0 2px}
+  .steps{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:7px}
+  .steps>li{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--ink-1)}
+  .steps .k{flex:none;width:18px;height:18px;border-radius:var(--r-pill);background:var(--ink);
+    color:#fff;font-size:11px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-top:1px}
+  .steps .to{color:var(--accent);font-weight:600}
+  .chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:var(--r-pill);
+    padding:2px 10px;font-size:12px;color:var(--ink-1);background:var(--paper)}
+  .ladder{display:flex;flex-direction:column;gap:8px;max-width:920px}
+  .lrow{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:var(--r-md);
+    padding:10px 12px;background:var(--paper)}
+  .lrow .lv{flex:none;width:34px;height:28px;border-radius:var(--r-sm);background:var(--paper-2);
+    border:1px solid var(--line);font-weight:800;font-size:13px;display:inline-flex;align-items:center;justify-content:center;color:var(--ink-1)}
+  .lrow.is-key{border-color:var(--accent);background:var(--accent-weak)}
+  .lrow.is-key .lv{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .lrow .lt{font-size:14px;color:var(--ink-1)}
+  .lrow .lt b{color:var(--ink)}
+  .axis{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-2);margin:2px 4px}
+  .legend{font-size:13px;color:var(--ink-2);margin-top:6px}
+  h2{font-size:var(--fs-h2);margin-top:0}
+  .sec{padding-block:var(--s7);border-top:1px solid var(--line)}
+  .sec:first-of-type{border-top:none}
+</style>
+</head>
+<body>
+
+<header class="header"><div class="container">
+  <span class="brand">Hero <b>Study</b></span>
+  <span class="tag" style="margin-left:8px">AI-слой · схемы</span>
+  <div class="header__actions"><a class="arrow-link" href="ai-chat-demo.html">Макеты чата →</a></div>
+</div></header>
+
+<main class="container">
+
+  <div class="sec">
+    <p class="eyebrow">Hero AI Assistant · техническое задание</p>
+    <h1 style="font-size:var(--fs-h1);max-width:20ch">Схемы: бэкенд, база знаний, дообучение</h1>
+    <p class="measure muted mt-3">Три ключевые схемы AI-слоя. Полный текст — в
+      <b>Hero-Study-AI-sloy-TZ</b> (разделы 4.1–4.3). Это lo-fi-схемы для согласования конструкции.</p>
+  </div>
+
+  <!-- ============ 1. BACKEND ============ -->
+  <section class="sec">
+    <p class="eyebrow">Схема 1</p>
+    <h2>Работа на бэкенде — жизненный цикл запроса</h2>
+    <div class="dgm mt-5">
+      <div class="box box--hd"><b>ЛК · чат-виджет</b><small>вызов с любой страницы кабинета</small></div>
+      <div class="arrow">↓<small>POST /ai/chat · JWT + контекст сущности</small></div>
+      <div class="row">
+        <div class="box"><b>1 · API Gateway</b><small>приём запроса, маршрутизация</small></div>
+        <span class="conn">→</span>
+        <div class="box"><b>2 · Auth / RBAC</b><small>роль · права · вуз (tenant)</small></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="box box--accent">
+        <b>3 · Оркестратор (AI Service)</b>
+        <ul class="steps">
+          <li><span class="k">a</span> Guardrails / модерация входа</li>
+          <li><span class="k">b</span> Retrieval <span class="to">→ Слой базы знаний (схема 2)</span></li>
+          <li><span class="k">c</span> Сборка промта: system + знания + история + запрос</li>
+          <li><span class="k">d</span> Провайдер-адаптер <span class="to">→ LLM</span>
+            <span class="chips"><span class="pill">OpenAI</span><span class="pill">Anthropic</span><span class="pill">Qwen (self-hosted)</span><span class="pill">смена — конфигом</span></span>
+          </li>
+          <li><span class="k">e</span> Действие? <span class="to">→ Слой действий</span>: предпросмотр ▶ подтверждение ▶ API ядра</li>
+          <li><span class="k">f</span> Guardrails / редакция PII на выходе</li>
+        </ul>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="row">
+        <div class="box"><b>4 · Память диалога · Аудит · Учёт стоимости</b><small>история, логи действий, токены</small></div>
+        <span class="conn">+</span>
+        <div class="box"><b>Кэш</b><small>ответы / эмбеддинги</small></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="box box--hd"><b>ЛК ◀ стрим ответа</b></div>
+    </div>
+    <p class="legend">Принципы: stateless-оркестратор (горизонтальное масштабирование), очередь для тяжёлых
+      задач, таймауты/ретраи на адаптерах, <b>полная изоляция модуля от ядра</b> (отдельный сервис/деплой).</p>
+  </section>
+
+  <!-- ============ 2. KNOWLEDGE BASE ============ -->
+  <section class="sec">
+    <p class="eyebrow">Схема 2</p>
+    <h2>Слой базы знаний</h2>
+    <div class="dgm mt-5">
+      <div class="box"><b>Источники</b>
+        <div class="chips"><span class="pill">документы: РПД, методички, регламенты</span>
+          <span class="pill">БД продукта: оценки, расписание, нагрузка</span>
+          <span class="pill">справочники / FAQ</span></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="box"><b>Ingestion / ETL</b>
+        <small>коннекторы ▶ нормализация ▶ чанкинг ▶ метаданные (tenant, сущность, роль, тип, ACL) ▶ эмбеддинги</small>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="box"><b>Хранилище</b>
+        <small>vector store с namespace на сущность + keyword/BM25 индекс · изоляция по вузу (tenant)</small>
+        <div class="chips"><span class="pill">namespace: студент</span><span class="pill">преподаватель</span>
+          <span class="pill">менеджер</span><span class="pill">+ общий слой вуза</span></div>
+      </div>
+      <div class="arrow">↓</div>
+      <div class="box box--accent"><b>Retrieval</b>
+        <small>запрос ▶ <b>фильтр прав / ACL</b> (tenant + роль) ▶ hybrid search (vector + BM25) ▶ re-rank ▶ top-k ▶ контекст в промт</small>
+      </div>
+      <div class="arrow">↺<small>обновление: инкрементальная переиндексация при изменении источников · версионирование</small></div>
+    </div>
+    <p class="legend">AI «видит» только разрешённое роли (ACL на каждый запрос). Обновление БЗ —
+      <b>без переобучения модели</b>: это основной канал «нашей экспертизы» (см. уровень RAG в схеме 3).</p>
+  </section>
+
+  <!-- ============ 3. FINE-TUNING ============ -->
+  <section class="sec">
+    <p class="eyebrow">Схема 3</p>
+    <h2>Дообучение и настройка — уровни кастомизации</h2>
+    <p class="muted mt-2 measure">От дешёвого и быстрого к глубокому. В большинстве случаев достаточно L0–L2.</p>
+    <div class="axis mt-4"><span>↑ глубже · дороже · приватнее</span></div>
+    <div class="ladder">
+      <div class="lrow"><span class="lv">L5</span><span class="lt"><b>Собственная модель</b> (self-hosted Qwen): обучение на приватных данных on-prem</span></div>
+      <div class="lrow"><span class="lv">L4</span><span class="lt"><b>Fine-tuning / LoRA</b>: дообучение весов на собранных диалогах и разметке</span></div>
+      <div class="lrow"><span class="lv">L3</span><span class="lt"><b>Few-shot</b>: эталонные примеры подмешиваются в промт</span></div>
+      <div class="lrow is-key"><span class="lv">L2</span><span class="lt"><b>База знаний (RAG)</b>: дозагрузка документов — «дообучение без обучения» · <b>основной способ</b></span></div>
+      <div class="lrow"><span class="lv">L1</span><span class="lt"><b>Промпты и роли</b>: системные промты per сущность / вуз (тон, правила)</span></div>
+      <div class="lrow"><span class="lv">L0</span><span class="lt"><b>Конфигурация</b>: модель, параметры (temperature, лимиты), вкл/выкл инструментов</span></div>
+    </div>
+    <div class="axis"><span>↓ быстрее · дешевле · без обучения весов</span></div>
+    <div class="box box--accent mt-5"><b>Петля обратной связи</b>
+      <small>оценки ответов (👍/👎) ▶ датасет ▶ обновление БЗ (L2) / периодический fine-tune (L4) ▶ качество растёт</small>
+    </div>
+    <p class="legend">Настройки <b>per-tenant</b> (вуз) и <b>per-entity</b> (роль): свои промты, своя БЗ,
+      свой набор инструментов, свои лимиты стоимости.</p>
+  </section>
+
+</main>
+</body>
+</html>

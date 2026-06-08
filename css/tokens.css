@@ -1,0 +1,61 @@
+/* ============================================================
+   Hero Study 2.0 — lo-fi prototype · DESIGN TOKENS
+   Намеренно обесцвеченная палитра: серая шкала + ОДИН акцент.
+   Акценты продуктов (green/violet/cyan/coral) в lo-fi НЕ цветные —
+   они обозначаются текстовой меткой .note («accent: green · SS»).
+   ============================================================ */
+:root{
+  /* — Paper / Line / Ink ————————————————————— */
+  --paper:    #ffffff;   /* фон страницы            */
+  --paper-2:  #f4f4f5;   /* секции-подложки         */
+  --paper-3:  #ececef;   /* штриховка / hover-fill  */
+  --line:     #d4d4d8;   /* границы, сетка          */
+  --line-2:   #a1a1aa;   /* активные границы        */
+  --ink-3:    #c4c4ca;   /* строки-плейсхолдеры     */
+  --ink-2:    #71717a;   /* вторичный текст         */
+  --ink-1:    #3f3f46;   /* основной текст          */
+  --ink:      #18181b;   /* заголовки               */
+
+  /* — Один акцент на весь прототип ————————————— */
+  --accent:      #2563eb;
+  --accent-weak: #eef2ff;
+
+  /* — Фирменные акценты продуктов (зафиксированы для hi-fi; в lo-fi визуально не применяются) — */
+  --acc-ss: #22c55e;   /* Study Space  — зелёный                 */
+  --acc-bi: #f97316;   /* BI Analytics — ОРАНЖЕВЫЙ (как в деке)   */
+  --acc-ai: #06b6d4;   /* Hero OS AI   — циан                    */
+  --acc-ws: #fb7185;   /* Workspace    — коралл                  */
+
+  /* — Note-аннотации вайрфрейма ————————————————— */
+  --note-bg:   #fff8e1;
+  --note-line: #e8d48a;
+  --note-ink:  #6b5d2e;
+
+  /* — Сетка / контейнер ——————————————————————— */
+  --container: 1280px;
+  --gutter:    24px;
+
+  /* — Шкала отступов (8pt) ————————————————————— */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px;
+  --s6:32px; --s7:48px; --s8:64px; --s9:96px;
+
+  /* — Радиусы ————————————————————————————————— */
+  --r-sm:4px; --r-md:8px; --r-lg:12px; --r-xl:16px; --r-pill:999px;
+
+  /* — Типографика ————————————————————————————— */
+  --ff: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --ff-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --fs-h1:40px; --fs-h2:28px; --fs-h3:20px; --fs-h4:17px;
+  --fs-body:16px; --fs-small:13px; --fs-eyebrow:12px;
+  --lh:1.5; --lh-tight:1.2;
+
+  /* — Эффекты ————————————————————————————————— */
+  --focus: 0 0 0 3px var(--accent-weak), 0 0 0 1px var(--accent);
+  --shadow-1: 0 1px 2px rgba(24,24,27,.06);
+  --shadow-2: 0 4px 14px rgba(24,24,27,.08);
+  --ease: 180ms cubic-bezier(.2,.6,.2,1);
+
+  /* — Высоты обвязки (резервируем под анти-CLS) ——— */
+  --h-topbar: 38px;
+  --h-header: 64px;
+}

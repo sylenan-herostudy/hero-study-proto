@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Цены · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar></hs-topbar>
+<hs-header active="pricing"></hs-header>
+
+<main>
+  <section class="hero section">
+    <div class="container center">
+      <h1>Гибкие тарифы под размер вашего вуза</h1>
+      <p class="sub mt-4" style="margin-inline:auto">Оплата за студента в год. Чем больше срок — тем выгоднее.</p>
+      <div data-tabset class="mt-4" style="display:inline-block">
+        <div class="tabs" style="justify-content:center;border:none">
+          <button class="tab" data-tab="m" aria-selected="true">Помесячно</button>
+          <button class="tab" data-tab="y" aria-selected="false">Ежегодно (−20%)</button>
+        </div>
+        <div data-panel="m"></div><div data-panel="y" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Тарифные карты -->
+  <section class="section">
+    <div class="container grid">
+      <div class="lg:col-4 col-4"><div class="card"><h3>Старт</h3><div class="card__kpi mt-2">от 90 ₸</div><p class="muted">/ студент / мес</p><ul class="mt-4"><li>Базовые модули</li><li>До 1 000 студентов</li><li>Email-поддержка</li><li>Стандартные интеграции</li><li>Обновления</li><li>1 администратор</li></ul><a class="btn btn--block mt-4" href="consultation.html">Запросить КП</a></div></div>
+      <div class="lg:col-4 col-4"><div class="card" style="border-color:var(--ink-1);border-width:2px"><span class="badge badge--ok">Популярный</span><h3 class="mt-2">Профи</h3><div class="card__kpi mt-2">от 140 ₸</div><p class="muted">/ студент / мес</p><ul class="mt-4"><li>Все модули Study Space</li><li>Интеграция с BI</li><li>Поддержка 24/7</li><li>Гос. сервисы (НОБД/ЕПВО)</li><li>Мобильное приложение</li><li>Обучение сотрудников</li></ul><a class="btn btn--primary btn--block mt-4" href="consultation.html">Запросить КП</a></div></div>
+      <div class="lg:col-4 col-4"><div class="card"><h3>Энтерпрайз</h3><div class="card__kpi mt-2">Индивид.</div><p class="muted">по запросу</p><ul class="mt-4"><li>Кастомные модули</li><li>Hero OS AI + White-label</li><li>Выделенный менеджер</li><li>SLA и приоритет</li><li>Кастомное обучение</li><li>Полный API</li></ul><a class="btn btn--block mt-4" href="consultation.html">Запросить КП</a></div></div>
+    </div>
+  </section>
+
+  <!-- Таблица сравнения -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Сравнение</p><h2>Что входит в тарифы</h2></div>
+      <div class="table-scroll"><table class="table">
+        <thead><tr><th>Возможность</th><th>Старт</th><th>Профи</th><th>Энтерпрайз</th></tr></thead>
+        <tbody>
+          <tr><th>Документооборот</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><th>Общежитие</th><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><th>BI Analytics</th><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><th>Hero OS AI</th><td class="no">—</td><td class="no">доп.</td><td class="yes">✓</td></tr>
+          <tr><th>Тех. поддержка</th><td>Email</td><td>24/7</td><td>24/7 + SLA</td></tr>
+          <tr><th>Кол-во пользователей</th><td>до 1 000</td><td>до 15 000</td><td>без лимита</td></tr>
+          <tr><th>Кастомизация</th><td class="no">—</td><td>частично</td><td class="yes">✓</td></tr>
+          <tr><th>API</th><td class="no">—</td><td>частично</td><td class="yes">полный</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- Калькулятор -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Калькулятор</p><h2>Рассчитайте стоимость для вашего вуза</h2><p>Числа условные — для демонстрации логики.</p></div>
+      <form data-calculator class="grid">
+        <div class="lg:col-8 col-8">
+          <div class="card">
+            <div class="field">
+              <label>Количество студентов: <b data-calc-students-label>5 000</b></label>
+              <input type="range" min="0" max="50000" step="100" value="5000" data-calc-students class="fill">
+              <small class="err" data-calc-error hidden>Минимум 100 студентов для расчёта.</small>
+            </div>
+            <fieldset class="mt-4"><legend>Модули</legend>
+              <div class="grid" style="gap:8px">
+                <label class="checkline col-6"><input type="checkbox" data-calc-module value="Документооборот" checked> Документооборот</label>
+                <label class="checkline col-6"><input type="checkbox" data-calc-module value="Общежитие"> Общежитие</label>
+                <label class="checkline col-6"><input type="checkbox" data-calc-module value="Финансы" checked> Финансы</label>
+                <label class="checkline col-6"><input type="checkbox" data-calc-module value="HR"> HR</label>
+                <label class="checkline col-6"><input type="checkbox" data-calc-module value="KPI преподавателя"> KPI преподавателя</label>
+                <label class="checkline col-6"><input type="checkbox" data-calc-module value="Библиотека"> Библиотека</label>
+                <label class="checkline col-6"><input type="checkbox" data-calc-module value="Прокторинг"> Прокторинг</label>
+              </div>
+            </fieldset>
+            <fieldset class="mt-4"><legend>Доп. услуги</legend>
+              <div class="grid" style="gap:8px">
+                <label class="checkline col-6"><input type="checkbox" data-calc-extra value="Hero OS AI"> Hero OS AI</label>
+                <label class="checkline col-6"><input type="checkbox" data-calc-extra value="BI Analytics" checked> BI Analytics</label>
+                <label class="checkline col-6"><input type="checkbox" data-calc-extra value="Mobile App"> Mobile App</label>
+                <label class="checkline col-6"><input type="checkbox" data-calc-extra value="White-label"> White-label</label>
+              </div>
+            </fieldset>
+            <fieldset class="mt-4"><legend>Срок</legend>
+              <div class="cluster">
+                <label class="checkline"><input type="radio" name="term" data-calc-term value="1" checked> 1 год</label>
+                <label class="checkline"><input type="radio" name="term" data-calc-term value="2"> 2 года</label>
+                <label class="checkline"><input type="radio" name="term" data-calc-term value="3"> 3 года</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="lg:col-4 col-4">
+          <div class="card" data-calc-output style="position:sticky;top:90px">
+            <p class="eyebrow">Предварительный расчёт</p>
+            <div class="card__kpi mt-2" data-calc-total>—</div>
+            <p class="muted" data-calc-perstudent>—</p>
+            <p class="hint mt-3" data-calc-contract>—</p>
+            <button class="btn btn--primary btn--block mt-4" type="submit">Получить коммерческое предложение</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">FAQ</p><h2>Частые вопросы о тарифах</h2></div>
+      <details class="acc" open><summary>Как считается стоимость?</summary><div class="acc__body"><p class="lines"><i></i><i></i></p></div></details>
+      <details class="acc"><summary>Есть ли скидки для колледжей?</summary><div class="acc__body"><p class="lines"><i></i></p></div></details>
+      <details class="acc"><summary>Что входит в поддержку?</summary><div class="acc__body"><p class="lines"><i></i><i></i></p></div></details>
+      <details class="acc"><summary>Можно ли подключать модули постепенно?</summary><div class="acc__body"><p class="lines"><i></i></p></div></details>
+      <details class="acc"><summary>Как происходит оплата?</summary><div class="acc__body"><p class="lines"><i></i></p></div></details>
+    </div>
+  </section>
+
+  <section class="section center"><div class="container"><h2>Не уверены, какой тариф нужен? Подберём вместе.</h2><p class="sub mt-4" style="margin-inline:auto">Бесплатная консультация — 30 минут.</p><a class="btn btn--primary btn--lg" href="consultation.html">Получить консультацию</a></div></section>
+</main>
+
+<hs-footer></hs-footer>
+<hs-stickycta label="Получить КП"></hs-stickycta>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+<script defer src="js/calculator.js"></script>
+</body>
+</html>

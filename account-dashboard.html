@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЛК · Дашборд · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar></hs-topbar>
+<hs-header></hs-header>
+
+<main class="app">
+  <aside class="side">
+    <p class="eyebrow mb-3">Личный кабинет</p>
+    <a href="account-dashboard.html" class="is-active">Дашборд</a>
+    <a href="#">Профиль</a>
+    <a href="consultation.html">Анкета / заявка</a>
+    <a href="account-tickets.html">Тикеты</a>
+    <a href="account-documents.html">Документы</a>
+    <a href="#">Уведомления</a>
+  </aside>
+
+  <div class="app__main">
+    <p class="crumbs"><a href="index.html">Главная</a> / Личный кабинет / Дашборд</p>
+    <h1 style="font-size:28px">Добро пожаловать, KBTU</h1>
+
+    <div class="section-head mt-5" style="margin-bottom:16px"><h2 style="font-size:20px">Ваши продукты</h2></div>
+    <div class="grid">
+      <div class="lg:col-6 col-6"><div class="card"><div class="between"><h4>Hero Study Space</h4><span class="badge badge--ok">active</span></div><p class="muted mt-2">Лицензий: 8 200 / 10 000</p><a class="arrow-link mt-3" href="product-study-space.html">Открыть →</a></div></div>
+      <div class="lg:col-6 col-6"><div class="card"><div class="between"><h4>Hero BI Analytics</h4><span class="badge badge--ok">active</span></div><p class="muted mt-2">Дашбордов: 14</p><a class="arrow-link mt-3" href="product-bi-analytics.html">Открыть →</a></div></div>
+      <div class="lg:col-6 col-6"><div class="card"><div class="between"><h4>Hero OS AI</h4><span class="badge badge--warn">trial</span></div><p class="muted mt-2">Триал до 30 июня</p><a class="arrow-link mt-3" href="product-ai-assistant.html">Открыть →</a></div></div>
+      <div class="lg:col-6 col-6"><div class="card"><div class="between"><h4>Hero Workspace</h4><span class="badge badge--mute">not-active</span></div><p class="muted mt-2">Не подключён</p><a class="arrow-link mt-3" href="product-workspace.html">Изучить продукт →</a></div></div>
+    </div>
+
+    <div class="grid mt-6">
+      <div class="lg:col-6 col-6"><div class="card"><div class="between mb-3"><h4>Последние тикеты</h4><a class="arrow-link" href="account-tickets.html">Все →</a></div>
+        <p class="between"><span>#10231 · Импорт студентов</span><span class="badge">Open</span></p>
+        <p class="between mt-2"><span>#10198 · Доступ к BI</span><span class="badge badge--ok">Resolved</span></p>
+      </div></div>
+      <div class="lg:col-6 col-6"><div class="card"><div class="between mb-3"><h4>Документы</h4><a class="arrow-link" href="account-documents.html">Все →</a></div>
+        <p>📄 Договор 2026.pdf</p><p class="mt-2">📄 КП Профи.pdf</p>
+      </div></div>
+    </div>
+  </div>
+</main>
+
+<hs-footer></hs-footer>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>

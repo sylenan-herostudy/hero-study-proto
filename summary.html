@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Саммари встречи — внедрение AI, 2026-06-03</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+    body{max-width:840px;margin:24px auto;padding:0 22px 60px;
+      font:16px/1.62 ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#18181b}
+    h1,h2,h3,h4{line-height:1.25;margin-top:1.7em}
+    h1{font-size:30px;letter-spacing:-.01em}
+    h2{font-size:23px;border-bottom:1px solid #e4e4e7;padding-bottom:6px}
+    h3{font-size:18px}
+    code{background:#f4f4f5;padding:1px 5px;border-radius:4px;font-size:.92em}
+    code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+    pre{background:#0b0b0d;color:#e7e7ea;padding:14px 16px;border-radius:10px;overflow:auto;
+      font-size:12.5px;line-height:1.5}
+    pre code{background:none;padding:0;color:inherit}
+    table{border-collapse:collapse;width:100%;margin:1.1em 0;font-size:14px}
+    th,td{border:1px solid #d4d4d8;padding:7px 10px;text-align:left;vertical-align:top}
+    th{background:#f4f4f5}
+    a{color:#2563eb}
+    blockquote{border-left:3px solid #c4b5fd;margin:1em 0;padding:4px 14px;color:#52525b;background:#faf9ff}
+    hr{border:none;border-top:1px solid #e4e4e7;margin:2.2em 0}
+    ul,ol{padding-left:22px}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Саммари встречи — внедрение AI, 2026-06-03</h1>
+</header>
+<h1
+id="саммари-встречи-внедрение-инструментов-ai-в-продукт-hero-study">Саммари
+встречи — Внедрение инструментов AI в продукт Hero Study</h1>
+<p><strong>Дата:</strong> 2026-06-03 <strong>Тема:</strong> Подход к
+постепенному внедрению AI-функциональности для пользователей продукта
+(ППС и студент) <strong>Формат:</strong> Рабочая онлайн-встреча
+<strong>Участники:</strong> Антон Силенко (директор) · Тимур · Вова
+<strong>Отсутствовал:</strong> Влада (приглашён, но не подключился —
+нужен его фидбэк)</p>
+<blockquote>
+<p>Примечание: протокол восстановлен по стенограмме. Там, где из записи
+говорящий не идентифицируется однозначно, позиция описана без жёсткой
+привязки к участнику и помечена <em>(атрибуция
+приблизительная)</em>.</p>
+</blockquote>
+<hr />
+<h2 id="цель-встречи">1. Цель встречи</h2>
+<p>Максимально конструктивно и быстро найти <strong>конкретный подход к
+постепенному внедрению AI</strong> для пользователей продукта.
+Стратегически — научиться предоставлять AI-услуги и <strong>ППС</strong>
+(профессорско-преподавательский состав), и
+<strong>студенту</strong>.</p>
+<p>Ключевой акцент Антона: на этом этапе важнее <strong>форма
+конструкции</strong> (архитектура, «рельсы»), а <strong>каким именно
+сервисом</strong> её наполнять — вопрос вторичный. Биться над одной
+конкретной проблемой (студента или кого-то ещё) сейчас не
+принципиально.</p>
+<hr />
+<h2 id="ключевые-тезисы-обсуждения">2. Ключевые тезисы обсуждения</h2>
+<h3 id="видение-антона-единый-ai-слой">2.1. Видение Антона — единый
+AI-слой</h3>
+<ul>
+<li>В продукте есть сущности/пространства: <strong>студент</strong>,
+<strong>преподаватель (ППС)</strong>, <strong>менеджер
+вуза</strong>.</li>
+<li>Нужно построить решение, <strong>которому всё равно, какая сущность
+к нему обращается</strong>.</li>
+<li>Есть <strong>AI-слой</strong> — через API (OpenAI, Anthropic) либо
+собственная бесплатная модель (например, Qwen).</li>
+<li>Под слоем — <strong>база специфических знаний</strong> под каждую
+сущность: про студента (привычки, его БД), про преподавателя
+(справочник, правила, модификаторы). Это слой, который <strong>даёт нашу
+экспертизу</strong>.</li>
+<li>Логика: запрос от сущности → AI-слой → забирает знания из базы →
+обрабатывает → возвращает ответ.</li>
+<li><strong>Первая база знаний</strong> — по ППС: скормить их
+функционал, чтобы у ППС <strong>на всех страницах «сквозняком»</strong>
+была возможность вызвать чат. Пока достаточно текста; голосовую
+транскрибацию прикрутить технически несложно — следующий шаг.</li>
+<li>Позже из этого можно сделать <strong>инструмент навигации</strong>,
+но <strong>сервис должен быть один и тот же</strong>.</li>
+<li>Метафора: <em>«Сейчас задача — построить рельсы. Дальше будем
+наращивать функциональность».</em></li>
+</ul>
+<h3
+id="позиция-разработки-это-и-так-в-планах-атрибуция-приблизительная">2.2.
+Позиция разработки — это и так в планах <em>(атрибуция
+приблизительная)</em></h3>
+<ul>
+<li>Со стороны технической реализации это <strong>так и планировалось и
+так и делается</strong>: AI-слой — <strong>отдельный настраиваемый
+сервис</strong>, где можно менять модель, со своими
+<strong>методами</strong>, которые переиспользуются разными
+функциональностями там, где мы хотим прикрутить AI.</li>
+</ul>
+<h3
+id="сценарии-автоматизации-действий-в-интерфейсе-следующий-этап">2.3.
+Сценарии автоматизации действий в интерфейсе (следующий этап)</h3>
+<ul>
+<li>Антон: важно, чтобы по голосовой или текстовой команде
+<strong>включались роботы/скрипты</strong>, а не только выдавались
+данные.</li>
+<li>Примеры: на странице <strong>журнала</strong> — «выставь
+посещаемость», «выставь всем пятёрки» (а потом руками поправить
+остальных); работа с <strong>нагрузкой</strong>, где менеджер сейчас
+вынужден просто «прокликивать» и ставить статусы.</li>
+<li>Это <strong>сложнее и относится к следующему этапу</strong>, но
+именно вызов реальных действий <strong>снимет нагрузку с
+сотрудников</strong>. От внедрения нужен «запрос на автоматизацию».</li>
+</ul>
+<h3 id="главное-ограничение-ресурс-атрибуция-приблизительная">2.4.
+Главное ограничение — ресурс <em>(атрибуция приблизительная)</em></h3>
+<ul>
+<li>«Комментарий в обратную сторону»: идеи и архитектура — не проблема,
+<strong>проблема в том, что нет ресурса это делать</strong>.</li>
+<li>Roadmap уже <strong>сильно ужат</strong>, команда не справляется с
+текущим объёмом.</li>
+<li>Стоит вопрос, <strong>чем жертвовать</strong>: пересдачами РК
+(рубежный контроль), дипломными работами и т.п.</li>
+<li><strong>Даже базу по стабилизации ядра</strong> не получается
+заложить до конца года.</li>
+<li>Беспокойство: <strong>база (ядро) ещё не закрыта</strong> —
+добавлять сверху новое рискованно.</li>
+</ul>
+<hr />
+<h2 id="принятые-решения">3. Принятые решения</h2>
+<ol type="1">
+<li><strong>Строим «рельсы»</strong> — единый AI-слой как
+<strong>отдельный переносимый модуль</strong> (по образцу модуля
+<strong>IGPA</strong>), который легко перенести позже.</li>
+<li>AI-слой — <strong>агностичен к модели</strong> (OpenAI / Anthropic /
+своя Qwen) и <strong>к сущности</strong> (студент / преподаватель /
+менеджер); один сервис со своими методами на всех.</li>
+<li><strong>Задачу дробим</strong>: реалистично — <strong>1–2
+функции</strong> студенту и ППС <strong>до конца года</strong>.</li>
+<li><strong>По ППС ничего не делаем, пока нет кабинета ППС</strong> —
+зафиксировано отдельно («да, это точно»).</li>
+<li><strong>Приоритет — не сломать стабилизацию ядра</strong>; новое
+внедряем, не жертвуя устойчивостью базы.</li>
+<li>На данном этапе фокус — <strong>форма конструкции
+(архитектура)</strong>, а не выбор конкретного сервиса.</li>
+</ol>
+<hr />
+<h2 id="открытые-вопросы">4. Открытые вопросы</h2>
+<ul>
+<li><strong>Куда «прокинуть» чат/рельсы в первую очередь.</strong> По
+итогам обсуждения с директором — цель — <strong>все три ЛК</strong>
+(студент, преподаватель, менеджер); подключение конкретного кабинета —
+по его готовности.</li>
+<li><strong>Ресурс и приоритеты roadmap</strong> — чем именно жертвовать
+(пересдачи РК / дипломные / стабилизация ядра).</li>
+<li><strong>Сроки появления кабинета ППС</strong> (блокирует
+ППС-специфику).</li>
+<li><strong>Разворачивание модели на сервере</strong> — как модель «ест»
+информацию, насколько стабильна и устойчива, поведение как «чёрный
+ящик».</li>
+<li><strong>Нужен фидбэк Влады</strong> (отсутствовал на встрече).</li>
+</ul>
+<hr />
+<h2 id="следующие-шаги">5. Следующие шаги</h2>
+<ol type="1">
+<li>Подготовить <strong>ТЗ на AI-слой</strong> на основе обсуждения. →
+см. «ТЗ: AI-слой Hero Study».</li>
+<li>Оформить <strong>эпик и подзадачи в Jira</strong> (проект hero
+study), вести последовательно: ТЗ → разработка, <strong>пока только
+макеты</strong>.</li>
+<li>Сделать <strong>макеты</strong> сквозного AI-чата в ЛК.</li>
+<li>Прогнать <strong>тест</strong>; посмотреть, как разворачивать и
+держать модель на сервере.</li>
+<li>Получить <strong>фидбэк Влады</strong>, синхронизировать приоритеты
+по ресурсу.</li>
+</ol>
+<hr />
+<h2 id="action-items">6. Action items</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Действие</th>
+<th>Ответственный</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Подготовить ТЗ на AI-слой (по итогам встречи)</td>
+<td>Антон / команда</td>
+<td>В работе</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Поставить эпик + подзадачи в Jira (проект hero study)</td>
+<td>Антон / команда</td>
+<td>В работе</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Записать саммари и ТЗ в Confluence</td>
+<td>Антон / команда</td>
+<td>В работе</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Сделать макеты сквозного AI-чата в ЛК
+(студент/преподаватель/менеджер)</td>
+<td>Команда (дизайн/фронт)</td>
+<td>Запланировано</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Дать фидбэк по концепции AI-слоя</td>
+<td>Влада</td>
+<td>Ожидается</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Оценить ресурс и определить жертвы в roadmap</td>
+<td>Тимур / команда</td>
+<td>Открыто</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Дождаться готовности кабинета ППС (разблокирует ППС-этап)</td>
+<td>—</td>
+<td>Заблокировано</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Ответственные проставлены ориентировочно — уточнить при постановке
+задач в Jira.</p>
+</blockquote>
+</body>
+</html>

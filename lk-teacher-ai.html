@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЛК преподавателя (ППС) · AI-чат (макет) · Hero Study</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+<link rel="stylesheet" href="css/ai-chat.css">
+</head>
+<body data-ai-role="teacher">
+
+<header class="header"><div class="container">
+  <span class="brand">Hero <b>Study</b> Space</span>
+  <span class="tag" style="margin-left:8px">прототип ЛК</span>
+  <div class="header__actions">
+    <span class="muted" style="font-size:13px">Роль: Преподаватель (ППС)</span>
+    <span class="ph ph--avatar"></span>
+  </div>
+</div></header>
+
+<main class="app">
+  <aside class="side">
+    <p class="eyebrow mb-3">ЛК преподавателя</p>
+    <a class="is-active" href="lk-teacher-ai.html">Дашборд</a>
+    <a href="#">Мои группы</a>
+    <a href="#">Журнал</a>
+    <a href="#">РК и оценки</a>
+    <a href="#">Методички</a>
+    <a href="#">Нагрузка</a>
+    <hr style="border:none;border-top:1px solid var(--line);margin:12px 0">
+    <p class="eyebrow mb-3">Другие ЛК (макеты)</p>
+    <a href="lk-student-ai.html">ЛК студента</a>
+    <a href="lk-manager-ai.html">ЛК менеджера</a>
+  </aside>
+
+  <div class="app__main">
+    <p class="crumbs"><a href="index.html">Главная</a> / ЛК преподавателя / Дашборд</p>
+    <h1 style="font-size:28px">Кабинет преподавателя</h1>
+
+    <div class="note note--margin">Кабинет ППС — <b>в планах</b>; по решению встречи подключение AI —
+      по готовности кабинета. Здесь показан макет сквозного чата для роли преподавателя.</div>
+
+    <div class="grid mt-6">
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Мои группы</h4><span class="badge">3</span></div>
+        <p class="muted mt-2">ИС-21 · ИС-22 · ВТ-20</p>
+      </div></div>
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Посещаемость (неделя)</h4><span class="card__kpi" style="font-size:22px">86%</span></div>
+        <ul class="lines mt-3 lines--sm"><i></i><i></i></ul>
+      </div></div>
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>РК1 — к выставлению</h4><span class="badge badge--warn">ИС-21</span></div>
+        <p class="muted mt-2">24 студента · можно выставить через ассистента</p>
+      </div></div>
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Методички</h4><a class="arrow-link" href="#">Каталог →</a></div>
+        <p class="muted mt-2">РПД, ФОС, лабораторные — поиск через ассистента</p>
+      </div></div>
+    </div>
+
+    <p class="muted mt-6" style="font-size:13px">Ассистент умеет находить методички, давать сводки и
+      (этап 3) предлагать действия — например, выставить оценки за РК — с подтверждением.</p>
+  </div>
+</main>
+
+<script defer src="js/ai-chat.js"></script>
+</body>
+</html>

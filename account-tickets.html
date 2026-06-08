@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЛК · Тикеты · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar></hs-topbar>
+<hs-header></hs-header>
+
+<main class="app">
+  <aside class="side">
+    <p class="eyebrow mb-3">Личный кабинет</p>
+    <a href="account-dashboard.html">Дашборд</a>
+    <a href="#">Профиль</a>
+    <a href="consultation.html">Анкета / заявка</a>
+    <a href="account-tickets.html" class="is-active">Тикеты</a>
+    <a href="account-documents.html">Документы</a>
+    <a href="#">Уведомления</a>
+  </aside>
+
+  <div class="app__main" data-search-scope>
+    <p class="crumbs"><a href="account-dashboard.html">ЛК</a> / Тикеты</p>
+    <div class="between"><h1 style="font-size:28px">Обращения в поддержку</h1><a class="btn btn--primary" href="support.html">Новый тикет</a></div>
+
+    <div class="cluster mt-5 mb-4">
+      <input class="input" data-search placeholder="Поиск по тикетам…" style="max-width:280px">
+      <span class="chip is-active">Все</span><span class="chip">Open</span><span class="chip">In progress</span><span class="chip">Resolved</span>
+    </div>
+
+    <div class="table-scroll"><table class="table">
+      <thead><tr><th>#</th><th>Тема</th><th>Категория</th><th>Статус</th><th>Обновлён</th></tr></thead>
+      <tbody>
+        <tr data-search-item data-keywords="импорт студенты"><td>10231</td><td>Импорт студентов из Excel</td><td>Study Space</td><td><span class="badge">Open</span></td><td>01.06</td></tr>
+        <tr data-search-item data-keywords="bi доступ дашборд"><td>10220</td><td>Не открывается дашборд BI</td><td>BI</td><td><span class="badge badge--warn">In progress</span></td><td>30.05</td></tr>
+        <tr data-search-item data-keywords="расписание"><td>10205</td><td>Конфликт в расписании</td><td>Study Space</td><td><span class="badge badge--mute">Waiting</span></td><td>28.05</td></tr>
+        <tr data-search-item data-keywords="доступ bi роль"><td>10198</td><td>Доступ к BI для деканата</td><td>Безопасность</td><td><span class="badge badge--ok">Resolved</span></td><td>25.05</td></tr>
+      </tbody>
+    </table></div>
+    <p class="empty mt-5" data-search-empty hidden>Тикетов не найдено.</p>
+
+    <div class="card mt-6"><h4>Тикет #10231</h4><p class="muted">Чат-тред с поддержкой</p>
+      <div class="stack mt-3"><span class="bubble bubble--me" style="max-width:60%">Не загружается список студентов</span><span class="bubble bubble--bot" style="max-width:60%">Здравствуйте! Уточните формат файла</span></div>
+    </div>
+
+    <div class="empty mt-6">Пример empty state: «Пока всё спокойно — открытых тикетов нет».</div>
+  </div>
+</main>
+
+<hs-footer></hs-footer>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero Study Space · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar product="ss"></hs-topbar>
+<hs-header active="products"></hs-header>
+
+<main>
+  <!-- 1. HERO -->
+  <section class="hero section">
+    <div class="container grid">
+      <div class="lg:col-6 col-6">
+        <span class="note note--accent mb-4">accent: green · Study Space (в hi-fi — зелёный акцент, бренд-индиго доминирует)</span>
+        <h1 class="mt-3">Hero Study Space — операционная система вашего вуза</h1>
+        <p class="sub mt-4">Облачная платформа для организации, планирования, управления и анализа деятельности вуза: приём, учебный процесс, студенты, финансы, общежитие, аналитика.</p>
+        <div class="cluster">
+          <a class="btn btn--primary btn--lg" href="consultation.html">Запросить демо</a>
+          <button class="btn btn--lg" data-modal-open="videoModal">Посмотреть видео ▷</button>
+        </div>
+      </div>
+      <div class="lg:col-6 col-6"><div class="ph ph--video">Изометрия интерфейса Study Space</div></div>
+    </div>
+  </section>
+
+  <!-- 1b. ЦИФРЫ ПЛАТФОРМЫ (из деки) -->
+  <section class="section section--tint" style="padding-block:var(--s6)">
+    <div class="container">
+      <div class="cluster" style="justify-content:space-around;text-align:center;gap:var(--s4)">
+        <div><div class="card__kpi">6</div><p class="muted">блоков</p></div>
+        <div><div class="card__kpi">356</div><p class="muted">функций</p></div>
+        <div><div class="card__kpi">6</div><p class="muted">ролей</p></div>
+        <div><div class="card__kpi">4</div><p class="muted">языка · KZ/UZ/EN/RU</p></div>
+        <div><div class="card__kpi">75</div><p class="muted">модулей</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. КЛИЕНТЫ -->
+  <section class="section section--tint">
+    <div class="container">
+      <p class="eyebrow mb-3 center">Используют Study Space</p>
+      <div class="logos">
+        <div class="ph ph--logo">KBTU</div><div class="ph ph--logo">АУНГ</div><div class="ph ph--logo">Satbayev</div>
+        <div class="ph ph--logo">АТУ</div><div class="ph ph--logo">«Сымбат»</div><div class="ph ph--logo">AlmaU</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. О ПРОДУКТЕ -->
+  <section class="section">
+    <div class="container grid">
+      <div class="lg:col-6 col-6">
+        <p class="eyebrow">О продукте</p>
+        <h2>Один вуз — одна цифровая экосистема</h2>
+        <p class="lines mt-4" style="max-width:48ch"><i></i><i></i><i></i><i></i></p>
+        <p class="muted mt-4">75+ модулей · B2U-подписка · мультиязычность RU/EN/KZ/UZ</p>
+      </div>
+      <div class="lg:col-6 col-6"><div class="ph ph--screen">Главный экран платформы</div></div>
+    </div>
+  </section>
+
+  <!-- 4. ФУНКЦИОНАЛ — интерактивная схема модулей -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Функционал</p><h2>Модули для комплексного управления вузом</h2><p>Нажмите на модуль, чтобы увидеть состав.</p></div>
+      <div class="grid">
+        <div class="lg:col-4 md:col-4 col-4"><div class="modwrap"><button class="card module" data-module-trigger aria-expanded="false"><div class="card__icon">◰</div><h4>Приёмная комиссия CRM</h4></button><div class="module-tip" data-module-tip><b>Цифровая приёмка</b><ul><li>Онлайн-подача и воронка заявок</li><li>Электронные документы абитуриента</li><li>Онлайн-оценивание и KPI кампании</li></ul></div></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="modwrap"><button class="card module" data-module-trigger aria-expanded="false"><div class="card__icon">▤</div><h4>Учебный процесс (LMS)</h4></button><div class="module-tip" data-module-tip><b>Гибкая LMS</b><ul><li>Умное расписание</li><li>Оценки и посещаемость, QR</li><li>Задания, материалы, прокторинг</li></ul></div></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="modwrap"><button class="card module" data-module-trigger aria-expanded="false"><div class="card__icon">◉</div><h4>Управление студентами (SIS)</h4></button><div class="module-tip" data-module-tip><b>Цифровой профиль</b><ul><li>Академическое движение</li><li>Группы и потоки</li><li>Заявления и обращения</li></ul></div></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="modwrap"><button class="card module" data-module-trigger aria-expanded="false"><div class="card__icon">◫</div><h4>Конструктор курсов</h4></button><div class="module-tip" data-module-tip><b>Онлайн-курсы</b><ul><li>Видеоуроки, тесты, материалы</li><li>CRM заявок и прогресс</li><li>Цифровые сертификаты</li></ul></div></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="modwrap"><button class="card module" data-module-trigger aria-expanded="false"><div class="card__icon">▥</div><h4>Библиотека</h4></button><div class="module-tip" data-module-tip><b>Электронный фонд</b><ul><li>Умный поиск и доступ</li><li>Интеграция с LMS</li><li>МегаПро / РАБИС / КАБИС</li></ul></div></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="modwrap"><button class="card module" data-module-trigger aria-expanded="false"><div class="card__icon">⌂</div><h4>Общежитие</h4></button><div class="module-tip" data-module-tip><b>Цифровое заселение</b><ul><li>Онлайн-заявки студентов</li><li>Контроль мест в реальном времени</li><li>Договоры и аналитика загрузки</li></ul></div></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="modwrap"><button class="card module" data-module-trigger aria-expanded="false"><div class="card__icon">📊</div><h4>BI Аналитика</h4></button><div class="module-tip" data-module-tip><b>Аналитика 360</b><ul><li>Дашборды без кода</li><li>Гос. отчётность автоматически</li><li>Прогнозирование</li></ul></div></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="modwrap"><button class="card module" data-module-trigger aria-expanded="false"><div class="card__icon">★</div><h4>KPI преподавателя</h4></button><div class="module-tip" data-module-tip><b>Оценка персонала</b><ul><li>Индивидуальные и индикативные планы</li><li>Контроль выполнения</li><li>Мотивация через данные</li></ul></div></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="modwrap"><button class="card module" data-module-trigger aria-expanded="false"><div class="card__icon">➜</div><h4>Карьера и стажировка</h4></button><div class="module-tip" data-module-tip><b>Вспомогательный модуль</b><ul><li>Профили выпускников</li><li>Вакансии и стажировки</li><li>Связь с работодателями</li></ul></div></div></div>
+      </div>
+      <p class="note note--margin mt-4">Тултип появляется по клику; на hi-fi — единый набор outline-иконок 1.5px.</p>
+    </div>
+  </section>
+
+  <!-- 5. ПРЕИМУЩЕСТВА (табы) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Преимущества</p><h2>Почему вузы выбирают Study Space</h2></div>
+      <div data-tabset>
+        <div class="tabs">
+          <button class="tab" data-tab="a" aria-selected="true">Быстрый запуск</button>
+          <button class="tab" data-tab="b" aria-selected="false">Гибкая архитектура</button>
+          <button class="tab" data-tab="c" aria-selected="false">Бесшовная интеграция</button>
+          <button class="tab" data-tab="d" aria-selected="false">Защита данных</button>
+        </div>
+        <div data-panel="a"><div class="grid"><div class="col-6"><h3>Внедрение за 30–90 дней</h3><p class="lines mt-3"><i></i><i></i><i></i></p></div><div class="col-6"><div class="ph">Схема внедрения</div></div></div></div>
+        <div data-panel="b" hidden><div class="grid"><div class="col-6"><h3>Кастомизация под масштаб</h3><p class="lines mt-3"><i></i><i></i></p></div><div class="col-6"><div class="ph">Колледж → университет → сеть</div></div></div></div>
+        <div data-panel="c" hidden><div class="grid"><div class="col-6"><h3>Готовые коннекторы и API</h3><p class="lines mt-3"><i></i><i></i></p><p class="muted">1С · Office 365 · прокторинг · антиплагиат · библиотеки</p></div><div class="col-6"><div class="ph">Карта интеграций</div></div></div></div>
+        <div data-panel="d" hidden><div class="grid"><div class="col-6"><h3>Многоуровневая защита</h3><p class="lines mt-3"><i></i><i></i></p><p class="muted">Шифрование · резервные копии · доступ по ролям · ISO/IEC 27001</p></div><div class="col-6"><div class="ph">Модель безопасности</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ДЛЯ КОГО (роли) -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Для кого и как используется</p><h2>Единая платформа для всех участников</h2></div>
+      <div class="grid">
+        <div class="lg:col-4 md:col-4 col-4"><div class="card"><div class="ph ph--avatar mb-3"></div><h4>Деканаты и кафедры</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="card"><div class="ph ph--avatar mb-3"></div><h4>Бухгалтерия</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="card"><div class="ph ph--avatar mb-3"></div><h4>Приёмная комиссия</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="card"><div class="ph ph--avatar mb-3"></div><h4>Абитуриенты</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="card"><div class="ph ph--avatar mb-3"></div><h4>Студенты</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="card"><div class="ph ph--avatar mb-3"></div><h4>Преподаватели</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="card"><div class="ph ph--avatar mb-3"></div><h4>Администрация</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 md:col-4 col-4"><div class="card"><div class="ph ph--avatar mb-3"></div><h4>Министерство и регуляторы</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. СОПРОВОЖДЕНИЕ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Наше сопровождение</p><h2>Мы с вами на каждом этапе цифровой трансформации</h2></div>
+      <div class="grid">
+        <div class="lg:col-4 col-4"><div class="card"><span class="badge">01</span><h4 class="mt-3">Внедрение под ключ</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 col-4"><div class="card"><span class="badge">02</span><h4 class="mt-3">Миграция данных</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 col-4"><div class="card"><span class="badge">03</span><h4 class="mt-3">Тех. поддержка 24/7</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 col-4"><div class="card"><span class="badge">04</span><h4 class="mt-3">Гибкие интеграции</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 col-4"><div class="card"><span class="badge">05</span><h4 class="mt-3">Развитие и масштабирование</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+        <div class="lg:col-4 col-4"><div class="card"><span class="badge">06</span><h4 class="mt-3">Обучение в течение года</h4><p class="lines mt-3 lines--sm"><i></i><i></i></p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7b. ИНТЕГРАЦИИ (из деки) -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Интеграции</p><h2>Подключаем всё через Open University API</h2><p>Готовые коннекторы к государственным и корпоративным системам.</p></div>
+      <div class="cluster">
+        <span class="chip">ЕПВО</span><span class="chip">НОБД</span><span class="chip">ГБДФЛ</span><span class="chip">ЭЦП / e-Imzo</span>
+        <span class="chip">1С</span><span class="chip">Office 365 · AD / Teams</span><span class="chip">Антиплагиат · Strike</span>
+        <span class="chip">Прокторинг</span><span class="chip">ZOOM</span><span class="chip">Educhain</span><span class="chip">СКУД</span>
+        <span class="chip">Diplom Edu</span><span class="chip">Kontrakt Edu</span><span class="chip">Библиотечные сервисы</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. ДЛЯ КОГО ПОДХОДИТ -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Для кого подходит</p><h2>Решение для учреждений среднего и высшего образования</h2></div>
+      <div class="grid">
+        <div class="col-6"><div class="card"><h3>Колледжи</h3><p class="lines mt-3"><i></i><i></i></p><p class="muted">Быстрый запуск, поддержка СПО-структуры и отчётности.</p></div></div>
+        <div class="col-6"><div class="card"><h3>Университеты</h3><p class="lines mt-3"><i></i><i></i></p><p class="muted">Многопрофильные структуры, кампусы, филиалы.</p></div></div>
+      </div>
+      <div class="cluster mt-5"><span class="chip">Многопрофильный</span><span class="chip">Медицинский</span><span class="chip">Технический</span><span class="chip">Педагогический</span><span class="chip">Лингвистический</span><span class="chip">Экономический</span></div>
+    </div>
+  </section>
+
+  <!-- 9. МОБИЛЬНАЯ ВЕРСИЯ -->
+  <section class="section">
+    <div class="container grid">
+      <div class="lg:col-6 col-6"><p class="eyebrow">Мобильная версия</p><h2>Супер-апп для студентов и преподавателей</h2><p class="lines mt-4" style="max-width:44ch"><i></i><i></i></p><div class="cluster mt-4"><span class="btn">App Store</span><span class="btn">Google Play</span></div></div>
+      <div class="lg:col-6 col-6 center"><div class="ph ph--3d" style="max-width:280px;margin-inline:auto">Мокап мобильного приложения</div></div>
+    </div>
+  </section>
+
+  <!-- 10. КЕЙСЫ -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Кейсы</p><h2>Что говорят наши клиенты</h2></div>
+      <div class="grid">
+        <div class="col-6"><div class="card"><div class="ph ph--logo mb-3">KBTU</div><p class="lines"><i></i><i></i></p><p class="muted mt-3">— проректор по цифровизации</p></div></div>
+        <div class="col-6"><div class="card"><div class="ph ph--logo mb-3">АУНГ</div><p class="lines"><i></i><i></i></p><p class="muted mt-3">— руководитель приёмной комиссии</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. CTA + запись -->
+  <section class="section">
+    <div class="container grid">
+      <div class="lg:col-6 col-6"><h2>Покажем, как Study Space работает в вашем вузе</h2><p class="sub mt-4">Бесплатная ZOOM-консультация + персональная демонстрация.</p><a class="btn btn--primary btn--lg" href="consultation.html">Запросить демо</a></div>
+      <div class="lg:col-6 col-6"><div class="ph ph--screen">Виджет записи (Calendly-style)</div></div>
+    </div>
+  </section>
+
+  <!-- 12. ПОДСТРАНИЦЫ -->
+  <section class="section section--tint">
+    <div class="container grid">
+      <div class="col-6"><a class="card" href="ss-how-it-helps.html" style="display:block"><p class="eyebrow">Подробнее</p><h3>Как Study Space помогает ВУЗам и колледжам?</h3><p class="muted mt-3">Вызовы → решение → функциональность → кейсы</p><span class="arrow-link mt-3">Открыть →</span></a></div>
+      <div class="col-6"><a class="card" href="ss-implementation.html" style="display:block"><p class="eyebrow">Подробнее</p><h3>Сопровождение и поддержка продукта</h3><p class="muted mt-3">Внедрение → поддержка → интеграции → обучение</p><span class="arrow-link mt-3">Открыть →</span></a></div>
+    </div>
+  </section>
+</main>
+
+<hs-footer></hs-footer>
+<hs-stickycta label="Запросить демо Study Space"></hs-stickycta>
+
+<dialog id="videoModal" class="dialog--video">
+  <div class="dlg__head"><h3>Демонстрация Study Space</h3><button class="x" data-modal-close aria-label="Закрыть">×</button></div>
+  <div class="dlg__body"><div class="ph ph--video">Видео-плеер</div></div>
+</dialog>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Справочный центр · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar></hs-topbar>
+<hs-header active="support"></hs-header>
+
+<main data-search-scope>
+  <section class="hero section section--tint">
+    <div class="container center">
+      <p class="eyebrow">Справочный центр</p>
+      <h1>Чем помочь?</h1>
+      <div class="searchbox mt-5">
+        <input class="input" data-search placeholder="Поиск по статьям: роль, импорт, дашборд…">
+        <button class="btn btn--primary">Найти</button>
+      </div>
+      <div class="cluster mt-4" style="justify-content:center">
+        <span class="chip" data-search-fill="роль">Как настроить роль</span>
+        <span class="chip" data-search-fill="импорт">Импорт студентов</span>
+        <span class="chip" data-search-fill="дашборд">BI: создать дашборд</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>Категории</h2></div>
+      <div class="grid">
+        <div class="lg:col-3 col-6" data-search-item data-keywords="study space модули"><div class="card"><div class="card__icon">◧</div><h4>Study Space</h4><p class="muted">42 статьи</p></div></div>
+        <div class="lg:col-3 col-6" data-search-item data-keywords="bi аналитика дашборд отчёт"><div class="card"><div class="card__icon">📊</div><h4>BI Analytics</h4><p class="muted">18 статей</p></div></div>
+        <div class="lg:col-3 col-6" data-search-item data-keywords="os ai ассистент"><div class="card"><div class="card__icon">🤖</div><h4>Hero OS AI</h4><p class="muted">9 статей</p></div></div>
+        <div class="lg:col-3 col-6" data-search-item data-keywords="workspace задачи проекты"><div class="card"><div class="card__icon">▤</div><h4>Workspace</h4><p class="muted">12 статей</p></div></div>
+        <div class="lg:col-3 col-6" data-search-item data-keywords="биллинг тарифы оплата"><div class="card"><div class="card__icon">₸</div><h4>Биллинг и тарифы</h4><p class="muted">7 статей</p></div></div>
+        <div class="lg:col-3 col-6" data-search-item data-keywords="интеграции api нобд епво 1с"><div class="card"><div class="card__icon">⚙</div><h4>Интеграции</h4><p class="muted">15 статей</p></div></div>
+        <div class="lg:col-3 col-6" data-search-item data-keywords="безопасность доступ роль"><div class="card"><div class="card__icon">🔒</div><h4>Безопасность</h4><p class="muted">6 статей</p></div></div>
+      </div>
+      <p class="empty mt-5" data-search-empty hidden>Ничего не найдено. Попробуйте другой запрос или <a href="support.html">создайте тикет</a>.</p>
+    </div>
+  </section>
+
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head"><h2>Популярные статьи</h2></div>
+      <div style="max-width:760px">
+        <a class="card mb-3" href="help-article.html" style="display:block" data-search-item data-keywords="роль доступ пользователь">Как настроить роль и доступы пользователя</a>
+        <a class="card mb-3" href="help-article.html" style="display:block" data-search-item data-keywords="импорт студенты excel">Импорт студентов из Excel</a>
+        <a class="card mb-3" href="help-article.html" style="display:block" data-search-item data-keywords="дашборд bi отчёт">BI: как создать дашборд без кода</a>
+        <a class="card mb-3" href="help-article.html" style="display:block" data-search-item data-keywords="расписание">Настройка умного расписания</a>
+        <a class="card mb-3" href="help-article.html" style="display:block" data-search-item data-keywords="общежитие заселение">Заселение в общежитие онлайн</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<hs-footer></hs-footer>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЛК студента · AI-чат (макет) · Hero Study</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+<link rel="stylesheet" href="css/ai-chat.css">
+</head>
+<body data-ai-role="student">
+
+<header class="header"><div class="container">
+  <span class="brand">Hero <b>Study</b> Space</span>
+  <span class="tag" style="margin-left:8px">прототип ЛК</span>
+  <div class="header__actions">
+    <span class="muted" style="font-size:13px">Роль: Студент</span>
+    <span class="ph ph--avatar"></span>
+  </div>
+</div></header>
+
+<main class="app">
+  <aside class="side">
+    <p class="eyebrow mb-3">ЛК студента</p>
+    <a class="is-active" href="lk-student-ai.html">Дашборд</a>
+    <a href="#">Расписание</a>
+    <a href="#">Журнал оценок</a>
+    <a href="#">Дедлайны</a>
+    <a href="#">Дисциплины</a>
+    <a href="#">Профиль</a>
+    <hr style="border:none;border-top:1px solid var(--line);margin:12px 0">
+    <p class="eyebrow mb-3">Другие ЛК (макеты)</p>
+    <a href="lk-teacher-ai.html">ЛК преподавателя</a>
+    <a href="lk-manager-ai.html">ЛК менеджера</a>
+  </aside>
+
+  <div class="app__main">
+    <p class="crumbs"><a href="index.html">Главная</a> / ЛК студента / Дашборд</p>
+    <h1 style="font-size:28px">Привет, Айдана</h1>
+
+    <div class="note note--margin">Макет AI-слоя: сквозной чат вызывается с любой страницы —
+      кнопка <b>«AI-ассистент»</b> внизу справа. В шапке чата есть демо-состояния и выбор модели.</div>
+
+    <div class="grid mt-6">
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Расписание сегодня</h4><span class="badge">4 пары</span></div>
+        <ul class="lines mt-3"><i></i><i></i><i></i></ul>
+      </div></div>
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Ближайшие дедлайны</h4><span class="badge badge--warn">2</span></div>
+        <p class="muted mt-2">Курсовая «Базы данных» · до 14 июня</p>
+        <p class="muted mt-2">Эссе по истории · до 19 июня</p>
+      </div></div>
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Баллы за РК1</h4><span class="card__kpi" style="font-size:22px">27/30</span></div>
+        <ul class="lines mt-3 lines--sm"><i></i><i></i></ul>
+      </div></div>
+      <div class="lg:col-6 col-6"><div class="card">
+        <div class="between"><h4>Сообщения</h4><a class="arrow-link" href="#">Все →</a></div>
+        <p class="muted mt-2">Куратор: собрание группы в пятницу</p>
+      </div></div>
+    </div>
+
+    <p class="muted mt-6" style="font-size:13px">Спросите ассистента: «когда дедлайн?», «покажи расписание»,
+      «сколько баллов за РК?» — ответы на основе базы знаний студента.</p>
+  </div>
+</main>
+
+<script defer src="js/ai-chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ЛК · Документы · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar></hs-topbar>
+<hs-header></hs-header>
+
+<main class="app">
+  <aside class="side">
+    <p class="eyebrow mb-3">Личный кабинет</p>
+    <a href="account-dashboard.html">Дашборд</a>
+    <a href="#">Профиль</a>
+    <a href="consultation.html">Анкета / заявка</a>
+    <a href="account-tickets.html">Тикеты</a>
+    <a href="account-documents.html" class="is-active">Документы</a>
+    <a href="#">Уведомления</a>
+  </aside>
+
+  <div class="app__main">
+    <p class="crumbs"><a href="account-dashboard.html">ЛК</a> / Документы</p>
+    <h1 style="font-size:28px">Доступ к документам</h1>
+    <p class="muted mt-2">Загружаются стороной Hero Study. Скачивание доступно, удаление — нет.</p>
+
+    <div class="cluster mt-5 mb-4"><span class="chip is-active">Все</span><span class="chip">Договоры</span><span class="chip">КП</span><span class="chip">Презентации</span><span class="chip">Отчёты</span></div>
+
+    <div class="table-scroll"><table class="table">
+      <thead><tr><th>Документ</th><th>Тип</th><th>Дата</th><th></th></tr></thead>
+      <tbody>
+        <tr><td>📄 Договор оказания услуг 2026.pdf</td><td>Договор</td><td>10.01.2026</td><td><button class="btn btn--sm">Скачать</button></td></tr>
+        <tr><td>📄 Коммерческое предложение «Профи».pdf</td><td>КП</td><td>05.01.2026</td><td><button class="btn btn--sm">Скачать</button></td></tr>
+        <tr><td>📄 Презентация Hero Study Space.pdf</td><td>Презентация</td><td>03.01.2026</td><td><button class="btn btn--sm">Скачать</button></td></tr>
+        <tr><td>📄 Отчёт по внедрению Q1.pdf</td><td>Отчёт</td><td>31.03.2026</td><td><button class="btn btn--sm">Скачать</button></td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="empty mt-6">Пример empty state: «Документов пока нет — они появятся после подписания договора».</div>
+  </div>
+</main>
+
+<hs-footer></hs-footer>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>

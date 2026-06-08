@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Карта прототипа · Hero Study 2.0</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+<style>
+  .map a{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:8px;background:var(--paper);transition:var(--ease)}
+  .map a:hover{border-color:var(--ink-1);background:var(--paper-2)}
+  .map a b{color:var(--ink);display:block}
+  .map a span{font-size:var(--fs-small);color:var(--ink-2)}
+  .map .tag{float:right;margin-top:2px}
+</style>
+</head>
+<body>
+<hs-topbar></hs-topbar>
+<hs-header></hs-header>
+
+<main class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Служебная страница для ревью</p>
+      <h1>Карта прототипа Hero Study 2.0</h1>
+      <p>Все 27 страниц прототипа. Можно начать с <a class="arrow-link" href="index.html">главной</a> и идти по меню/CTA, либо открывать любой раздел отсюда. Зелёным помечено, <em>что посмотреть</em> на интерактивных страницах.</p>
+    </div>
+
+    <div class="grid map">
+      <!-- столбец 1 -->
+      <div class="lg:col-4 md:col-4 col-12">
+        <h3 class="mb-3">Вход и витрина</h3>
+        <a href="index.html"><span class="tag">тест</span><b>2 · Главная</b><span>видео-модалка, табы продуктов</span></a>
+        <a href="styleguide.html"><b>★ Styleguide</b><span>словарь всех lo-fi компонентов</span></a>
+
+        <h3 class="mb-3 mt-5">3 · Продукты</h3>
+        <a href="product-study-space.html"><span class="tag">тест</span><b>Hero Study Space</b><span>эталонный шаблон · схема модулей (тултипы)</span></a>
+        <a href="product-bi-analytics.html"><b>Hero BI Analytics</b><span>accent: orange</span></a>
+        <a href="product-ai-assistant.html"><b>Hero OS AI</b><span>accent: cyan · контент-плейсхолдеры</span></a>
+        <a href="product-workspace.html"><b>Hero Workspace</b><span>accent: coral</span></a>
+        <a href="ss-how-it-helps.html"><b>SS · Как помогает</b><span>вызовы → решение → кейсы</span></a>
+        <a href="ss-implementation.html"><b>SS · Сопровождение</b><span>внедрение → поддержка → обучение</span></a>
+      </div>
+
+      <!-- столбец 2 -->
+      <div class="lg:col-4 md:col-4 col-12">
+        <h3 class="mb-3">4–9 · Конверсия и доверие</h3>
+        <a href="pricing.html"><span class="tag">тест</span><b>4 · Цены</b><span>тоггл, калькулятор, таблица, FAQ</span></a>
+        <a href="consultation.html"><span class="tag">тест</span><b>5 · Консультация</b><span>мульти-степ форма с валидацией</span></a>
+        <a href="cases.html"><b>6 · Кейсы</b><span>каталог + хронология</span></a>
+        <a href="about.html"><b>7 · О компании</b><span>таймлайн 2016–2026, команда</span></a>
+        <a href="partners.html"><span class="tag">тест</span><b>8 · Партнёрская программа</b><span>модалка-заявка, условия, FAQ</span></a>
+        <a href="support.html"><span class="tag">тест</span><b>9 · Тех. поддержка</b><span>чат-бот, тикет-форма (состояния)</span></a>
+
+        <h3 class="mb-3 mt-5">10 · Ресурсы</h3>
+        <a href="help-center.html"><span class="tag">тест</span><b>Справочный центр</b><span>живой поиск + категории</span></a>
+        <a href="help-article.html"><b>Статья справки</b><span>TOC + лонгрид + «полезно?»</span></a>
+        <a href="resources-blog.html"><b>Блог</b><span>каталог статей</span></a>
+        <a href="resources-news.html"><b>Новости</b><span>лента анонсов</span></a>
+      </div>
+
+      <!-- столбец 3 -->
+      <div class="lg:col-4 md:col-4 col-12">
+        <h3 class="mb-3">11 · Личный кабинет</h3>
+        <a href="account-login.html"><b>Вход / Регистрация</b><span>email, SSO, 2FA</span></a>
+        <a href="account-dashboard.html"><b>Дашборд</b><span>4 продукта + статусы</span></a>
+        <a href="account-tickets.html"><b>Тикеты</b><span>статусы, поиск, empty state</span></a>
+        <a href="account-documents.html"><b>Документы</b><span>хранилище + скачивание</span></a>
+
+        <h3 class="mb-3 mt-5">12 · Утилитные</h3>
+        <a href="404.html"><b>404</b><span>«Аудитория закрыта на ремонт»</span></a>
+        <a href="thank-you.html"><b>Спасибо</b><span>после отправки заявки</span></a>
+        <a href="legal-privacy.html"><b>Политика конфиденциальности</b></a>
+        <a href="legal-cookie.html"><b>Использование cookie</b></a>
+        <a href="legal-terms.html"><b>Условия использования</b></a>
+
+        <div class="note note--margin mt-5">Сквозные элементы на всех страницах: топ-бар с языком RU/EN/KZ/UZ, мега-меню, футер, cookie-баннер, мобильный sticky-CTA.</div>
+      </div>
+    </div>
+
+    <p class="mt-6"><a class="btn btn--primary btn--lg" href="index.html">Начать прохождение с главной →</a></p>
+  </div>
+</main>
+
+<hs-footer></hs-footer>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>

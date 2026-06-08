@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-слой Hero Study · макеты чата · обзор</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+
+<header class="header"><div class="container">
+  <span class="brand">Hero <b>Study</b></span>
+  <span class="tag" style="margin-left:8px">AI-слой · макеты</span>
+</div></header>
+
+<main class="container section">
+  <p class="eyebrow">Hero AI Assistant</p>
+  <h1 style="font-size:var(--fs-h1);max-width:18ch">Сквозной AI-чат в личных кабинетах</h1>
+  <p class="measure muted mt-3">Макеты «рельс» из ТЗ: единый AI-слой, агностичный к сущности и модели,
+    вызывается с любой страницы. Этапы: рельсы → чат во всех ЛК → голос → действия в интерфейсе.</p>
+
+  <div class="grid mt-7">
+    <div class="lg:col-4 col-12"><div class="card">
+      <p class="eyebrow">Сущность</p><h3>ЛК студента</h3>
+      <p class="muted mt-2">Дедлайны, расписание, баллы РК — на основе базы знаний студента.</p>
+      <a class="btn btn--accent mt-4" href="lk-student-ai.html">Открыть макет →</a>
+    </div></div>
+    <div class="lg:col-4 col-12"><div class="card">
+      <p class="eyebrow">Сущность</p><h3>ЛК преподавателя (ППС)</h3>
+      <p class="muted mt-2">Методички, сводки, выставление оценок. Подключение — по готовности кабинета ППС.</p>
+      <a class="btn btn--accent mt-4" href="lk-teacher-ai.html">Открыть макет →</a>
+    </div></div>
+    <div class="lg:col-4 col-12"><div class="card">
+      <p class="eyebrow">Сущность</p><h3>ЛК менеджера</h3>
+      <p class="muted mt-2">Посещаемость, нагрузка, статусы — как действия с подтверждением (этап 3).</p>
+      <a class="btn btn--accent mt-4" href="lk-manager-ai.html">Открыть макет →</a>
+    </div></div>
+  </div>
+
+  <div class="note note--margin mt-7">Что показано в каждом макете: пустое состояние с подсказками,
+    ответ на основе базы знаний, индикатор «печатает», карточка <b>подтверждения действия</b> (этап 3),
+    состояние <b>ошибки</b> с повтором, плейсхолдер <b>голосового ввода</b> (этап 2) и
+    переключатель <b>модели</b> (OpenAI / Anthropic / Qwen) — иллюстрирует смену провайдера конфигом.</div>
+
+  <div class="grid mt-6">
+    <div class="lg:col-6 col-12"><div class="card card--flat">
+      <p class="eyebrow">Документы</p><h4>Техническое задание и саммари</h4>
+      <p class="muted mt-2">Полные документы — в корне проекта:</p>
+      <p class="mt-2">📄 <a class="arrow-link" href="../Hero-Study-AI-sloy-TZ.md">Hero-Study-AI-sloy-TZ.md</a></p>
+      <p class="mt-2">📄 <a class="arrow-link" href="../Hero-Study-AI-vstrecha-2026-06-03-summary.md">Саммари встречи 2026-06-03</a></p>
+    </div></div>
+    <div class="lg:col-6 col-12"><div class="card card--flat">
+      <p class="eyebrow">Статус</p><h4>Это lo-fi макет</h4>
+      <p class="muted mt-2">Без бэкенда: ответы имитируются. Цель — показать форму конструкции
+        («рельсы») и сценарии, а не финальный визуал.</p>
+    </div></div>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Styleguide · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar></hs-topbar>
+<hs-header></hs-header>
+
+<main class="container section">
+  <div class="section-head">
+    <p class="eyebrow">Служебная страница</p>
+    <h1>Styleguide — словарь lo-fi компонентов</h1>
+    <p>Контракт дизайн-системы прототипа. Если элемента нет здесь — его не должно быть на страницах. Палитра намеренно серая: акценты продуктов передаются текстовой меткой, а не цветом.</p>
+  </div>
+
+  <!-- Палитра -->
+  <h2 class="mb-4">Палитра</h2>
+  <div class="grid mb-6">
+    <div class="col-3"><div class="ph ph--sm" style="background:var(--paper-2)">paper-2</div></div>
+    <div class="col-3"><div class="ph ph--sm" style="background:var(--paper-3)">paper-3</div></div>
+    <div class="col-3"><div class="ph ph--sm" style="background:var(--line);color:#fff">line</div></div>
+    <div class="col-3"><div class="ph ph--sm" style="background:var(--ink);color:#fff">ink</div></div>
+    <div class="col-3"><div class="ph ph--sm" style="background:var(--accent);color:#fff">accent</div></div>
+  </div>
+
+  <!-- Типографика -->
+  <h2 class="mb-4">Типографика</h2>
+  <div class="card mb-6">
+    <h1>H1 — заголовок hero-секции</h1>
+    <h2 class="mt-3">H2 — заголовок секции</h2>
+    <h3 class="mt-3">H3 — подзаголовок</h3>
+    <p class="mt-3">Body 16px — основной текст. В реальных блоках тело заменяется строками-плейсхолдерами:</p>
+    <p class="lines mt-3" style="max-width:520px"><i></i><i></i><i></i></p>
+    <p class="eyebrow mt-4">Eyebrow / надзаголовок</p>
+  </div>
+
+  <!-- Плейсхолдеры -->
+  <h2 class="mb-4">Плейсхолдеры визуала</h2>
+  <div class="grid mb-6">
+    <div class="col-3"><div class="ph">Фото</div></div>
+    <div class="col-3"><div class="ph ph--video">Видео-герой</div></div>
+    <div class="col-3"><div class="ph ph--chart">График / BI</div></div>
+    <div class="col-3"><div class="ph ph--3d">3D / изометрия</div></div>
+  </div>
+
+  <!-- Кнопки -->
+  <h2 class="mb-4">Кнопки и состояния</h2>
+  <div class="card mb-6">
+    <div class="cluster">
+      <button class="btn btn--primary">Primary</button>
+      <button class="btn">Secondary</button>
+      <button class="btn btn--ghost">Ghost</button>
+      <button class="btn btn--accent">Accent / CTA</button>
+      <button class="btn" disabled>Disabled</button>
+      <button class="btn btn--sm">Small</button>
+      <button class="btn btn--lg">Large</button>
+    </div>
+    <p class="note note--margin">hover / focus-visible / active / disabled — у всех кнопок и инпутов.</p>
+  </div>
+
+  <!-- Формы -->
+  <h2 class="mb-4">Поля формы</h2>
+  <div class="grid mb-6">
+    <div class="col-6 card">
+      <div class="field"><label>Имя</label><input class="input" placeholder="Введите имя"></div>
+      <div class="field" data-invalid="true"><label>Email <span class="req">*</span></label><input class="input" aria-invalid="true" value="неверный"><small class="err">Проверьте формат email.</small></div>
+      <div class="field"><label>Тип учреждения</label><select class="select"><option>Университет</option><option>Колледж</option></select></div>
+    </div>
+    <div class="col-6 card">
+      <div class="field"><label>Комментарий</label><textarea class="textarea" placeholder="Ваш вопрос"></textarea></div>
+      <div class="checkline"><input type="checkbox" id="sg-c" checked><label for="sg-c">Согласие на обработку данных</label></div>
+    </div>
+  </div>
+
+  <!-- Состояния формы -->
+  <h2 class="mb-4">Состояния отправки формы</h2>
+  <form class="card mb-6" data-mock-submit>
+    <div class="cluster mb-4">
+      <button class="btn btn--sm" data-set-state="default">default</button>
+      <button class="btn btn--sm" data-set-state="loading">loading</button>
+      <button class="btn btn--sm" data-set-state="success">success</button>
+      <button class="btn btn--sm" data-set-state="error">error</button>
+    </div>
+    <button class="btn btn--primary" type="submit"><span class="spinner"></span> Отправить заявку</button>
+    <p class="note mt-4" data-on-state="success" hidden>✓ Успешно: «Заявка получена, менеджер свяжется в течение 1 рабочего часа».</p>
+    <p class="note mt-4" data-on-state="error" hidden>✕ Ошибка: «Не удалось отправить. Попробуйте ещё раз».</p>
+  </form>
+
+  <!-- Карточки -->
+  <h2 class="mb-4">Карточки</h2>
+  <div class="grid mb-6">
+    <div class="col-4"><div class="card"><div class="card__icon">◧</div><h3>Product card</h3><p class="lines mt-3"><i></i><i></i></p><a class="arrow-link mt-3" href="#">Подробнее →</a></div></div>
+    <div class="col-4"><div class="card"><div class="ph ph--logo mb-3">Лого вуза</div><div class="card__kpi">−40%</div><p class="muted">Case card · KPI результата</p></div></div>
+    <div class="col-4"><div class="card"><span class="badge badge--ok">active</span><h3 class="mt-3">Pricing / status card</h3><p class="lines mt-3"><i></i><i></i></p></div></div>
+  </div>
+
+  <!-- Табы -->
+  <h2 class="mb-4">Табы</h2>
+  <div class="card mb-6" data-tabset>
+    <div class="tabs">
+      <button class="tab" data-tab="a" aria-selected="true">Преимущество 1</button>
+      <button class="tab" data-tab="b" aria-selected="false">Преимущество 2</button>
+      <button class="tab" data-tab="c" aria-selected="false">Преимущество 3</button>
+    </div>
+    <div data-panel="a"><p class="lines"><i></i><i></i><i></i></p></div>
+    <div data-panel="b" hidden><p class="lines"><i></i><i></i></p></div>
+    <div data-panel="c" hidden><p class="lines"><i></i><i></i><i></i><i></i></p></div>
+  </div>
+
+  <!-- Аккордеон -->
+  <h2 class="mb-4">Аккордеон (FAQ)</h2>
+  <div class="mb-6">
+    <details class="acc" open><summary>Вопрос 1</summary><div class="acc__body"><p class="lines"><i></i><i></i></p></div></details>
+    <details class="acc"><summary>Вопрос 2</summary><div class="acc__body"><p class="lines"><i></i></p></div></details>
+  </div>
+
+  <!-- Note / chips / badges -->
+  <h2 class="mb-4">Note, чипы, бейджи</h2>
+  <div class="card mb-6">
+    <p class="note mb-4">NOTE — жёлтая аннотация для пояснения логики/состояния прямо на вайрфрейме.</p>
+    <p class="note note--accent mb-4">accent: green · Study Space (в hi-fi этот блок получит зелёный акцент)</p>
+    <div class="cluster"><span class="chip is-active">Активный чип</span><span class="chip">Чип</span><span class="badge badge--ok">active</span><span class="badge badge--warn">trial</span><span class="badge badge--mute">not-active</span></div>
+  </div>
+
+  <p><a class="arrow-link" href="index.html">← На главную прототипа</a></p>
+</main>
+
+<hs-footer></hs-footer>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>
