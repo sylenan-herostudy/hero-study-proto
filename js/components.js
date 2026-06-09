@@ -70,7 +70,7 @@
 
       this.innerHTML =
         '<header class="header"><div class="container">'+
-          '<a class="brand" href="'+N.brand.href+'">'+N.brand.label+'<b>.'+N.brand.acc+'</b></a>'+
+          '<a class="brand" href="'+N.brand.href+'"><img class="brand-logo" src="assets/logo-herostudy.png" alt="HeRo Study"></a>'+
           '<nav class="nav" aria-label="Основная навигация"><ul style="display:flex;gap:2px;align-items:center;list-style:none;margin:0;padding:0">'+navHTML+'</ul></nav>'+
           '<div class="header__actions">'+
             '<a class="btn btn--sm" href="account-login.html">Вход</a>'+
@@ -79,7 +79,7 @@
           '<button class="burger" data-drawer-open aria-label="Открыть меню">'+I.burger+'</button>'+
         '</div></header>'+
         '<div class="drawer" data-drawer role="dialog" aria-label="Меню">'+
-          '<div class="between"><a class="brand" href="'+N.brand.href+'">'+N.brand.label+'<b>.'+N.brand.acc+'</b></a>'+
+          '<div class="between"><a class="brand" href="'+N.brand.href+'"><img class="brand-logo" src="assets/logo-herostudy.png" alt="HeRo Study"></a>'+
             '<button class="burger" data-drawer-close aria-label="Закрыть меню">'+I.close+'</button></div>'+
           drawerHTML+
           '<div class="stack mt-5"><a class="btn btn--primary btn--block" href="consultation.html">Заполнить анкету</a>'+
@@ -98,7 +98,7 @@
       this.innerHTML =
         '<footer class="footer"><div class="container">'+
           '<div class="cols">'+
-            '<div><div class="foot-brand">'+N.brand.label+'.'+N.brand.acc+'</div>'+
+            '<div><div class="foot-brand"><img src="assets/logo-herostudy-white.svg" alt="HeRo Study"></div>'+
               '<p style="max-width:34ch">Экосистема цифровых продуктов для университетов и колледжей.</p>'+
               '<p class="mt-4">'+N.social.map(function(s){return '<a style="display:inline-block;margin-right:14px" href="#">'+s+'</a>';}).join('')+'</p>'+
             '</div>'+ cols +
