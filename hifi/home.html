@@ -69,10 +69,10 @@ nav a{color:#A5B0D0;font-weight:600;font-size:15px}nav a:hover{color:#fff}
 .mega--products{min-width:470px;display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .mega--products a{position:relative;padding-left:30px}
 .mega--products a::before{content:"";position:absolute;left:13px;top:16px;width:8px;height:8px;border-radius:50%;box-shadow:0 0 10px 1px currentColor}
-.mega--products a[data-acc="ss"]::before{color:#D64388;background:#D64388}
-.mega--products a[data-acc="bi"]::before{color:#F97316;background:#F97316}
-.mega--products a[data-acc="ai"]::before{color:#06B6D4;background:#06B6D4}
-.mega--products a[data-acc="ws"]::before{color:#78AA00;background:#78AA00}
+.mega--products a[data-acc="ss"]::before{color:#FB7185;background:#FB7185}
+.mega--products a[data-acc="bi"]::before{color:#FB923C;background:#FB923C}
+.mega--products a[data-acc="ai"]::before{color:#2DD4BF;background:#2DD4BF}
+.mega--products a[data-acc="ws"]::before{color:#A3E635;background:#A3E635}
 .mega--lang{min-width:200px;top:calc(100% + 8px);left:auto;right:0;border-radius:14px}
 .mega--lang a{display:flex;align-items:baseline;gap:8px;padding:9px 12px}
 .mega--lang a b{font-size:13px}.mega--lang a span{margin-top:0;font-size:12.5px}
@@ -181,8 +181,9 @@ h1{font-size:64px;line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
 .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px;transition:.2s}
 .card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.22)}
-.card .plogo{height:40px;width:auto;display:block;margin-bottom:18px;overflow:visible}
-.card .psub{font-family:Manrope,system-ui,sans-serif;font-size:10px;font-weight:600;letter-spacing:1.5px;fill:#CDD5EC}
+.card .plk{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.card .plk img{width:44px;height:44px;display:block;border-radius:12px}
+.card .plk b{color:#fff;font-weight:800;font-size:16.5px;letter-spacing:-.01em;line-height:1.2}
 .card h3{font-size:18px;font-weight:800;color:#fff}
 .card p{color:#9aa4c4;font-size:14px;margin-top:6px;line-height:1.5}
 .card ul{list-style:none;padding:0;margin:12px 0 0}
@@ -409,17 +410,17 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
   <h2 class="h2">Четыре продукта — <span class="grad">одна экосистема</span></h2>
   <p class="h2sub">Каждый со своим акцентом, вместе — как единый организм вуза.</p>
   <div class="products">
-    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Study Space" style="color:#D64388"><use href="#heroMark"/><text x="74" y="49.5" class="psub">STUDY SPACE</text></svg><p>Операционная система вуза (ERP).</p><ul style="color:#D64388"><li>Приём · LMS · студенты</li><li>Финансы · общежитие</li><li>Документооборот · KPI</li></ul><a class="more" href="product-study-space.html" style="color:#D64388">Подробнее →</a></div>
-    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo BI Analytics" style="color:#F97316"><use href="#heroMark"/><text x="74" y="49.5" class="psub">BI ANALYTICS</text></svg><p>Поддержка решений на данных.</p><ul style="color:#F97316"><li>Дашборды без кода</li><li>Прогнозы и KPI</li><li>Отчётность Министерства</li></ul><a class="more" href="product-bi-analytics.html" style="color:#F97316">Подробнее →</a></div>
-    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo OS AI" style="color:#06B6D4"><use href="#heroMark"/><text x="74" y="49.5" class="psub">OS AI</text></svg><p>ИИ-помощник в процессах.</p><ul style="color:#06B6D4"><li>Поиск по данным</li><li>Генерация отчётов</li><li>Помощь студентам и ППС</li></ul><a class="more" href="product-ai-assistant.html" style="color:#06B6D4">Подробнее →</a></div>
-    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Workspace" style="color:#78AA00"><use href="#heroMark"/><text x="74" y="49.5" class="psub">WORKSPACE</text></svg><p>Команда и проекты вуза.</p><ul style="color:#78AA00"><li>Задачи и дедлайны</li><li>Проекты и контроль</li><li>Документы команды</li></ul><a class="more" href="product-workspace.html" style="color:#78AA00">Подробнее →</a></div>
+    <div class="card"><div class="plk"><img src="../assets/marks/ss.svg" alt=""><b>HeRo Study Space</b></div><p>Операционная система вуза (ERP).</p><ul style="color:#FB7185"><li>Приём · LMS · студенты</li><li>Финансы · общежитие</li><li>Документооборот · KPI</li></ul><a class="more" href="product-study-space.html" style="color:#FB7185">Подробнее →</a></div>
+    <div class="card"><div class="plk"><img src="../assets/marks/bi.svg" alt=""><b>HeRo BI Analytics</b></div><p>Поддержка решений на данных.</p><ul style="color:#FB923C"><li>Дашборды без кода</li><li>Прогнозы и KPI</li><li>Отчётность Министерства</li></ul><a class="more" href="product-bi-analytics.html" style="color:#FB923C">Подробнее →</a></div>
+    <div class="card"><div class="plk"><img src="../assets/marks/ai.svg" alt=""><b>HeRo OS AI</b></div><p>ИИ-помощник в процессах.</p><ul style="color:#2DD4BF"><li>Поиск по данным</li><li>Генерация отчётов</li><li>Помощь студентам и ППС</li></ul><a class="more" href="product-ai-assistant.html" style="color:#2DD4BF">Подробнее →</a></div>
+    <div class="card"><div class="plk"><img src="../assets/marks/ws.svg" alt=""><b>HeRo Work Space</b></div><p>Команда и проекты вуза.</p><ul style="color:#A3E635"><li>Задачи и дедлайны</li><li>Проекты и контроль</li><li>Документы команды</li></ul><a class="more" href="product-workspace.html" style="color:#A3E635">Подробнее →</a></div>
   </div>
   <div class="ecoband">
     <div>
       <h3>Работайте со всей экосистемой</h3>
       <p>Четыре продукта на одной платформе — данные, процессы и аналитика связаны между собой.</p>
     </div>
-    <div class="ecochips"><span style="color:#D64388">SS</span><span style="color:#F97316">BI</span><span style="color:#06B6D4">AI</span><span style="color:#78AA00">WS</span></div>
+    <div class="ecochips"><span style="color:#FB7185">SS</span><span style="color:#FB923C">BI</span><span style="color:#2DD4BF">AI</span><span style="color:#A3E635">WS</span></div>
     <a class="btn btn-primary btn-sm" href="product-study-space.html">Все продукты →</a>
   </div>
 </div></section>
