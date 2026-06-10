@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тикеты — личный кабинет — HeRo Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hs.css">
+<script src="hs.js" defer></script>
+<style>
+/* — уникальные блоки страницы «ЛК · Тикеты» — */
+.lk{display:grid;grid-template-columns:250px 1fr;gap:36px;align-items:start}
+.lkside{position:sticky;top:98px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:16px 12px}
+.lkcap{color:#566089;font-size:11.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px 10px}
+.lkside a{display:flex;align-items:center;gap:11px;padding:11px 12px;border-radius:11px;border:1px solid transparent;color:#A5B0D0;font-weight:600;font-size:14.5px;transition:.16s}
+.lkside a svg{flex:none;opacity:.85}
+.lkside a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.lkside a.is-active{color:#fff;background:rgba(129,140,248,.14);border-color:rgba(129,140,248,.32)}
+.lkhead{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.lkhead h1{font-size:32px;line-height:1.15;letter-spacing:-.02em;margin:0;max-width:none}
+.lkhead .lksub{color:#8893B5;font-size:14.5px;margin-top:7px;max-width:52ch}
+.lktools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:26px 0 16px}
+.lktools .input{max-width:280px;padding:11px 14px;font-size:14px}
+.fchip{border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);border-radius:99px;padding:8px 15px;font-size:13px;font-weight:700;color:#A5B0D0;cursor:pointer;font-family:inherit;transition:.16s}
+.fchip:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+.fchip.is-active{color:#06121f;background:#fff;border-color:#fff}
+.tlist{display:flex;flex-direction:column;gap:10px}
+.trow{display:grid;grid-template-columns:58px minmax(0,1fr) 132px 128px 88px;gap:16px;align-items:center;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:17px 20px;transition:.18s}
+.trow:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.24)}
+.tnum{color:#566089;font-weight:800;font-size:13px}
+.tsub{color:#fff;font-weight:700;font-size:15px;letter-spacing:-.01em}
+.tdate{color:#8893B5;font-size:13px;font-weight:600;text-align:right;white-space:nowrap}
+.stbadge{display:inline-flex;align-items:center;gap:7px;border-radius:99px;padding:6px 13px;font-size:12.5px;font-weight:700;white-space:nowrap;justify-self:start}
+.stbadge i{width:7px;height:7px;border-radius:50%;background:currentColor;display:block}
+.st-open{color:#FB923C;background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.32)}
+.st-wip{color:#818CF8;background:rgba(129,140,248,.12);border:1px solid rgba(129,140,248,.32)}
+.st-done{color:#2DD4BF;background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.32)}
+.chathead{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.chathead h3{color:#fff;font-size:17px;font-weight:800;letter-spacing:-.01em}
+.chathead .meta{color:#8893B5;font-size:13px;margin-top:3px}
+.chatthread{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+.bubble{max-width:62%;padding:11px 15px;border-radius:14px;font-size:14px;line-height:1.55}
+.bub-me{align-self:flex-end;background:rgba(129,140,248,.18);border:1px solid rgba(129,140,248,.3);color:#E0E7FF;border-bottom-right-radius:5px}
+.bub-sup{align-self:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#cdd5ec;border-bottom-left-radius:5px}
+.bubble .who{display:block;font-size:11.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#8893B5;margin-bottom:4px}
+.emptystate{text-align:center;border:1px dashed rgba(255,255,255,.18);border-radius:18px;padding:44px 24px;background:rgba(255,255,255,.02)}
+.emptystate h3{color:#fff;font-size:19px;font-weight:800}
+.emptystate p{color:#8893B5;font-size:14px;margin:8px auto 18px;max-width:46ch}
+.emptyico{width:54px;height:54px;border-radius:16px;margin:0 auto 16px;display:grid;place-items:center;background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.3);color:#2DD4BF}
+@media(max-width:980px){.lk{grid-template-columns:1fr}.lkside{position:static}.trow{grid-template-columns:1fr auto;gap:8px 14px}.tnum,.tdate{text-align:left}.bubble{max-width:88%}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<hs-topbar></hs-topbar>
+<hs-header></hs-header>
+
+<!-- ЛК: САЙДБАР + ТИКЕТЫ -->
+<section class="section" style="padding:44px 0 84px"><div class="wrap">
+  <div class="crumbs"><a href="home.html">Главная</a> · <a href="account-dashboard.html">Личный кабинет</a> · Тикеты</div>
+
+  <div class="lk">
+    <!-- ЛК-НАВИГАЦИЯ -->
+    <aside class="lkside">
+      <p class="lkcap">Личный кабинет</p>
+      <a href="account-dashboard.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Дашборд</a>
+      <a href="#"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Профиль</a>
+      <a href="consultation.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>Анкета / заявка</a>
+      <a class="is-active" href="account-tickets.html" aria-current="page"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v2a2.5 2.5 0 0 0 0 5v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2a2.5 2.5 0 0 0 0-5z"/><line x1="14" y1="5" x2="14" y2="8"/><line x1="14" y1="11" x2="14" y2="13"/><line x1="14" y1="16" x2="14" y2="19"/></svg>Тикеты</a>
+      <a href="account-documents.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Документы</a>
+      <a href="#"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Уведомления</a>
+    </aside>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <div>
+      <div class="lkhead">
+        <div>
+          <h1>Обращения в поддержку</h1>
+          <p class="lksub">Все ваши тикеты в одном месте: статусы, ответы команды и история решений. SLA: стандартные — до 4 рабочих часов, критичные — до 1 часа.</p>
+        </div>
+        <a class="btn btn-primary btn-sm" href="support.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Новый тикет</a>
+      </div>
+
+      <!-- ПОИСК + ФИЛЬТРЫ -->
+      <div class="lktools">
+        <input class="input" type="search" placeholder="Поиск по тикетам…">
+        <button class="fchip is-active" type="button">Все · 5</button>
+        <button class="fchip" type="button">Открыт · 1</button>
+        <button class="fchip" type="button">В работе · 2</button>
+        <button class="fchip" type="button">Решён · 2</button>
+      </div>
+
+      <!-- СПИСОК ТИКЕТОВ -->
+      <div class="tlist">
+        <a class="trow" href="#">
+          <span class="tnum">#10231</span>
+          <span class="tsub">Импорт студентов из Excel останавливается на 40 %</span>
+          <span class="tagchip">Study Space</span>
+          <span class="stbadge st-open"><i></i>Открыт</span>
+          <span class="tdate">01.06.2026</span>
+        </a>
+        <a class="trow" href="#">
+          <span class="tnum">#10220</span>
+          <span class="tsub">Не открывается дашборд приёмной кампании</span>
+          <span class="tagchip">BI Analytics</span>
+          <span class="stbadge st-wip"><i></i>В работе</span>
+          <span class="tdate">30.05.2026</span>
+        </a>
+        <a class="trow" href="#">
+          <span class="tnum">#10205</span>
+          <span class="tsub">Конфликт в расписании при объединении групп</span>
+          <span class="tagchip">Study Space</span>
+          <span class="stbadge st-wip"><i></i>В работе</span>
+          <span class="tdate">28.05.2026</span>
+        </a>
+        <a class="trow" href="#">
+          <span class="tnum">#10198</span>
+          <span class="tsub">Доступ к BI-дашбордам для деканата</span>
+          <span class="tagchip">Безопасность</span>
+          <span class="stbadge st-done"><i></i>Решён</span>
+          <span class="tdate">25.05.2026</span>
+        </a>
+        <a class="trow" href="#">
+          <span class="tnum">#10184</span>
+          <span class="tsub">Настройка ролей и прав в проектах команды</span>
+          <span class="tagchip">Work Space</span>
+          <span class="stbadge st-done"><i></i>Решён</span>
+          <span class="tdate">21.05.2026</span>
+        </a>
+      </div>
+
+      <!-- ПЕРЕПИСКА ПО ТИКЕТУ -->
+      <div class="card" style="margin-top:28px">
+        <div class="chathead">
+          <div>
+            <h3>Тикет #10231 · Импорт студентов из Excel</h3>
+            <p class="meta">Переписка с поддержкой · первый ответ — за 32 минуты</p>
+          </div>
+          <span class="stbadge st-open"><i></i>Открыт</span>
+        </div>
+        <div class="chatthread">
+          <div class="bubble bub-me"><span class="who">Вы · 01.06, 10:14</span>Не загружается список студентов: файл .xlsx на 1 200 строк, импорт останавливается на 40 % без сообщения об ошибке.</div>
+          <div class="bubble bub-sup"><span class="who">Поддержка HeRo · 01.06, 10:46</span>Здравствуйте! Уточните, пожалуйста, формат файла — импорт принимает .xlsx по шаблону Study Space. Шаблон и инструкцию отправили вам на email, проверим файл вместе.</div>
+        </div>
+        <a class="arrowlink" href="#" style="display:inline-block;margin-top:18px">Открыть тикет полностью →</a>
+      </div>
+
+      <!-- EMPTY STATE (пример: так выглядит раздел без открытых тикетов) -->
+      <div class="emptystate" style="margin-top:28px">
+        <div class="emptyico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.27"/></svg></div>
+        <h3>Пока всё спокойно</h3>
+        <p>Открытых тикетов нет — все обращения решены. Если что-то понадобится, создайте новый тикет: возьмём его в работу по SLA.</p>
+        <a class="btn btn-glass btn-sm" href="support.html">Новый тикет</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<hs-footer></hs-footer>
+
+</div>
+</body>
+</html>

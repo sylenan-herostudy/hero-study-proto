@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Использование cookie — HeRo Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hs.css">
+<script src="hs.js" defer></script>
+<style>
+/* уникальные блоки страницы legal-cookie */
+html{scroll-behavior:smooth}
+.prose h2{scroll-margin-top:140px}
+.legalmeta{display:flex;gap:8px 18px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:14px}
+.legalmeta .hint{font-size:13.5px}
+.toccard{max-width:760px;margin:0 auto 10px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:22px 24px}
+.toccard .toct{color:#C7D2FE;font-weight:800;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
+.toccard ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 24px;counter-reset:toc}
+.toccard li{counter-increment:toc}
+.toccard a{display:flex;gap:10px;align-items:baseline;padding:7px 10px;border-radius:10px;color:#aab3d0;font-size:14.5px;font-weight:600;transition:.16s}
+.toccard a::before{content:counter(toc,decimal-leading-zero);font-size:12px;font-weight:800;color:#818CF8}
+.toccard a:hover{color:#fff;background:rgba(129,140,248,.1)}
+.cookietable{margin:6px 0 14px;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;background:rgba(255,255,255,.02)}
+.cookietable .cmp{margin-top:0}
+.cookietable code{font-family:inherit;font-weight:700;color:#fff;background:rgba(129,140,248,.14);border:1px solid rgba(129,140,248,.25);border-radius:8px;padding:3px 9px;font-size:13.5px;white-space:nowrap}
+.legaldocs{max-width:760px;margin:42px auto 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center;border-top:1px solid rgba(255,255,255,.08);padding-top:24px}
+.legaldocs .ldl{color:#566089;font-size:13px;font-weight:700;margin-right:6px}
+@media(max-width:680px){.toccard ol{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+<hs-topbar></hs-topbar>
+<hs-header active=""></hs-header>
+
+<!-- PAGEHERO -->
+<section class="pagehero" style="padding-bottom:8px"><div class="wrap">
+  <div class="crumbs"><a href="home.html">Главная</a> · Использование cookie</div>
+  <span class="eyebrow">Правовые документы</span>
+  <h1 style="font-size:44px">Использование cookie</h1>
+  <p class="sub" style="font-size:17px;max-width:56ch">Мы используем cookie, чтобы портал работал лучше и был удобнее. Этот документ объясняет, какие файлы cookie применяет сайт hero.study, зачем они нужны и как ими управлять.</p>
+  <div class="legalmeta">
+    <span class="hint">Обновлено: 10 июня 2026</span>
+    <a class="arrowlink" href="#" style="font-size:13.5px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать PDF</a>
+  </div>
+</div></section>
+
+<!-- TOC -->
+<section class="section--tight" style="padding-bottom:0"><div class="wrap">
+  <nav class="toccard" aria-label="Оглавление">
+    <div class="toct">Разделы документа</div>
+    <ol>
+      <li><a href="#s1">Что такое cookie</a></li>
+      <li><a href="#s2">Какие cookie мы используем</a></li>
+      <li><a href="#s3">Как управлять cookie</a></li>
+      <li><a href="#s4">Срок хранения</a></li>
+      <li><a href="#s5">Контакты</a></li>
+    </ol>
+  </nav>
+</div></section>
+
+<!-- CONTENT -->
+<section class="section" style="padding-top:36px"><div class="wrap">
+  <article class="prose">
+
+    <h2 id="s1">1. Что такое cookie</h2>
+    <p>Cookie — это небольшие текстовые файлы, которые сайт сохраняет в вашем браузере при посещении. Они помогают сайту «узнавать» вас между страницами и визитами: поддерживать сессию, помнить выбранный язык интерфейса и ваши настройки, а нам — понимать, какие разделы наиболее востребованы.</p>
+    <p>Cookie не дают нам доступа к вашему устройству и не содержат паролей или платёжных данных. Сами по себе они не идентифицируют вас как личность — подробнее о том, как мы обращаемся с персональными данными, читайте в <a href="legal-privacy.html">Политике конфиденциальности</a>.</p>
+
+    <h2 id="s2">2. Какие cookie мы используем</h2>
+    <p>На сайте hero.study применяются две категории cookie:</p>
+    <ul>
+      <li><b>Необходимые</b> — обеспечивают базовую работу сайта: поддержание сессии, запоминание выбранного языка (<b>hs_lang</b>) и вашего решения по баннеру согласия (<b>hs_cookie</b>). Без них сайт не сможет корректно работать, поэтому они устанавливаются всегда.</li>
+      <li><b>Аналитические</b> — собирают обезличенную статистику посещений: какие страницы открывают, сколько времени проводят на сайте, с каких устройств заходят. Эти данные помогают нам улучшать сайт и устанавливаются только с вашего согласия.</li>
+    </ul>
+    <div class="cookietable">
+      <table class="cmp">
+        <thead>
+          <tr><th>Имя cookie</th><th>Тип</th><th>Срок хранения</th></tr>
+        </thead>
+        <tbody>
+          <tr class="hl"><td><code>hs_cookie</code></td><td>Необходимая — согласие на cookie</td><td class="yes">1 год</td></tr>
+          <tr class="hl"><td><code>hs_lang</code></td><td>Необходимая — язык интерфейса</td><td class="yes">1 год</td></tr>
+          <tr><td><code>_ga</code></td><td>Аналитическая — статистика посещений</td><td>2 года</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Перечень может дополняться по мере развития сайта — актуальная версия таблицы всегда доступна на этой странице.</p>
+
+    <h2 id="s3">3. Как управлять cookie</h2>
+    <p>Вы сами решаете, разрешать ли аналитические cookie. Управлять ими можно двумя способами:</p>
+    <ul>
+      <li><b>Баннер согласия на сайте</b> — при первом визите вы выбираете, принимать ли cookie. Решение сохраняется в файле <b>hs_cookie</b>, и баннер больше не показывается до истечения срока его действия.</li>
+      <li><b>Настройки браузера</b> — Chrome, Safari, Firefox и Edge позволяют просматривать, блокировать и удалять cookie для отдельных сайтов или полностью. Инструкции есть в справке вашего браузера в разделе «Конфиденциальность».</li>
+    </ul>
+    <p>Обратите внимание: блокировка необходимых cookie может нарушить работу сайта — например, сбросится выбранный язык, и баннер согласия будет появляться при каждом визите.</p>
+
+    <h2 id="s4">4. Срок хранения</h2>
+    <p>Каждый файл cookie хранится в браузере ограниченное время, указанное в таблице выше: необходимые cookie (<b>hs_cookie</b>, <b>hs_lang</b>) — 1 год, аналитические (<b>_ga</b>) — 2 года. По истечении срока файл автоматически удаляется браузером; при следующем визите сайт запросит согласие заново.</p>
+    <p>Вы можете удалить cookie вручную в любой момент через настройки браузера — это равносильно отзыву согласия на их использование.</p>
+
+    <h2 id="s5">5. Контакты</h2>
+    <p>Если у вас есть вопросы об использовании cookie или обработке данных на сайте, свяжитесь с нами:</p>
+    <ul>
+      <li>e-mail: <a href="mailto:sales@hero.study">sales@hero.study</a>;</li>
+      <li>офисы компании: Алматы (Казахстан), Ташкент (Узбекистан), Сингапур.</li>
+    </ul>
+    <p>Хотите узнать, как платформа HeRo Study устроена изнутри и как она обращается с данными вашего вуза? <a href="consultation.html">Запишитесь на консультацию</a> — покажем на живой демонстрации.</p>
+
+    <div class="legaldocs">
+      <span class="ldl">Смежные документы:</span>
+      <a class="tagchip" href="legal-privacy.html">Политика конфиденциальности</a>
+      <a class="tagchip" href="legal-terms.html">Пользовательское соглашение</a>
+    </div>
+  </article>
+</div></section>
+
+<hs-footer></hs-footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как настроить приёмную кампанию — справка — HeRo Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hs.css">
+<script src="hs.js" defer></script>
+<style>
+/* уникальные блоки страницы-статьи */
+.artgrid{display:grid;grid-template-columns:210px minmax(0,1fr) 300px;gap:40px;align-items:start;margin-top:8px}
+.artgrid .prose{margin:0;max-width:none}
+.toc{position:sticky;top:104px}
+.toclabel{color:#566089;font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.toc a{display:block;color:#8893B5;font-size:13.5px;font-weight:600;padding:7px 12px;border-left:2px solid rgba(255,255,255,.1);transition:.16s}
+.toc a:hover{color:#fff;border-left-color:#FB7185}
+.artside{position:sticky;top:104px;display:flex;flex-direction:column;gap:16px}
+.artside .card:hover{transform:none}
+.artside .card h4{color:#fff;font-size:16px;font-weight:800}
+.artside .card .hint{margin-top:10px}
+.arttitle{font-size:38px;line-height:1.12;letter-spacing:-.025em;font-weight:800;color:#fff;margin:0 0 14px}
+.artmeta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;color:#566089;font-size:13.5px;margin-bottom:26px}
+.prose h2{scroll-margin-top:112px}
+.stepn{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;background:rgba(251,113,133,.14);border:1px solid rgba(251,113,133,.35);color:#FB7185;font-size:14px;font-weight:800;margin-right:11px;vertical-align:-7px}
+.tipbox{border:1px solid rgba(251,113,133,.3);background:rgba(251,113,133,.07);border-radius:14px;padding:14px 18px;color:#cdd5ec;font-size:14px;line-height:1.6;margin:18px 0}
+.tipbox b{color:#FB7185}
+.shotwr{margin:22px 0}
+.shotwr .shot{width:100%}
+.shotcap{color:#566089;font-size:12.5px;margin-top:8px;text-align:center}
+.shot--video{cursor:pointer;flex-direction:column;gap:12px;transition:.18s}
+.shot--video:hover{border-color:rgba(255,255,255,.3)}
+.playcirc{width:56px;height:56px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;color:#fff}
+.votebtns{display:flex;gap:10px;margin-top:14px}
+.votebtn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 0;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);color:#cdd5ec;font:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.18s}
+.votebtn:hover{color:#fff;border-color:rgba(251,113,133,.5);background:rgba(251,113,133,.1)}
+.neigh{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.neigh h3{margin-top:14px}
+@media(max-width:1100px){.artgrid{grid-template-columns:minmax(0,1fr) 300px}.toc{display:none}}
+@media(max-width:980px){.artgrid{grid-template-columns:1fr}.artside{position:static}.neigh{grid-template-columns:1fr}.arttitle{font-size:30px}}
+</style>
+</head>
+<body>
+<div class="page">
+<hs-topbar></hs-topbar>
+<hs-header active="support"></hs-header>
+
+<!-- СТАТЬЯ -->
+<section class="section--tight section"><div class="wrap">
+  <p class="crumbs"><a href="help-center.html">Справочный центр</a> → <a href="help-center.html">Study Space</a> → Как настроить приёмную кампанию</p>
+
+  <div class="artgrid">
+
+    <!-- Содержание -->
+    <aside class="toc">
+      <div class="toclabel">Содержание</div>
+      <a href="#s1">1. Создание кампании</a>
+      <a href="#s2">2. Программы и план набора</a>
+      <a href="#s3">3. Анкета абитуриента</a>
+      <a href="#s4">4. Онлайн-подача и оплата</a>
+      <a href="#s5">5. Приёмная комиссия</a>
+      <a href="#s6">6. Запуск и воронка</a>
+    </aside>
+
+    <!-- Контент -->
+    <article>
+      <h1 class="arttitle">Как настроить приёмную кампанию в Study Space</h1>
+      <div class="artmeta"><span class="tagchip" style="color:#FB7185;border-color:rgba(251,113,133,.35)">Study Space</span><span>Обновлено 28 мая 2026</span><span>·</span><span>6 мин чтения</span></div>
+
+      <div class="prose">
+        <p>Приёмная кампания в Study Space — единый контур: от публикации программ до приказа о зачислении. Базовая настройка занимает 30–40 минут и не требует участия разработчиков. Ниже — шесть шагов, которые проходит каждый вуз перед запуском набора.</p>
+
+        <h2 id="s1"><span class="stepn">1</span>Создайте кампанию и задайте сроки</h2>
+        <p>Откройте раздел <b>«Приёмная комиссия → Кампании»</b> и нажмите «Новая кампания». В мастере укажите:</p>
+        <ul>
+          <li>учебный год и уровень — бакалавриат, магистратура или докторантура;</li>
+          <li>формы обучения: очная, заочная, дистанционная;</li>
+          <li>даты волн приёма — система автоматически закроет подачу по дедлайну.</li>
+        </ul>
+        <div class="shotwr">
+          <div class="shot">Скриншот: мастер создания кампании в Study Space</div>
+          <div class="shotcap">Мастер кампании — четыре экрана, на каждом подсказки и проверка заполнения</div>
+        </div>
+
+        <h2 id="s2"><span class="stepn">2</span>Добавьте программы и план набора</h2>
+        <p>Выберите образовательные программы, участвующие в наборе, и для каждой задайте план мест: грант, платное отделение, квоты. Study Space контролирует план в реальном времени — принять заявок сверх лимита не получится, а свободные места видны комиссии на каждом этапе конкурса.</p>
+
+        <h2 id="s3"><span class="stepn">3</span>Соберите анкету абитуриента</h2>
+        <p>В конструкторе анкеты настройте поля, обязательные документы и языки формы. Стандартный набор уже готов: удостоверение личности, аттестат или диплом, сертификат ЕНТ, фото. Любое поле можно сделать обязательным, скрыть или добавить своё — без программирования.</p>
+        <div class="tipbox"><b>Совет:</b> начните с типовой анкеты из шаблона — её можно корректировать в любой момент, даже после запуска кампании. Уже поданные заявки при этом не теряются.</div>
+
+        <h2 id="s4"><span class="stepn">4</span>Подключите онлайн-подачу и оплату</h2>
+        <p>Включите личный кабинет абитуриента: подача документов, статусы заявки и уведомления работают онлайн — без очередей в приёмной комиссии. Через Open University API подключаются ЕПВО и НОБД, подпись через ЭЦП и приём оплаты — данные уходят в гос. системы автоматически.</p>
+
+        <h2 id="s5"><span class="stepn">5</span>Назначьте приёмную комиссию</h2>
+        <p>В разделе «Роли и доступы» выдайте права команде: оператор принимает и проверяет заявки, модератор допускает к конкурсу, секретарь формирует протоколы и приказы. Каждый видит только свой участок работы — подробнее в статье <a href="help-article.html">«Как настроить роль и доступы пользователя»</a>.</p>
+
+        <h2 id="s6"><span class="stepn">6</span>Запустите кампанию и следите за воронкой</h2>
+        <p>Переведите кампанию в статус «Активна» — форма подачи сразу публикуется на сайте вуза. Дальше работает воронка: заявки → допущенные → конкурс → зачисленные. Дашборд показывает динамику по программам и квотам, а приказ о зачислении формируется из конкурсного списка в один клик.</p>
+        <div class="shotwr">
+          <a class="shot shot--video" data-modal-open="videoModal">
+            <span class="playcirc"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 4 20 12 6 20 6 4"/></svg></span>
+            Видео-инструкция: приёмная кампания за 12 минут
+          </a>
+          <div class="shotcap">Полный разбор настройки — от мастера кампании до приказа о зачислении</div>
+        </div>
+        <p>После закрытия кампании зачисленные абитуриенты автоматически становятся студентами: личные дела, группы и договоры создаются в Study Space без ручного переноса данных.</p>
+      </div>
+    </article>
+
+    <!-- Виджет полезности -->
+    <aside class="artside">
+      <div class="card">
+        <h4>Помогла ли статья?</h4>
+        <div class="votebtns">
+          <button class="votebtn" type="button" aria-label="Статья помогла"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>Да</button>
+          <button class="votebtn" type="button" aria-label="Статья не помогла"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3z"/><path d="M17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>Нет</button>
+        </div>
+      </div>
+      <div class="card">
+        <h4>Не нашли ответ?</h4>
+        <p>Команда поддержки HeRo Study поможет настроить кампанию под регламент вашего вуза.</p>
+        <a class="btn btn-primary btn-sm btn-block" href="support.html" style="margin-top:14px">Связаться с поддержкой</a>
+        <div class="hint">Отвечаем в течение рабочего дня</div>
+      </div>
+    </aside>
+
+  </div>
+</div></section>
+
+<!-- СОСЕДНИЕ СТАТЬИ -->
+<section class="section section--tight" style="padding-top:0"><div class="wrap">
+  <h2 class="h2" style="font-size:32px">Соседние статьи</h2>
+  <div class="neigh">
+    <div class="card"><span class="tagchip">Study Space</span><h3>Как настроить роль и доступы пользователя</h3><p>Типовые роли, точечные права и безопасная работа команды в одной системе.</p><a class="more" href="help-article.html" style="color:#FB7185">Читать статью →</a></div>
+    <div class="card"><span class="tagchip">Study Space</span><h3>Импорт абитуриентов из Excel</h3><p>Перенос заявок из таблиц и прежних систем — без потерь и ручного ввода.</p><a class="more" href="help-article.html" style="color:#FB7185">Читать статью →</a></div>
+    <div class="card"><span class="tagchip">Study Space</span><h3>Формирование приказа о зачислении</h3><p>От конкурсного списка до подписанного приказа и автоматического создания студентов.</p><a class="more" href="help-article.html" style="color:#FB7185">Читать статью →</a></div>
+  </div>
+  <div style="text-align:center;margin-top:30px"><a class="arrowlink" href="help-center.html">Все статьи справочного центра →</a></div>
+</div></section>
+
+<hs-footer></hs-footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HeRo BI Analytics — система поддержки принятия решений — HeRo Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hs.css">
+<script src="hs.js" defer></script>
+<style>
+/* страничные стили: оранжевый акцент BI */
+.grad-bi{background:linear-gradient(110deg,#FDBA74,#FB923C 55%,#F97316);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow--bi{background:rgba(251,146,60,.12);border-color:rgba(251,146,60,.35);color:#FDBA74}
+.panel--bi{box-shadow:0 50px 120px -40px rgba(251,146,60,.35),0 30px 70px -30px rgba(99,102,241,.45)}
+.panel--bi .chart i{background:linear-gradient(180deg,#FDBA74,#F97316);box-shadow:0 0 16px rgba(251,146,60,.45)}
+.panel--bi .chart i:nth-child(even){background:linear-gradient(180deg,#818CF8,#4F46E5);box-shadow:0 0 16px rgba(99,102,241,.45)}
+.pcap{margin-top:10px;color:#566089;font-size:12px;font-weight:600;text-align:left}
+.zico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:rgba(251,146,60,.13);border:1px solid rgba(251,146,60,.32);margin-bottom:14px}
+.zones{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;margin-top:40px}
+.zones>.card{grid-column:span 2}
+.zones>.card:nth-child(4),.zones>.card:nth-child(5){grid-column:span 3}
+.gov{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+.rektor{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:18px;margin-top:40px;align-items:stretch}
+.rektor .col{display:grid;gap:18px;align-content:start}
+.rektor .shot{aspect-ratio:auto;height:100%;min-height:320px;padding:20px;text-align:center}
+.lightrow{display:flex;gap:8px;margin-top:16px;align-items:center}
+.lightrow i{width:12px;height:12px;border-radius:50%}
+.lightrow .lg{background:#34D399;box-shadow:0 0 10px rgba(52,211,153,.7)}
+.lightrow .ly{background:#FBBF24;box-shadow:0 0 10px rgba(251,191,36,.7)}
+.lightrow .lr{background:#F87171;box-shadow:0 0 10px rgba(248,113,113,.7)}
+.lightrow span{color:#8893B5;font-size:12.5px;font-weight:600;margin-left:4px}
+.chiprow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.h2-left{text-align:left;font-size:36px}
+.sub-left{text-align:left;margin-left:0}
+@media(max-width:980px){.zones>.card,.zones>.card:nth-child(4),.zones>.card:nth-child(5){grid-column:span 6}.gov,.rektor{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<hs-topbar product="bi"></hs-topbar>
+<hs-header active="products"></hs-header>
+
+<!-- 1. HERO -->
+<section class="pagehero"><div class="wrap">
+  <div class="crumbs"><a href="home.html">Главная</a> · Продукты · HeRo BI Analytics</div>
+  <span class="eyebrow eyebrow--bi">HeRo BI Analytics · аналитика и отчётность</span>
+  <h1 style="max-width:24ch;margin-left:auto;margin-right:auto">Система поддержки принятия решений <span class="grad-bi">для вашего вуза</span></h1>
+  <p class="sub" style="margin:0 auto">Дашборды и прогнозы в реальном времени на чистых данных HeRo Study: качественный датасет, интеграция с государственными системами и автоматическая отчётность.</p>
+  <div class="cta" style="justify-content:center"><a class="btn btn-primary" href="consultation.html">Посмотреть демо →</a><a class="btn btn-glass" data-modal-open="videoModal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8.5 16 12 10 15.5 10 8.5" fill="currentColor" stroke="none"/></svg><span>Смотреть презентацию</span></a></div>
+  <div class="trust"><b>16</b> вузов · <b>100 000+</b> пользователей · отчётность Министерству — <b>за 20 минут</b></div>
+  <div class="panel panel--bi">
+    <div class="pbar"><i></i><i></i><i></i></div>
+    <div class="pgrid">
+      <div class="kpi"><div class="l">Оплата контрактов</div><div class="v" style="color:#FB923C">98%</div></div>
+      <div class="kpi"><div class="l">Средний GPA</div><div class="v" style="color:#A5B4FC">3.4</div></div>
+      <div class="kpi"><div class="l">Посещаемость</div><div class="v" style="color:#34D399">92%</div></div>
+      <div class="kpi"><div class="l">Контингент</div><div class="v" style="color:#22D3EE">12 480</div></div>
+    </div>
+    <div class="chartbox"><div class="chart"><i style="height:38%"></i><i style="height:64%"></i><i style="height:52%"></i><i style="height:80%"></i><i style="height:58%"></i><i style="height:96%"></i><i style="height:72%"></i></div></div>
+    <div class="pcap">Live: оплата контрактов и динамика приёма — графики строятся из базы данных университета в реальном времени</div>
+  </div>
+</div></section>
+
+<!-- 2. ИСТОЧНИК ПРАВДЫ -->
+<section class="section"><div class="wrap">
+  <h2 class="h2">Точная аналитика начинается <span class="grad-bi">с чистых данных</span></h2>
+  <p class="h2sub">Без HeRo Study как «источника правды» точная аналитика невозможна. Только на чистых данных строятся точные прогнозы.</p>
+  <div class="pillars">
+    <div class="pill"><div class="n" style="color:#FB923C">01</div><h4>Исключение ошибок</h4><p>Автоматический сбор данных убирает «человеческий фактор» и ручное сведение Excel-таблиц.</p></div>
+    <div class="pill"><div class="n" style="color:#FB923C">02</div><h4>Единая экосистема</h4><p>Модули LMS, SIS, HR и Finance работают в связке и дают непротиворечивые отчёты в реальном времени.</p></div>
+    <div class="pill"><div class="n" style="color:#FB923C">03</div><h4>Валидация записей</h4><p>Система проверяет полноту данных — ПИНФЛ, паспорта, приказы — и исключает дубли до построения отчётов.</p></div>
+    <div class="pill"><div class="n" style="color:#FB923C">04</div><h4>Чистый датасет</h4><p>Один контур охватывает весь цикл «Приём → Студент → Выпускник» — без фрагментации данных.</p></div>
+  </div>
+  <div class="split" style="margin-top:34px">
+    <div class="shot">Скриншот: 100% заполнение ведомостей — контроль процесса</div>
+    <div class="shot">Скриншот: качество заполнения журналов — мониторинг полноты</div>
+  </div>
+</div></section>
+
+<!-- 3. ЗОНЫ АНАЛИТИКИ -->
+<section class="section" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Вся деятельность вуза — <span class="grad-bi">в одном окне</span></h2>
+  <p class="h2sub">Пять зон аналитики покрывают весь академический контур — от заявки абитуриента до публикаций кафедр.</p>
+  <div class="zones">
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><h3>Абитуриенты</h3><p>Полная картина приёмной кампании в реальном времени.</p><ul style="color:#FB923C"><li>География: тепловая карта по регионам и странам</li><li>Качество приёма: баллы тестов, конверсия заявок в зачисления</li><li>Социальный срез: льготы, гендерный состав, грант/контракт</li></ul></div>
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Студенты</h3><p>Успеваемость и дисциплина каждого курса и программы.</p><ul style="color:#FB923C"><li>Динамика GPA и академические задолженности (Retake)</li><li>Посещаемость через QR-коды и FaceID</li><li>Разрезы по курсам и образовательным программам</li></ul></div>
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><h3>Учебный план</h3><p>Диагностика программ и расписания по реальным данным.</p><ul style="color:#FB923C"><li>Рейтинг дисциплин-аутсайдеров — «узкие места» плана</li><li>Реальная нагрузка студентов и сезонность активности</li><li>Основа для корректировки расписания и состава ППС</li></ul></div>
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div><h3>ППС</h3><p>Нагрузка и KPI преподавателей — без ручных сводок с кафедр.</p><ul style="color:#FB923C"><li>Автоматический расчёт учебной нагрузки в часах</li><li>Выполнение индивидуальных планов</li><li>Рейтинг ППС на основе опросов студентов</li></ul></div>
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div><h3>Наука</h3><p>Научная активность кафедр и качество преподавания.</p><ul style="color:#FB923C"><li>Публикации Scopus / Web of Science и цитируемость</li><li>Грантовая активность кафедр, доля ППС со степенью PhD</li><li>Контроль журналов, силлабусов и своевременности оценок</li></ul></div>
+  </div>
+</div></section>
+
+<!-- 4. ПУЛЬС ПРОЦЕССА / ИСКЛЮЧЕНИЕ ПРИПИСОК -->
+<section class="section" style="padding-top:0"><div class="wrap"><div class="split">
+  <div>
+    <span class="eyebrow eyebrow--bi">Прозрачность</span>
+    <h2 class="h2 h2-left" style="margin-top:18px">Держать руку на пульсе образовательного процесса</h2>
+    <p class="h2sub sub-left">«Вертолётный взгляд» на дисциплину в вузе — без запросов сводок у кафедр и ожидания докладных записок.</p>
+    <div class="card" style="margin-top:22px"><h3>Исключение приписок</h3><p>Данные агрегируются напрямую из цифрового следа каждой записи в системе. Скорректировать посещаемость «задним числом» невозможно — отчёт показывает то, что было на самом деле.</p></div>
+  </div>
+  <div class="shot">Дашборд: студенты по статусам — обучается · отчислен · академический отпуск</div>
+</div></div></section>
+
+<!-- 5. ДАШБОРД РЕКТОРА -->
+<section class="section" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Дашборд ректора — <span class="grad-bi">«пульс университета»</span></h2>
+  <p class="h2sub">Ключевые показатели в реальном времени — на экране компьютера или планшета руководителя.</p>
+  <div class="rektor">
+    <div class="col">
+      <div class="card"><h3>Финансы</h3><p>План/факт по оплате контрактов, дебиторская задолженность, структура расходов.</p></div>
+      <div class="card"><h3>Инфраструктура</h3><p>Загрузка аудиторного фонда, мониторинг заселения общежитий.</p></div>
+      <div class="card"><h3>Стратегия</h3><p>Выполнение целевых показателей развития университета.</p></div>
+    </div>
+    <div class="shot">Дашборд на планшете руководителя — KPI университета в реальном времени</div>
+    <div class="card" style="height:100%"><h3>Индивидуальные дашборды</h3><p>Аналитика под уникальные задачи вашего вуза:</p><ul style="color:#FB923C"><li>Кастомные дашборды для ректората и деканов</li><li>Мониторинг KPI сотрудников и студентов</li><li>Визуализация финансовых и академических показателей</li></ul></div>
+  </div>
+</div></section>
+
+<!-- 6. ОТЧЁТНОСТЬ И НАЦИОНАЛЬНЫЕ РЕЙТИНГИ -->
+<section class="section" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Отчётность Министерства и рейтинги — <span class="grad-bi">одним кликом</span></h2>
+  <p class="h2sub">Обязательные формы и индикаторы национальных рейтингов считаются автоматически — на проверенных данных.</p>
+  <div class="gov">
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>BI-аналитика по национальным рейтингам</h3><p>Готовые витрины национальных метрик под требования государственных систем — ЕПВО, НОБД и ведомственные запросы.</p></div>
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h3>Валидация данных — «Светофор»</h3><p>Перед отправкой в Министерство система подсвечивает записи с ошибками: отсутствие ПИНФЛ, фото или приказа.</p><div class="lightrow"><i class="lg"></i><i class="ly"></i><i class="lr"></i><span>готово · требует внимания · ошибка</span></div></div>
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div><h3>Национальный рейтинг вузов</h3><p>Автоматический расчёт индикаторов для Национального рейтинга и прогноз позиций университета по текущим показателям.</p></div>
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><h3>Отчёты Министерства образования</h3><p>Все обязательные статистические формы формируются по клику — с гарантией точности данных.</p></div>
+  </div>
+</div></section>
+
+<!-- 7. АВТОМАТИЧЕСКИЕ РАССЫЛКИ -->
+<section class="section" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Отчёты, которые <span class="grad-bi">приходят сами</span></h2>
+  <div class="gov">
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></div><h3>Рассылки в Telegram и на email</h3><p>Отчёты формируются с заданной регулярностью — ежедневно или еженедельно — и автоматически уходят ключевым должностным лицам в мессенджер или на почту.</p></div>
+    <div class="card"><div class="zico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Контроль на кончиках пальцев</h3><p>Все графики и дашборды строятся на базе данных университета в реальном времени. Руководитель видит ситуацию «здесь и сейчас», а не по устаревшим справкам.</p></div>
+  </div>
+</div></section>
+
+<!-- 8. СВЯЗКА С HERO STUDY SPACE -->
+<section class="section--tight section" style="padding-top:0"><div class="wrap">
+  <div class="ecoband">
+    <div>
+      <h3>Работает поверх HeRo Study Space — без интеграций</h3>
+      <p>BI берёт данные напрямую из модулей управления: от приёмной кампании до академических результатов выпускников.</p>
+    </div>
+    <div class="ecochips"><img src="../assets/marks/ss.svg" alt="HeRo Study Space"><img src="../assets/marks/bi.svg" alt="HeRo BI Analytics"></div>
+    <a class="btn btn-primary btn-sm" href="product-study-space.html">HeRo Study Space →</a>
+  </div>
+</div></section>
+
+<!-- 9. КЕЙС KAZIOR: ДО / ПОСЛЕ -->
+<section class="section" style="padding-top:24px"><div class="wrap">
+  <h2 class="h2">Было 4 дня — <span class="grad-bi">стало 20 минут</span></h2>
+  <p class="h2sub">KazIOR — Казахский НИИ онкологии и радиологии — перевёл государственную отчётность на HeRo BI Analytics.</p>
+  <div class="split" style="align-items:start;margin-top:36px">
+    <div class="case"><div class="clogo"><img src="../assets/logos/kaznior.png" alt="KazIOR"></div><div class="big">4 дня → 20 мин</div><p>Подготовка обязательной государственной отчётности после внедрения BI Analytics. Данные собираются из единой базы — без ручного сведения таблиц и повторных проверок.</p><p style="margin-top:14px"><a class="arrowlink" href="cases.html" style="color:#C2410C">Все кейсы клиентов →</a></p></div>
+    <table class="cmp" style="margin-top:0">
+      <tr><th>Процесс</th><th>До внедрения</th><th class="hl">С HeRo BI</th></tr>
+      <tr><td>Сбор данных</td><td>Ручное сведение Excel-таблиц</td><td class="hl yes">Автоматически из единой БД</td></tr>
+      <tr><td>Проверка ошибок</td><td>Вручную, ошибки всплывают в Министерстве</td><td class="hl yes">«Светофор» до отправки</td></tr>
+      <tr><td>Подготовка форм</td><td>4 рабочих дня</td><td class="hl yes">20 минут</td></tr>
+      <tr><td>Актуальность</td><td>Данные устаревают за время сбора</td><td class="hl yes">Реальное время</td></tr>
+      <tr><td>Приписки</td><td>Возможны правки «задним числом»</td><td class="hl yes">Цифровой след каждой записи</td></tr>
+    </table>
+  </div>
+</div></section>
+
+<!-- 10. CTA -->
+<section class="section" style="padding-top:0"><div class="ctaband">
+  <h2 class="h2">Будущее вашего университета — <span class="grad-bi">с HeRo BI Analytics</span></h2>
+  <div class="chiprow"><span class="tagchip">Точные данные</span><span class="tagchip">Прозрачные процессы</span><span class="tagchip">Эффективные решения</span></div>
+  <p class="h2sub">Покажем BI на демо-данных или на данных вашего вуза — бесплатная ZOOM-консультация.</p>
+  <div class="cta" style="justify-content:center;margin-top:28px"><a class="btn btn-primary" href="consultation.html">Попробовать BI на данных вашего вуза →</a><a class="btn btn-glass" data-modal-open="videoModal">Смотреть презентацию</a></div>
+</div></section>
+
+<hs-footer></hs-footer>
+
+</div>
+</body>
+</html>

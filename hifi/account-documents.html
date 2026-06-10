@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Документы — личный кабинет — HeRo Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hs.css">
+<script src="hs.js" defer></script>
+<style>
+/* ===== ЛК: сетка, навигация, списки документов ===== */
+.lk{display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:start;margin-top:8px}
+.lknav{position:sticky;top:100px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:16px 12px}
+.lknav .lkttl{color:#566089;font-size:11.5px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;padding:2px 12px 10px}
+.lknav a{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:11px;color:#A5B0D0;font-weight:600;font-size:14.5px;border:1px solid transparent;transition:.16s}
+.lknav a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.lknav a.is-active{color:#fff;background:rgba(129,140,248,.14);border-color:rgba(129,140,248,.32)}
+.lknav a svg{flex:none}
+.lknav .lkout{margin-top:8px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08)}
+.lkhead h1{font-size:34px;line-height:1.1;letter-spacing:-.02em;font-weight:800;color:#fff;margin:12px 0 10px}
+.lkhead .note{color:#8893B5;font-size:15px;line-height:1.6;max-width:62ch}
+.docfilters{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 2px}
+a.tagchip{transition:.16s}
+a.tagchip:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+a.tagchip.is-active{background:rgba(129,140,248,.16);border-color:rgba(129,140,248,.45);color:#fff}
+.docgroup{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:4px 22px 8px;margin-top:20px;scroll-margin-top:96px}
+.ghead{display:flex;align-items:center;gap:12px;padding:16px 0 14px}
+.ghead .gico{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:rgba(129,140,248,.13);border:1px solid rgba(129,140,248,.3);flex:none}
+.ghead h2{color:#fff;font-size:18px;font-weight:800;letter-spacing:-.01em;flex:1}
+.ghead .gcnt{color:#566089;font-size:12.5px;font-weight:700;white-space:nowrap}
+.docrow{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:14px;align-items:center;padding:13px 0;border-top:1px solid rgba(255,255,255,.07)}
+.docrow .fico{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);flex:none}
+.docrow .fname{color:#fff;font-weight:700;font-size:14.5px;letter-spacing:-.01em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.docrow .fmeta{display:flex;flex-wrap:wrap;gap:4px 14px;color:#8893B5;font-size:12.5px;font-weight:600;margin-top:3px}
+.docnote{display:flex;gap:14px;align-items:flex-start;border:1px dashed rgba(255,255,255,.18);border-radius:16px;padding:18px 20px;margin-top:24px;color:#8893B5;font-size:14px;line-height:1.6}
+.docnote svg{flex:none;margin-top:2px}
+.docnote b{color:#cdd5ec}
+.docnote a{color:#A5B4FC;font-weight:700}
+@media(max-width:980px){.lk{grid-template-columns:1fr;gap:22px}.lknav{position:static;display:flex;flex-wrap:wrap;gap:6px;padding:14px}.lknav .lkttl{width:100%;padding-bottom:8px}.lknav .lkout{margin:0;padding:10px 12px;border-top:0}.lkhead h1{font-size:28px}.docgroup{padding:2px 16px 6px}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<hs-topbar></hs-topbar>
+<hs-header></hs-header>
+
+<!-- ЛК: ДОКУМЕНТЫ -->
+<section class="section--tight" style="padding-top:38px"><div class="wrap">
+  <div class="lk">
+
+    <!-- Навигация личного кабинета -->
+    <aside class="lknav">
+      <p class="lkttl">Личный кабинет</p>
+      <a href="account-dashboard.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>Дашборд</a>
+      <a href="#"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Профиль</a>
+      <a href="consultation.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>Анкета / заявка</a>
+      <a href="account-tickets.html"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Тикеты</a>
+      <a href="account-documents.html" class="is-active" aria-current="page"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>Документы</a>
+      <a href="#"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>Уведомления</a>
+      <a href="account-login.html" class="lkout"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>Выйти</a>
+    </aside>
+
+    <!-- Контент -->
+    <div>
+      <div class="lkhead">
+        <p class="crumbs" style="margin-bottom:6px"><a href="account-dashboard.html">Личный кабинет</a> / Документы</p>
+        <h1>Доступ к документам</h1>
+        <p class="note">Все материалы по вашему проекту — в одном месте. Документы загружает команда HeRo Study: скачивание доступно в любой момент, удаление и замена файлов — только на нашей стороне.</p>
+      </div>
+
+      <!-- Фильтры -->
+      <div class="docfilters">
+        <a class="tagchip is-active" href="#top">Все</a>
+        <a class="tagchip" href="#docs-contracts">Договоры</a>
+        <a class="tagchip" href="#docs-offers">КП</a>
+        <a class="tagchip" href="#docs-presentations">Презентации</a>
+        <a class="tagchip" href="#docs-reports">Отчёты</a>
+      </div>
+
+      <!-- Договоры -->
+      <section class="docgroup" id="docs-contracts">
+        <div class="ghead">
+          <span class="gico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+          <h2>Договоры</h2>
+          <span class="gcnt">3 файла</span>
+        </div>
+        <div class="docrow">
+          <span class="fico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><div class="fname">Договор №12-2026 оказания услуг.pdf</div><div class="fmeta"><span>PDF · 1,2 МБ</span><span>10.01.2026</span></div></div>
+          <a class="btn btn-glass btn-sm" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать</a>
+        </div>
+        <div class="docrow">
+          <span class="fico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><div class="fname">Приложение №1 — спецификация модулей.pdf</div><div class="fmeta"><span>PDF · 740 КБ</span><span>10.01.2026</span></div></div>
+          <a class="btn btn-glass btn-sm" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать</a>
+        </div>
+        <div class="docrow">
+          <span class="fico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><div class="fname">Акт выполненных работ — Q1 2026.pdf</div><div class="fmeta"><span>PDF · 360 КБ</span><span>04.04.2026</span></div></div>
+          <a class="btn btn-glass btn-sm" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать</a>
+        </div>
+      </section>
+
+      <!-- Коммерческие предложения -->
+      <section class="docgroup" id="docs-offers">
+        <div class="ghead">
+          <span class="gico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+          <h2>Коммерческие предложения</h2>
+          <span class="gcnt">2 файла</span>
+        </div>
+        <div class="docrow">
+          <span class="fico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><div class="fname">Коммерческое предложение «Профи».pdf</div><div class="fmeta"><span>PDF · 2,1 МБ</span><span>05.01.2026</span></div></div>
+          <a class="btn btn-glass btn-sm" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать</a>
+        </div>
+        <div class="docrow">
+          <span class="fico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FB923C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><div class="fname">КП — расширение лицензии HeRo BI Analytics.pdf</div><div class="fmeta"><span>PDF · 1,4 МБ</span><span>18.04.2026</span></div></div>
+          <a class="btn btn-glass btn-sm" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать</a>
+        </div>
+      </section>
+
+      <!-- Презентации -->
+      <section class="docgroup" id="docs-presentations">
+        <div class="ghead">
+          <span class="gico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+          <h2>Презентации</h2>
+          <span class="gcnt">3 файла</span>
+        </div>
+        <div class="docrow">
+          <span class="fico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><div class="fname">Презентация HeRo Study Space.pdf</div><div class="fmeta"><span>PDF · 8,4 МБ</span><span>03.01.2026</span></div></div>
+          <a class="btn btn-glass btn-sm" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать</a>
+        </div>
+        <div class="docrow">
+          <span class="fico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><div class="fname">HeRo BI Analytics — обзор дашбордов.pdf</div><div class="fmeta"><span>PDF · 6,1 МБ</span><span>14.02.2026</span></div></div>
+          <a class="btn btn-glass btn-sm" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать</a>
+        </div>
+        <div class="docrow">
+          <span class="fico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><div class="fname">HeRo OS AI — возможности ИИ-ассистента.pdf</div><div class="fmeta"><span>PDF · 5,2 МБ</span><span>22.05.2026</span></div></div>
+          <a class="btn btn-glass btn-sm" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать</a>
+        </div>
+      </section>
+
+      <!-- Отчёты -->
+      <section class="docgroup" id="docs-reports">
+        <div class="ghead">
+          <span class="gico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span>
+          <h2>Отчёты</h2>
+          <span class="gcnt">2 файла</span>
+        </div>
+        <div class="docrow">
+          <span class="fico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><div class="fname">Отчёт по внедрению Q1 2026.pdf</div><div class="fmeta"><span>PDF · 3,4 МБ</span><span>31.03.2026</span></div></div>
+          <a class="btn btn-glass btn-sm" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать</a>
+        </div>
+        <div class="docrow">
+          <span class="fico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A3E635" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+          <div><div class="fname">Отчёт об активности пользователей — май 2026.pdf</div><div class="fmeta"><span>PDF · 1,1 МБ</span><span>05.06.2026</span></div></div>
+          <a class="btn btn-glass btn-sm" href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Скачать</a>
+        </div>
+      </section>
+
+      <!-- Подсказка / empty state -->
+      <div class="docnote">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818CF8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><line x1="12" y1="11" x2="12" y2="16.5"/><line x1="12" y1="7.5" x2="12" y2="7.6"/></svg>
+        <p><b>Не нашли нужный документ?</b> Новые материалы появляются в кабинете после подписания договора — мы присылаем уведомление на email. Если файла не хватает, напишите в <a href="support.html">службу поддержки</a> или на <a href="mailto:sales@hero.study">sales@hero.study</a> — добавим в течение рабочего дня.</p>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<hs-footer></hs-footer>
+
+</div>
+</body>
+</html>

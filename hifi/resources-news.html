@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Новости — HeRo Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hs.css">
+<script src="hs.js" defer></script>
+<style>
+/* уникальные блоки страницы «Новости» */
+.newsgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+.newsgrid .card{display:flex;flex-direction:column}
+.nmeta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.newsgrid h3{color:#fff;font-size:19px;font-weight:800;letter-spacing:-.015em;line-height:1.3}
+.newsgrid .card>p{flex:1}
+.newsgrid .more{color:#A5B4FC}
+/* featured-новость на всю ширину */
+.card.feat{grid-column:1/-1;display:grid;grid-template-columns:1.15fr 1fr;gap:34px;align-items:center;padding:30px}
+.card.feat h3{font-size:26px;max-width:22ch}
+.card.feat>div>p{color:#9aa4c4;font-size:15px;margin-top:10px;line-height:1.6}
+.card.feat .shot{aspect-ratio:16/9}
+/* форма подписки */
+.subform{display:flex;gap:12px;max-width:520px;margin:30px auto 0}
+.subform .input{flex:1}
+.ctaband .hint{margin-top:14px}
+@media(max-width:980px){
+  .newsgrid{grid-template-columns:1fr}
+  .card.feat{grid-template-columns:1fr}
+  .subform{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<div class="page">
+<hs-topbar></hs-topbar>
+<hs-header active="more"></hs-header>
+
+<!-- PAGE HERO -->
+<section class="pagehero"><div class="wrap">
+  <div class="crumbs"><a href="home.html">Главная</a> · Новости</div>
+  <span class="eyebrow">Новости</span>
+  <h1>Анонсы и события <span class="grad">HeRo Study</span></h1>
+  <p class="sub" style="max-width:56ch">Запуски продуктов, обновления платформы, новые вузы-клиенты и события компании — всё самое важное в одной ленте.</p>
+</div></section>
+
+<!-- ЛЕНТА НОВОСТЕЙ -->
+<section class="section--tight section"><div class="wrap">
+  <div class="newsgrid">
+
+    <a class="card feat" href="help-article.html">
+      <div>
+        <div class="nmeta"><span class="tagchip">4 июня 2026</span><span class="tagchip" style="color:#2DD4BF;border-color:rgba(45,212,191,.35)">Hero OS AI</span></div>
+        <h3>Hero OS AI выходит в ранний доступ</h3>
+        <p>ИИ-ассистент экосистемы открыт первым вузам-партнёрам: поиск по данным вуза, генерация отчётов и помощь студентам и преподавателям на естественном языке. Подключение к программе раннего доступа — по заявке.</p>
+        <span class="more" style="color:#2DD4BF">Читать новость →</span>
+      </div>
+      <div class="shot">Скриншот: Hero OS AI в интерфейсе платформы</div>
+    </a>
+
+    <a class="card" href="help-article.html">
+      <div class="nmeta"><span class="tagchip">11 ноября 2025</span><span class="tagchip" style="color:#A5B4FC;border-color:rgba(129,140,248,.35)">Компания</span></div>
+      <h3>На платформе HeRo Study — 100 000 пользователей</h3>
+      <p>Студенты, преподаватели и администраторы 16 вузов Казахстана и Узбекистана работают в единой экосистеме. Спасибо, что растёте вместе с нами.</p>
+      <span class="more">Читать новость →</span>
+    </a>
+
+    <a class="card" href="help-article.html">
+      <div class="nmeta"><span class="tagchip">2 сентября 2025</span><span class="tagchip" style="color:#A5B4FC;border-color:rgba(129,140,248,.35)">Клиенты</span></div>
+      <h3>Новые вузы-клиенты в Узбекистане</h3>
+      <p>К платформе присоединились новые университеты — теперь в Узбекистане с HeRo Study работают 5 вузов. Внедрения стартуют с приёмной кампании и LMS.</p>
+      <span class="more">Читать новость →</span>
+    </a>
+
+    <a class="card" href="help-article.html">
+      <div class="nmeta"><span class="tagchip">15 июля 2025</span><span class="tagchip" style="color:#FB923C;border-color:rgba(251,146,60,.35)">BI Analytics</span></div>
+      <h3>Большое обновление BI Analytics: «Светофор» отчётности</h3>
+      <p>Новый режим контроля подсвечивает отклонения KPI красным, жёлтым и зелёным — проблемные показатели видно до того, как они попадут в отчёт министерству.</p>
+      <span class="more" style="color:#FB923C">Читать новость →</span>
+    </a>
+
+    <a class="card" href="help-article.html">
+      <div class="nmeta"><span class="tagchip">20 марта 2025</span><span class="tagchip" style="color:#A5B4FC;border-color:rgba(129,140,248,.35)">Компания</span></div>
+      <h3>HeRo Study открывает офис в Сингапуре</h3>
+      <p>Штаб-квартира в Сингапуре усиливает международное развитие: теперь команды компании работают в Алматы, Ташкенте и Сингапуре.</p>
+      <span class="more">Читать новость →</span>
+    </a>
+
+    <a class="card" href="help-article.html">
+      <div class="nmeta"><span class="tagchip">28 января 2025</span><span class="tagchip" style="color:#A5B4FC;border-color:rgba(129,140,248,.35)">Партнёрство</span></div>
+      <h3>Партнёрство с UZCARD: инвестиционный раунд</h3>
+      <p>UZCARD стал стратегическим партнёром и инвестором HeRo Study. Инвестиции направим на развитие AI-направления и экспансию в Центральной Азии.</p>
+      <span class="more">Читать новость →</span>
+    </a>
+
+  </div>
+</div></section>
+
+<!-- ПОДПИСКА -->
+<section class="section" style="padding-top:0"><div class="ctaband">
+  <h2 class="h2">Узнавайте о новостях <span class="grad">первыми</span></h2>
+  <p class="h2sub">Анонсы продуктов, обновления платформы и события HeRo Study — раз в месяц, без спама.</p>
+  <form class="subform" action="thank-you.html" method="get">
+    <input class="input" type="email" name="email" placeholder="Ваш рабочий e-mail" required>
+    <button class="btn btn-primary" type="submit">Подписаться →</button>
+  </form>
+  <p class="hint">Нажимая «Подписаться», вы соглашаетесь с <a href="legal-privacy.html" style="color:#A5B4FC">политикой конфиденциальности</a>.</p>
+  <p class="hint" style="margin-top:22px">Хотите увидеть платформу вживую? <a class="arrowlink" href="consultation.html">Запросить демо →</a></p>
+</div></section>
+
+<hs-footer></hs-footer>
+
+</div>
+</body>
+</html>

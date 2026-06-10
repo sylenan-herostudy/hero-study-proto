@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Страница не найдена — HeRo Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hs.css">
+<script src="hs.js" defer></script>
+<style>
+.nf{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:90px 32px 120px;min-height:58vh;justify-content:center}
+.nf-code{position:relative;font-size:140px;font-weight:800;line-height:1;letter-spacing:-.06em;margin:0}
+.nf-code::before{content:"";position:absolute;inset:-60px -120px;background:radial-gradient(closest-side,rgba(99,102,241,.28),transparent 70%);z-index:-1;pointer-events:none}
+.nf h1{font-size:44px;line-height:1.1;letter-spacing:-.03em;font-weight:800;color:#fff;margin:18px 0 14px}
+.nf .sub{font-size:18px;max-width:54ch;margin:0 auto}
+.nf-search{display:flex;gap:10px;width:100%;max-width:540px;margin:34px auto 0}
+.nf-search .input{flex:1}
+.nf-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+@media(max-width:640px){
+  .nf-code{font-size:96px}
+  .nf h1{font-size:32px}
+  .nf-search{flex-direction:column}
+  .nf-actions .btn{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<hs-topbar></hs-topbar>
+<hs-header active=""></hs-header>
+
+<!-- 404 -->
+<section class="section"><div class="wrap">
+  <div class="nf">
+    <div class="nf-code grad">404</div>
+    <h1>Эта аудитория закрыта на ремонт</h1>
+    <p class="sub">Похоже, страницу перенесли в другой корпус, а расписание обновить забыли. Начните с главной или загляните в справочный центр — там точно подскажут дорогу.</p>
+    <form class="nf-search" action="help-center.html" method="get">
+      <input class="input" type="search" name="q" placeholder="Поиск по сайту: продукты, цены, кейсы…" aria-label="Поиск по сайту">
+      <button class="btn btn-glass" type="submit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.2" y2="16.2"/></svg>Найти</button>
+    </form>
+    <div class="nf-actions">
+      <a class="btn btn-primary" href="home.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>На главную</a>
+      <a class="btn btn-glass" href="help-center.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="4"/><line x1="5.3" y1="5.3" x2="9.2" y2="9.2"/><line x1="14.8" y1="14.8" x2="18.7" y2="18.7"/><line x1="14.8" y1="9.2" x2="18.7" y2="5.3"/><line x1="5.3" y1="18.7" x2="9.2" y2="14.8"/></svg>Справочный центр</a>
+    </div>
+  </div>
+</div></section>
+
+<hs-footer></hs-footer>
+
+</div>
+</body>
+</html>

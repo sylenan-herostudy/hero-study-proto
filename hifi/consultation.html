@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Консультация и демо — HeRo Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hs.css">
+<script src="hs.js" defer></script>
+<style>
+/* Консультация и демо — уникальные блоки страницы */
+.consult{padding:64px 0 84px}
+.consult .split{align-items:start}
+.consult h1{font-size:46px;line-height:1.06;letter-spacing:-.03em;font-weight:800;margin:20px 0 16px;max-width:none;text-align:left;color:#fff}
+.demolist{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-direction:column;gap:16px}
+.demolist li{display:flex;gap:14px;align-items:flex-start}
+.demolist .dico{width:40px;height:40px;flex:none;border-radius:12px;display:grid;place-items:center;background:rgba(129,140,248,.14);border:1px solid rgba(129,140,248,.3);color:#A5B4FC}
+.demolist b{display:block;color:#fff;font-size:15.5px;font-weight:800}
+.demolist span{color:#8893B5;font-size:13.5px;line-height:1.5;display:block;margin-top:2px}
+.contactbox{margin-top:32px;border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;flex-direction:column;gap:11px}
+.crow{display:flex;align-items:center;gap:11px;color:#8893B5;font-size:14px;font-weight:600}
+.crow svg{color:#818CF8;flex:none}
+.crow a{color:#A5B4FC;font-weight:700}
+.crow a:hover{color:#fff}
+.formhead{margin-bottom:22px}
+.formhead h3{color:#fff;font-size:21px;font-weight:800;letter-spacing:-.01em}
+.formhead p{color:#8893B5;font-size:13.5px;margin-top:5px}
+.prodchecks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pcheck{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;cursor:pointer;transition:.18s}
+.pcheck:hover{border-color:rgba(255,255,255,.28)}
+.pcheck img{width:34px;height:34px;border-radius:9px;flex:none;display:block}
+.pcheck b{color:#E5E9F5;font-size:13.5px;font-weight:700;line-height:1.25;flex:1}
+.pcheck input{appearance:none;-webkit-appearance:none;width:19px;height:19px;border-radius:6px;border:1.5px solid rgba(255,255,255,.3);background:transparent;cursor:pointer;flex:none;display:grid;place-items:center;margin:0;transition:.15s}
+.pcheck input::after{content:"";width:9px;height:5px;border-left:2px solid #06121f;border-bottom:2px solid #06121f;transform:rotate(-45deg) translateY(-1px);opacity:0}
+.pcheck input:checked{background:linear-gradient(135deg,#818CF8,#22D3EE);border-color:transparent}
+.pcheck input:checked::after{opacity:1}
+.pcheck:has(input:checked){border-color:var(--pc,#818CF8);background:rgba(255,255,255,.07)}
+@media(max-width:560px){.prodchecks{grid-template-columns:1fr}.consult h1{font-size:36px}}
+</style>
+</head>
+<body>
+<div class="page">
+<hs-topbar></hs-topbar>
+<hs-header active="support"></hs-header>
+
+<!-- ЗАЯВКА: слева — что будет на демо, справа — форма -->
+<section class="section consult"><div class="wrap">
+  <div class="split">
+
+    <div>
+      <span class="eyebrow">Консультация и демо</span>
+      <h1>Покажем HeRo Study <span class="grad">на данных вашего вуза</span></h1>
+      <p class="sub" style="font-size:18px;max-width:52ch">Разберём процессы вашего учебного заведения, покажем платформу в действии и предложим план внедрения. Бесплатно и без обязательств.</p>
+
+      <ul class="demolist">
+        <li>
+          <span class="dico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></span>
+          <div><b>30-минутная ZOOM-встреча</b><span>Индивидуальная консультация в удобное для вас время — без презентаций «для всех».</span></div>
+        </li>
+        <li>
+          <span class="dico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg></span>
+          <div><b>Разбор ваших процессов</b><span>Живая демонстрация 75+ модулей на сценариях именно вашего вуза — приём, учёба, финансы, отчётность.</span></div>
+        </li>
+        <li>
+          <span class="dico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></span>
+          <div><b>Оценка миграции</b><span>Ответим на вопросы об интеграциях, переносе данных из текущей системы и поддержке.</span></div>
+        </li>
+        <li>
+          <span class="dico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+          <div><b>Коммерческое предложение под ваш вуз</b><span>Состав продуктов, сроки запуска и стоимость — по итогам встречи, без «вилок».</span></div>
+        </li>
+      </ul>
+
+      <div class="contactbox">
+        <div class="crow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:sales@hero.study">sales@hero.study</a></div>
+        <div class="crow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Офисы: Алматы · Ташкент · Сингапур</span></div>
+        <div class="crow"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span>Менеджер свяжется в течение 1 рабочего часа</span></div>
+        <div class="trust" style="margin-top:8px"><b>100 000+</b> пользователей · <b>16</b> вузов · <b>3</b> страны</div>
+      </div>
+    </div>
+
+    <div class="formcard" style="margin:0;max-width:none">
+      <div class="formhead">
+        <h3>Заявка на консультацию и демо</h3>
+        <p>Заполнение займёт две минуты — остальное возьмём на себя.</p>
+      </div>
+
+      <div class="formrow">
+        <div class="field"><label for="f-name">Имя</label><input class="input" id="f-name" type="text" placeholder="Как к вам обращаться" required></div>
+        <div class="field"><label for="f-org">Вуз / организация</label><input class="input" id="f-org" type="text" placeholder="Например, KBTU" required></div>
+      </div>
+      <div class="formrow">
+        <div class="field"><label for="f-role">Должность</label><input class="input" id="f-role" type="text" placeholder="Проректор, ИТ-директор…"></div>
+        <div class="field"><label for="f-type">Тип учреждения</label>
+          <select class="select" id="f-type" required>
+            <option value="" selected>Выберите…</option>
+            <option>Университет</option>
+            <option>Колледж</option>
+            <option>Другое</option>
+          </select>
+        </div>
+      </div>
+      <div class="formrow">
+        <div class="field"><label for="f-phone">Телефон</label><input class="input" id="f-phone" type="tel" placeholder="+7 (___) ___-__-__" required></div>
+        <div class="field"><label for="f-email">Email</label><input class="input" id="f-email" type="email" placeholder="name@university.kz" required></div>
+      </div>
+
+      <div class="field">
+        <label>Интересующие продукты</label>
+        <div class="prodchecks">
+          <label class="pcheck" style="--pc:#FB7185"><input type="checkbox" checked><img src="../assets/marks/ss.svg" alt=""><b>HeRo Study Space</b></label>
+          <label class="pcheck" style="--pc:#FB923C"><input type="checkbox"><img src="../assets/marks/bi.svg" alt=""><b>HeRo BI Analytics</b></label>
+          <label class="pcheck" style="--pc:#2DD4BF"><input type="checkbox"><img src="../assets/marks/ai.svg" alt=""><b>HeRo OS AI</b></label>
+          <label class="pcheck" style="--pc:#A3E635"><input type="checkbox"><img src="../assets/marks/ws.svg" alt=""><b>HeRo Work Space</b></label>
+        </div>
+      </div>
+
+      <div class="field"><label for="f-comment">Комментарий</label><textarea class="textarea" id="f-comment" placeholder="Что хотите обсудить? Кратко о задаче"></textarea></div>
+
+      <button class="btn btn-primary btn-block" type="button" onclick="location.href='thank-you.html'">Отправить заявку →</button>
+      <p class="hint" style="margin-top:14px;text-align:center">Нажимая «Отправить заявку», вы соглашаетесь с <a href="legal-privacy.html" style="color:#A5B4FC">политикой обработки персональных данных</a>.</p>
+    </div>
+
+  </div>
+</div></section>
+
+<hs-footer></hs-footer>
+</div>
+</body>
+</html>

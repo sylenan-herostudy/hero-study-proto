@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Блог — HeRo Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hs.css">
+<script src="hs.js" defer></script>
+<style>
+.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:28px}
+.filters .tagchip{cursor:pointer;transition:.18s}
+.filters .tagchip:hover{color:#fff;border-color:rgba(255,255,255,.32)}
+.filters .tagchip.is-on{background:#fff;color:#06121f;border-color:#fff}
+.blogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+a.card{display:flex;flex-direction:column;text-decoration:none}
+.card .shot{aspect-ratio:16/9;border-radius:14px;box-shadow:none;margin-bottom:16px}
+.shot.t-ss{background:radial-gradient(120% 120% at 30% 20%,rgba(251,113,133,.32),transparent),radial-gradient(120% 120% at 80% 90%,rgba(99,102,241,.22),transparent),#0c1226}
+.shot.t-bi{background:radial-gradient(120% 120% at 30% 20%,rgba(251,146,60,.30),transparent),radial-gradient(120% 120% at 80% 90%,rgba(99,102,241,.22),transparent),#0c1226}
+.shot.t-ai{background:radial-gradient(120% 120% at 30% 20%,rgba(45,212,191,.30),transparent),radial-gradient(120% 120% at 80% 90%,rgba(99,102,241,.22),transparent),#0c1226}
+.card h3{margin-top:12px;font-size:17.5px;line-height:1.35;letter-spacing:-.01em}
+.bmeta{margin-top:auto;padding-top:16px;display:flex;align-items:center;gap:7px;color:#566089;font-size:13px;font-weight:600}
+.tc-ss{color:#FB7185;border-color:rgba(251,113,133,.35);background:rgba(251,113,133,.08)}
+.tc-bi{color:#FB923C;border-color:rgba(251,146,60,.35);background:rgba(251,146,60,.08)}
+.tc-ai{color:#2DD4BF;border-color:rgba(45,212,191,.35);background:rgba(45,212,191,.08)}
+.tc-in{color:#A5B4FC;border-color:rgba(165,180,252,.35);background:rgba(165,180,252,.08)}
+.subform{display:flex;gap:10px;flex:1;min-width:300px;max-width:460px;margin-left:auto}
+.subform .input{flex:1}
+@media(max-width:980px){.blogrid{grid-template-columns:1fr 1fr}.subform{margin-left:0;max-width:none}}
+@media(max-width:620px){.blogrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="page">
+<hs-topbar></hs-topbar>
+<hs-header active="more"></hs-header>
+
+<!-- PAGE HERO -->
+<section class="pagehero"><div class="wrap">
+  <div class="crumbs"><a href="home.html">Главная</a> → Ресурсы → Блог</div>
+  <span class="eyebrow">Блог HeRo Study</span>
+  <h1>Практики <span class="grad">цифровизации вузов</span></h1>
+  <p class="sub">Статьи о внедрении, аналитике и управлении учебным заведением — без воды, с цифрами из реальных проектов в Казахстане и Узбекистане.</p>
+  <div class="filters">
+    <span class="tagchip is-on">Все</span>
+    <span class="tagchip">Цифровизация</span>
+    <span class="tagchip">Аналитика</span>
+    <span class="tagchip">Приёмная кампания</span>
+    <span class="tagchip">Кейсы</span>
+  </div>
+</div></section>
+
+<!-- ARTICLES GRID -->
+<section class="section--tight" style="padding-top:36px"><div class="wrap">
+  <div class="blogrid">
+
+    <a class="card" href="help-article.html">
+      <div class="shot">Обложка · Миграция с Platonus</div>
+      <span class="tagchip tc-in" style="align-self:flex-start">Цифровизация</span>
+      <h3>Как вузу перейти с Platonus без потери данных</h3>
+      <p>Пошаговый план миграции: аудит данных, маппинг справочников, параллельный период и контрольные сверки. Опыт Coventry Kazakhstan.</p>
+      <div class="bmeta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 13.5"/></svg>5 июня 2026 · 9 мин чтения</div>
+    </a>
+
+    <a class="card" href="help-article.html">
+      <div class="shot t-ss">Обложка · Воронка приёма</div>
+      <span class="tagchip tc-ss" style="align-self:flex-start">Приёмная кампания</span>
+      <h3>5 метрик приёмной кампании, которые стоит считать ежедневно</h3>
+      <p>Воронка заявок, конверсия по источникам, скорость обработки документов — метрики, которые показывают реальное состояние приёма.</p>
+      <div class="bmeta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 13.5"/></svg>27 мая 2026 · 6 мин чтения</div>
+    </a>
+
+    <a class="card" href="help-article.html">
+      <div class="shot t-bi">Обложка · Дашборд отчётности</div>
+      <span class="tagchip tc-bi" style="align-self:flex-start">Аналитика</span>
+      <h3>Светофор Министерства: как сдавать отчётность за 20 минут</h3>
+      <p>Как KazIOR сократил подготовку государственной отчётности с 4 дней до 20 минут и перестал бояться внеплановых запросов.</p>
+      <div class="bmeta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 13.5"/></svg>18 мая 2026 · 7 мин чтения</div>
+    </a>
+
+    <a class="card" href="help-article.html">
+      <div class="shot t-bi">Обложка · Цифровой след студента</div>
+      <span class="tagchip tc-bi" style="align-self:flex-start">Аналитика</span>
+      <h3>Цифровой след против приписок: как BI защищает вуз</h3>
+      <p>Посещаемость, активность в LMS и история оценок в одном контуре — почему приписки становятся технически невозможными.</p>
+      <div class="bmeta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 13.5"/></svg>6 мая 2026 · 8 мин чтения</div>
+    </a>
+
+    <a class="card" href="help-article.html">
+      <div class="shot">Обложка · Единый контур LMS + SIS</div>
+      <span class="tagchip tc-in" style="align-self:flex-start">Цифровизация</span>
+      <h3>LMS + SIS в одном контуре: зачем это вузу</h3>
+      <p>Зачем объединять учебный процесс и студенческий учёт: меньше двойного ввода, чище данные, прозрачная аналитика для ректората.</p>
+      <div class="bmeta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 13.5"/></svg>23 апреля 2026 · 6 мин чтения</div>
+    </a>
+
+    <a class="card" href="help-article.html">
+      <div class="shot t-ai">Обложка · Сценарии OS AI</div>
+      <span class="tagchip tc-ai" style="align-self:flex-start">Кейсы</span>
+      <h3>ИИ-помощник в вузе: первые сценарии OS AI</h3>
+      <p>Поиск по данным вуза, генерация справок и подсказки студентам — какие сценарии HeRo OS AI уже работают в пилотных вузах.</p>
+      <div class="bmeta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 13.5"/></svg>14 апреля 2026 · 5 мин чтения</div>
+    </a>
+
+  </div>
+  <div style="text-align:center;margin-top:34px"><a class="arrowlink" href="resources-news.html">Новости и события компании →</a></div>
+</div></section>
+
+<!-- SUBSCRIPTION -->
+<section class="section--tight"><div class="wrap">
+  <div class="ecoband">
+    <div>
+      <h3>Дайджест для управленцев вуза</h3>
+      <p>Раз в месяц — лучшие статьи, кейсы и обновления платформы. Без спама, отписка в один клик.</p>
+    </div>
+    <form class="subform" action="thank-you.html">
+      <input class="input" type="email" placeholder="rector@university.edu.kz" aria-label="Email для подписки" required>
+      <button class="btn btn-primary" type="submit">Подписаться</button>
+    </form>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="section" style="padding-top:36px"><div class="ctaband">
+  <h2 class="h2">От статей — к практике <span class="grad">в вашем вузе</span></h2>
+  <p class="h2sub">Покажем на персональном демо, как описанные подходы работают на платформе HeRo Study.</p>
+  <div class="cta" style="justify-content:center;margin-top:28px"><a class="btn btn-primary" href="consultation.html">Запросить демо →</a><a class="btn btn-glass" data-modal-open="videoModal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8.5 16 12 10 15.5 10 8.5" fill="currentColor" stroke="none"/></svg><span>Смотреть презентацию</span></a></div>
+</div></section>
+
+<hs-footer></hs-footer>
+</div>
+</body>
+</html>

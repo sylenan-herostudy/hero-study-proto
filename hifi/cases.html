@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Клиенты и кейсы — HeRo Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hs.css">
+<script src="hs.js" defer></script>
+<style>
+/* — уникальные блоки страницы «Клиенты и кейсы» — */
+.clientgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 16px;margin-top:26px}
+.client{display:flex;flex-direction:column;align-items:center;gap:11px;text-align:center}
+.client .lchip{width:100%;min-width:0;height:92px}
+.client .cname{color:#B9C2DC;font-size:13.5px;font-weight:600;line-height:1.4;max-width:26ch}
+.countryhead{display:flex;align-items:center;gap:13px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:14px;margin-top:54px}
+.countryhead:first-of-type{margin-top:40px}
+.countryhead h3{color:#fff;font-size:22px;font-weight:800;letter-spacing:-.01em}
+.countryhead .flag{width:30px;height:21px;border-radius:5px;display:block;flex:none;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
+.countryhead .tagchip{margin-left:auto}
+/* белые карточки кейсов: тег продукта и история */
+.case .ctag{display:inline-flex;align-items:center;gap:7px;background:#F0F3FA;border-radius:8px;padding:4px 11px;font-size:12px;font-weight:700;color:#3B4358;width:max-content;margin-bottom:16px}
+.case .ctag i{width:8px;height:8px;border-radius:50%;display:block}
+.case .lead{color:#0B1020;font-weight:700}
+.case .more{margin-top:auto;padding-top:16px}
+/* таймлайн 2019→2026 на 5 этапов */
+.lifecycle.tl5{grid-template-columns:repeat(5,1fr)}
+.lifecycle.tl5 .lstage p{font-size:13px}
+@media(max-width:980px){
+  .clientgrid{grid-template-columns:repeat(2,1fr)}
+  .lifecycle.tl5{grid-template-columns:1fr 1fr}
+  .countryhead .tagchip{margin-left:0}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<hs-topbar></hs-topbar>
+<hs-header active="more"></hs-header>
+
+<!-- PAGE HERO -->
+<section class="pagehero"><div class="wrap">
+  <div class="crumbs"><a href="home.html">Главная</a> · Клиенты и кейсы</div>
+  <span class="eyebrow">Реальные вузы. Реальные числа.</span>
+  <h1>16 вузов <span class="grad">доверяют HeRo Study</span></h1>
+  <p class="sub" style="font-size:18px">Университеты и колледжи Казахстана и Узбекистана ведут приём, учёбу, финансы и аналитику на одной платформе — каждый день, без бумаги и параллельных систем.</p>
+  <div class="cta" style="justify-content:center"><a class="btn btn-primary" href="consultation.html">Записаться на консультацию →</a><a class="btn btn-glass" data-modal-open="videoModal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8.5 16 12 10 15.5 10 8.5" fill="currentColor" stroke="none"/></svg><span>Смотреть презентацию</span></a></div>
+  <div class="trust"><b>100 000+</b> пользователей · <b>11</b> вузов в Казахстане · <b>5</b> в Узбекистане</div>
+</div></section>
+
+<!-- STATS -->
+<section class="statsband"><div class="wrap"><div class="statsrow">
+  <div class="statc"><div class="n">100K+</div><div class="l">активных пользователей</div></div>
+  <div class="statc"><div class="n">16</div><div class="l">вузов и колледжей</div></div>
+  <div class="statc"><div class="n">3</div><div class="l">страны присутствия</div></div>
+  <div class="statc"><div class="n">75+</div><div class="l">модулей экосистемы</div></div>
+</div></div></section>
+
+<!-- КАТАЛОГ КЛИЕНТОВ -->
+<section class="section"><div class="wrap">
+  <h2 class="h2">Кто работает <span class="grad">на HeRo Study</span></h2>
+  <p class="h2sub">Каталог клиентов по странам — от нефтегазового университета до британского кампуса и академии МЧС.</p>
+
+  <!-- Казахстан -->
+  <div class="countryhead">
+    <svg class="flag" viewBox="0 0 30 21" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="30" height="21" rx="2.5" fill="#00ABC2"/><rect x="2" y="2" width="2.4" height="17" rx="1.2" fill="#FFCB05" opacity=".9"/><circle cx="17" cy="10.5" r="4" fill="#FFCB05"/><path d="M10.5 14.4c2 1.5 4.4 2.2 6.5 2.2s4.5-.7 6.5-2.2" stroke="#FFCB05" stroke-width="1.3" fill="none" stroke-linecap="round"/></svg>
+    <h3>Казахстан</h3>
+    <span class="tagchip">11 вузов</span>
+  </div>
+  <div class="clientgrid">
+    <div class="client"><div class="lchip"><img src="../assets/logos/aung.svg" alt="АУНГ"></div><div class="cname">Атырауский университет нефти и газа</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/caspian.png" alt="Caspian University"></div><div class="cname">Каспийский университет</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/atu.png" alt="АТУ"></div><div class="cname">Алматинский технологический университет</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/ablaikhan.png" alt="Университет им. Абылай хана"></div><div class="cname">Университет им. Абылай хана</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/agz.png" alt="Академия МЧС"></div><div class="cname">Академия МЧС</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/site.png" alt="SITE"></div><div class="cname">Swiss Institute of Technology and Entrepreneurship</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/coventry.png" alt="Coventry Kazakhstan"></div><div class="cname">Coventry Kazakhstan</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/gubkin.png" alt="РГУ им. Губкина"></div><div class="cname">РГУ им. Губкина (филиал)</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/meta.png" alt="META University"></div><div class="cname">META University (ЕТУ)</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/kaznior.png" alt="KazIOR"></div><div class="cname">Казахский НИИ онкологии и радиологии (KazIOR)</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/symbat.png" alt="Колледж Сымбат"></div><div class="cname">Колледж «Сымбат»</div></div>
+  </div>
+
+  <!-- Узбекистан -->
+  <div class="countryhead">
+    <svg class="flag" viewBox="0 0 30 21" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="30" height="21" rx="2.5" fill="#0099B5"/><rect y="7.3" width="30" height="6.4" fill="#fff"/><rect y="6.7" width="30" height="0.7" fill="#CE1126"/><rect y="13.6" width="30" height="0.7" fill="#CE1126"/><path d="M0 14.3h30v4.2a2.5 2.5 0 0 1-2.5 2.5h-25A2.5 2.5 0 0 1 0 18.5z" fill="#1EB53A"/><circle cx="5.6" cy="3.7" r="2.1" fill="#fff"/><circle cx="6.5" cy="3.3" r="1.8" fill="#0099B5"/></svg>
+    <h3>Узбекистан</h3>
+    <span class="tagchip">5 вузов</span>
+  </div>
+  <div class="clientgrid">
+    <div class="client"><div class="lchip"><img src="../assets/logos/newuu.png" alt="New Uzbekistan University"></div><div class="cname">New Uzbekistan University</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/kokand.png" alt="Kokand University"></div><div class="cname">Кокандский университет</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/kokand_andijan.png" alt="Kokand University — Андижан"></div><div class="cname">Кокандский университет — филиал в Андижане</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/tiu.png" alt="Tashkent International University"></div><div class="cname">Ташкентский международный университет</div></div>
+    <div class="client"><div class="lchip"><img src="../assets/logos/nizami.png" alt="НПУ им. Низами"></div><div class="cname">Национальный педагогический университет им. Низами</div></div>
+  </div>
+</div></section>
+
+<!-- ПОДРОБНЫЕ КЕЙСЫ -->
+<section class="section" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Истории, за которыми <span class="grad">стоят цифры</span></h2>
+  <p class="h2sub">Три кейса о том, как вузы переходят на HeRo Study — и что меняется после внедрения.</p>
+  <div class="cases">
+    <div class="case">
+      <div class="clogo"><img src="../assets/logos/aung.svg" alt="АУНГ"></div>
+      <span class="ctag"><i style="background:#FB7185"></i>HeRo Study Space</span>
+      <div class="big">5+ лет</div>
+      <p class="lead">Атырауский университет нефти и газа — на платформе с 2020 года.</p>
+      <p>Один из первых клиентов HeRo Study. За пять лет вуз перевёл в систему приём, учебный процесс, финансы и общежитие — каждая приёмная кампания с 2020 года прошла полностью в цифре, без бумажных журналов и авралов в деканатах.</p>
+      <a class="more" href="consultation.html" style="color:#FB7185">Обсудить такой проект →</a>
+    </div>
+    <div class="case">
+      <div class="clogo"><img src="../assets/logos/coventry.png" alt="Coventry Kazakhstan"></div>
+      <span class="ctag"><i style="background:#FB7185"></i>Миграция на Study Space</span>
+      <div class="big">Platonus → HeRo</div>
+      <p class="lead">Coventry Kazakhstan мигрировал без потери британской системы.</p>
+      <p>Контингент, оценки и учебные планы перенесли из Platonus, а британскую модель оценивания и академический календарь Coventry University настроили в HeRo как есть. Студенты и преподаватели начали семестр уже в новой системе — учебный процесс не останавливался ни на день.</p>
+      <a class="more" href="consultation.html" style="color:#FB7185">Обсудить такой проект →</a>
+    </div>
+    <div class="case">
+      <div class="clogo"><img src="../assets/logos/kaznior.png" alt="KazIOR"></div>
+      <span class="ctag"><i style="background:#FB923C"></i>HeRo BI Analytics</span>
+      <div class="big">4 дня → 20 мин</div>
+      <p class="lead">Государственная отчётность KazIOR после внедрения BI Analytics.</p>
+      <p>Раньше сводку для министерства четыре дня собирали вручную из разрозненных таблиц. Теперь BI Analytics берёт данные напрямую из учебных модулей: отчёт формируется за 20 минут, а ручные ошибки переноса исчезли вместе с самим переносом.</p>
+      <a class="more" href="consultation.html" style="color:#FB923C">Обсудить такой проект →</a>
+    </div>
+  </div>
+</div></section>
+
+<!-- ХРОНОЛОГИЯ ВНЕДРЕНИЙ -->
+<section class="section" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">География растёт <span class="grad">каждый год</span></h2>
+  <p class="h2sub">Хронология внедрений: от первых вузов Казахстана до международной сети в трёх странах.</p>
+  <div class="lifecycle tl5">
+    <div class="lstage"><span class="ln">2019–2020</span><h4>Старт в Казахстане</h4><p>АУНГ, Каспийский университет, колледж «Сымбат» — первые внедрения платформы.</p></div>
+    <div class="lstage"><span class="ln">2023</span><h4>Рост сети</h4><p>АТУ, KazIOR и Университет им. Абылай хана подключаются к экосистеме.</p></div>
+    <div class="lstage"><span class="ln">2024</span><h4>Выход в Узбекистан</h4><p>META University и четыре вуза Узбекистана: NewUU, Коканд, TIU, НПУ им. Низами.</p></div>
+    <div class="lstage"><span class="ln">2025</span><h4>Международные кампусы</h4><p>Coventry Kazakhstan, SITE, Академия МЧС, РГУ им. Губкина, Коканд — Андижан.</p></div>
+    <div class="lstage"><span class="ln">2026</span><h4>16 вузов · 3 страны</h4><p>100 000+ пользователей и масштабирование AI-экосистемы HeRo.</p></div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="section" style="padding-top:0"><div class="ctaband">
+  <h2 class="h2">Хотите такой же результат <span class="grad">в вашем вузе</span>?</h2>
+  <p class="h2sub">Бесплатная ZOOM-консультация: покажем платформу на примерах вузов вашего профиля.</p>
+  <div class="cta" style="justify-content:center;margin-top:28px"><a class="btn btn-primary" href="consultation.html">Записаться на консультацию →</a><a class="btn btn-glass" data-modal-open="videoModal">Смотреть презентацию</a></div>
+</div></section>
+
+<hs-footer></hs-footer>
+
+</div>
+</body>
+</html>
