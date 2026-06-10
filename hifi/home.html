@@ -98,6 +98,41 @@ nav a{color:#A5B0D0;font-weight:600;font-size:15px}nav a:hover{color:#fff}
 .drawer-foot{display:flex;flex-direction:column;gap:10px;margin-top:18px}
 @media(max-width:980px){.nav,.header__actions{display:none}.burger{display:inline-flex}}
 @media(prefers-reduced-motion:reduce){.mega,.caret,.drawer{transition:none}}
+/* ===== ВОССТАНОВЛЕНО: ссылки, видео-модалка, sticky-CTA, cookie, футер ===== */
+.arrowlink{display:inline-block;color:#A5B4FC;font-weight:700;font-size:14px;text-decoration:none}
+.arrowlink:hover{color:#fff}
+.card .more{display:inline-block;margin-top:14px;font-weight:700;font-size:13.5px;text-decoration:none}
+.card .more:hover{filter:brightness(1.2)}
+.lmore{text-decoration:none}
+.lmore:hover{color:#fff}
+/* видео-модалка */
+dialog.vmodal{border:0;padding:0;background:transparent;max-width:920px;width:92vw;color:inherit}
+dialog.vmodal::backdrop{background:rgba(4,6,15,.78);backdrop-filter:blur(6px)}
+.vmodal .vbox{background:rgba(13,18,38,.97);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px;box-shadow:0 40px 90px -30px rgba(0,0,0,.85)}
+.vmodal .vhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.vmodal .vhead h3{color:#fff;font-size:18px;font-weight:800}
+.vmodal .vclose{width:38px;height:38px;border-radius:10px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#fff;cursor:pointer;font-size:16px}
+.vmodal .vframe{aspect-ratio:16/9;border-radius:14px;background:radial-gradient(120% 120% at 30% 20%,rgba(99,102,241,.5),transparent),radial-gradient(120% 120% at 80% 90%,rgba(34,211,238,.4),transparent),#0a0e1f;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.1)}
+.vmodal .vplay{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;color:#fff;font-size:20px}
+.vmodal .vnote{color:#8893B5;font-size:13px;margin-top:12px;text-align:center}
+/* мобильный sticky CTA */
+.stickycta{display:none}
+@media(max-width:980px){.stickycta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(7,10,24,.92);backdrop-filter:blur(14px);border-top:1px solid rgba(255,255,255,.1)}.stickycta .btn{width:100%;justify-content:center}}
+/* cookie-баннер */
+.cookie{position:fixed;left:16px;right:16px;bottom:16px;z-index:75;max-width:580px;margin:0 auto;background:rgba(13,18,38,.97);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px 18px;box-shadow:0 24px 60px -20px rgba(0,0,0,.85);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.cookie p{color:#cdd5ec;font-size:13.5px;flex:1;min-width:220px;margin:0}
+.cookie p a{color:#A5B4FC}
+.cookie[hidden]{display:none}
+@media(max-width:980px){.cookie{bottom:84px}}
+/* футер: соцсети, 5 колонок, нижняя строка со ссылками */
+.fsocials{display:flex;gap:10px;margin-top:16px}
+.fsocials a{width:34px;height:34px;border-radius:9px;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;color:#A5B0D0;font-size:11px;font-weight:700;text-decoration:none;transition:.18s}
+.fsocials a:hover{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.05)}
+footer .fcols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:30px}
+footer .fbottom{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;margin-top:30px;padding-top:22px;border-top:1px solid rgba(255,255,255,.08);color:#8893B5;font-size:13px}
+.fbottom a{color:#8893B5;text-decoration:none}.fbottom a:hover{color:#fff}
+@media(max-width:980px){footer .fcols{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){footer .fcols{grid-template-columns:1fr}}
 .eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(99,102,241,.12);border:1px solid rgba(129,140,248,.3);color:#C7D2FE;font-weight:700;font-size:12.5px;letter-spacing:.04em;padding:7px 16px;border-radius:99px;text-transform:uppercase}
 .section{padding:84px 0;position:relative;z-index:1}
 .eyetxt{text-align:center;color:#8893B5;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px}
@@ -299,7 +334,7 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
   <span class="eyebrow">● Экосистема для университетов и колледжей</span>
   <h1>Цифровой партнёр <span class="grad">вашего университета</span></h1>
   <p class="sub">Единая облачная платформа для приёма, учёбы, аналитики и команды — управляйте вузом эффективно в одном месте.</p>
-  <div class="cta"><a class="btn btn-primary">Запросить демо →</a><a class="btn btn-glass">▷ Смотреть видео</a></div>
+  <div class="cta"><a class="btn btn-primary" href="consultation.html">Запросить демо →</a><a class="btn btn-glass" data-modal-open="videoModal">▷ Смотреть видео</a></div>
   <div class="trust"><b>100 000+</b> пользователей · <b>16</b> вузов · <b>3</b> страны</div>
   <div class="panel">
     <div class="pbar"><i></i><i></i><i></i></div>
@@ -325,8 +360,9 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
     <div class="lchip"><img src="../assets/logos/newuu.png" alt="New Uzbekistan"></div>
     <div class="lchip"><img src="../assets/logos/tiu.png" alt="Tashkent IU"></div>
     <div class="lchip"><img src="../assets/logos/kokand.png" alt="Kokand"></div>
-    <span class="lmore">+8 вузов →</span>
+    <a class="lmore" href="cases.html">+8 вузов →</a>
   </div>
+  <div style="text-align:center;margin-top:18px"><a class="arrowlink" href="cases.html">Все клиенты по странам →</a></div>
 </div></section>
 
 <!-- HeRo lockup (значок + слово «HeRo»); цвет значка = color карточки, подпись — <text> Manrope -->
@@ -345,11 +381,12 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
   <h2 class="h2">Четыре продукта — <span class="grad">одна экосистема</span></h2>
   <p class="h2sub">Каждый со своим акцентом, вместе — как единый организм вуза.</p>
   <div class="products">
-    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Study Space" style="color:#D64388"><use href="#heroMark"/><text x="74" y="49.5" class="psub">STUDY SPACE</text></svg><p>Операционная система вуза (ERP).</p><ul style="color:#D64388"><li>Приём · LMS · студенты</li><li>Финансы · общежитие</li><li>Документооборот · KPI</li></ul></div>
-    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo BI Analytics" style="color:#F97316"><use href="#heroMark"/><text x="74" y="49.5" class="psub">BI ANALYTICS</text></svg><p>Поддержка решений на данных.</p><ul style="color:#F97316"><li>Дашборды без кода</li><li>Прогнозы и KPI</li><li>Отчётность Министерства</li></ul></div>
-    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo OS AI" style="color:#06B6D4"><use href="#heroMark"/><text x="74" y="49.5" class="psub">OS AI</text></svg><p>ИИ-помощник в процессах.</p><ul style="color:#06B6D4"><li>Поиск по данным</li><li>Генерация отчётов</li><li>Помощь студентам и ППС</li></ul></div>
-    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Workspace" style="color:#78AA00"><use href="#heroMark"/><text x="74" y="49.5" class="psub">WORKSPACE</text></svg><p>Команда и проекты вуза.</p><ul style="color:#78AA00"><li>Задачи и дедлайны</li><li>Проекты и контроль</li><li>Документы команды</li></ul></div>
+    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Study Space" style="color:#D64388"><use href="#heroMark"/><text x="74" y="49.5" class="psub">STUDY SPACE</text></svg><p>Операционная система вуза (ERP).</p><ul style="color:#D64388"><li>Приём · LMS · студенты</li><li>Финансы · общежитие</li><li>Документооборот · KPI</li></ul><a class="more" href="product-study-space.html" style="color:#D64388">Подробнее →</a></div>
+    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo BI Analytics" style="color:#F97316"><use href="#heroMark"/><text x="74" y="49.5" class="psub">BI ANALYTICS</text></svg><p>Поддержка решений на данных.</p><ul style="color:#F97316"><li>Дашборды без кода</li><li>Прогнозы и KPI</li><li>Отчётность Министерства</li></ul><a class="more" href="product-bi-analytics.html" style="color:#F97316">Подробнее →</a></div>
+    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo OS AI" style="color:#06B6D4"><use href="#heroMark"/><text x="74" y="49.5" class="psub">OS AI</text></svg><p>ИИ-помощник в процессах.</p><ul style="color:#06B6D4"><li>Поиск по данным</li><li>Генерация отчётов</li><li>Помощь студентам и ППС</li></ul><a class="more" href="product-ai-assistant.html" style="color:#06B6D4">Подробнее →</a></div>
+    <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Workspace" style="color:#78AA00"><use href="#heroMark"/><text x="74" y="49.5" class="psub">WORKSPACE</text></svg><p>Команда и проекты вуза.</p><ul style="color:#78AA00"><li>Задачи и дедлайны</li><li>Проекты и контроль</li><li>Документы команды</li></ul><a class="more" href="product-workspace.html" style="color:#78AA00">Подробнее →</a></div>
   </div>
+  <div style="text-align:center;margin-top:30px"><a class="btn btn-primary btn-sm" href="product-study-space.html">Все продукты экосистемы →</a></div>
 </div></section>
 
 <!-- POSITIONING / PILLARS -->
@@ -361,6 +398,7 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
     <div class="pill"><div class="n">03</div><h4>Бесшовные интеграции</h4><p>Госсервисы, 1С, Office 365, прокторинг — через API.</p></div>
     <div class="pill"><div class="n">04</div><h4>Защита данных</h4><p>Шифрование, резервные копии, ISO/IEC 27001.</p></div>
   </div>
+  <div style="text-align:center;margin-top:30px"><a class="arrowlink" href="about.html">Узнать больше о платформе →</a></div>
 </div></section>
 
 <!-- STATS -->
@@ -391,13 +429,14 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
     <div class="case"><div class="clogo"><img src="../assets/logos/coventry.png" alt="Coventry"></div><div class="big">миграция</div><p>Coventry Kazakhstan перешёл от Platonus без потери британской системы.</p></div>
     <div class="case"><div class="clogo"><img src="../assets/logos/kaznior.png" alt="KazIOR"></div><div class="big">4 дня → 20 мин</div><p>Подготовка гос. отчётности после внедрения BI Analytics.</p></div>
   </div>
+  <div style="text-align:center;margin-top:30px"><a class="arrowlink" href="cases.html">Все кейсы и истории клиентов →</a></div>
 </div></section>
 
 <!-- CTA -->
 <section class="section" style="padding-top:0"><div class="ctaband">
   <h2 class="h2">Покажем, как HeRo Study работает <span class="grad">в вашем вузе</span></h2>
   <p class="h2sub">Бесплатная ZOOM-консультация и персональная демонстрация платформы.</p>
-  <div class="cta" style="justify-content:center;margin-top:28px"><a class="btn btn-primary">Оставить заявку →</a><a class="btn btn-glass">Скачать презентацию</a></div>
+  <div class="cta" style="justify-content:center;margin-top:28px"><a class="btn btn-primary" href="consultation.html">Оставить заявку →</a><a class="btn btn-glass" data-modal-open="videoModal">Смотреть презентацию</a></div>
 </div></section>
 
 <!-- FOOTER -->
@@ -405,14 +444,39 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
   <div class="fcols">
     <div>
       <a class="brand" href="index.html"><svg class="brandlogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Study" style="color:#2D68C4"><use href="#heroMark"/><text x="74" y="50" class="bsub">STUDY</text></svg></a>
-      <p class="about">Экосистема цифровых продуктов для университетов и колледжей. Алматы · Ташкент · Сингапур.</p>
+      <p class="about">Экосистема цифровых продуктов для университетов и колледжей.</p>
+      <div class="fsocials"><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="LinkedIn">in</a><a href="#" aria-label="YouTube">YT</a><a href="#" aria-label="Facebook">f</a></div>
     </div>
-    <div><h5>Продукты</h5><a class="fl">Study Space</a><a class="fl">BI Analytics</a><a class="fl">Hero OS AI</a><a class="fl">Workspace</a></div>
-    <div><h5>Компания</h5><a class="fl">О нас</a><a class="fl">Кейсы</a><a class="fl">Партнёрам</a><a class="fl">Контакты</a></div>
-    <div><h5>Ресурсы</h5><a class="fl">Цены</a><a class="fl">Поддержка</a><a class="fl">Справочный центр</a><a class="fl">Блог</a></div>
+    <div><h5>Продукты</h5><a class="fl" href="product-study-space.html">Hero Study Space</a><a class="fl" href="product-bi-analytics.html">Hero BI Analytics</a><a class="fl" href="product-ai-assistant.html">Hero OS AI</a><a class="fl" href="product-workspace.html">Hero Workspace</a></div>
+    <div><h5>Для вузов и колледжей</h5><a class="fl" href="ss-implementation.html">Сопровождение</a><a class="fl" href="consultation.html">Консультация и оценка</a><a class="fl" href="support.html">Тех. поддержка</a><a class="fl" href="pricing.html">Тарифы</a></div>
+    <div><h5>Компания</h5><a class="fl" href="about.html">О нас</a><a class="fl" href="cases.html">Кейсы</a><a class="fl" href="partners.html">Партнёрам</a><a class="fl" href="resources-news.html">Новости</a><a class="fl" href="resources-blog.html">Блог</a></div>
+    <div><h5>Ресурсы</h5><a class="fl" href="help-center.html">Справочный центр</a><a class="fl" href="legal-privacy.html">Политика конфиденциальности</a><a class="fl" href="legal-cookie.html">Использование cookie</a><a class="fl" href="legal-terms.html">Условия использования</a></div>
   </div>
-  <div class="fbottom"><span>© 2026 HeRo Study</span><span>sales@hero.study · +7 (700) 000-00-00</span><span>hero.study</span></div>
+  <div class="fbottom">
+    <span>© 2026 HeRo Study</span>
+    <span>+7 (700) 000-00-00 (KZ) · +998 (00) 000-00-00 (UZ) · sales@hero.study</span>
+    <span>Алматы · Ташкент · Сингапур</span>
+    <span><a href="legal-privacy.html">Политика</a> · <a href="legal-terms.html">Условия</a> · <a href="sitemap.html">🗺 Карта прототипа</a></span>
+  </div>
 </div></footer>
+
+<!-- VIDEO MODAL -->
+<dialog class="vmodal" id="videoModal">
+  <div class="vbox">
+    <div class="vhead"><h3>Презентация экосистемы HeRo Study</h3><button class="vclose" data-modal-close aria-label="Закрыть">✕</button></div>
+    <div class="vframe"><div class="vplay">▶</div></div>
+    <p class="vnote">Видео-презентация платформы (версии KZ / EN / UZ). В прототипе — плейсхолдер ролика.</p>
+  </div>
+</dialog>
+
+<!-- MOBILE STICKY CTA -->
+<div class="stickycta"><a class="btn btn-primary" href="consultation.html">Запросить демо</a></div>
+
+<!-- COOKIE BANNER -->
+<div class="cookie" id="cookieBar" hidden>
+  <p>Мы используем файлы cookie для работы сайта и аналитики. Подробнее — в <a href="legal-cookie.html">политике cookie</a>.</p>
+  <button class="btn btn-primary btn-sm" data-cookie-accept>Принять</button>
+</div>
 
 </div>
 <script>
@@ -461,6 +525,23 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
   if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
   if(drawer) drawer.querySelectorAll('a[href]').forEach(function(a){ a.addEventListener('click', closeDrawer); });
   DESKTOP.addEventListener('change', function(m){ if(m.matches) closeDrawer(); });
+
+  /* ---- видео-модалка ---- */
+  var vmodal = document.getElementById('videoModal');
+  document.querySelectorAll('[data-modal-open]').forEach(function(b){
+    b.addEventListener('click', function(e){ e.preventDefault(); closeAll(); var m=document.getElementById(b.getAttribute('data-modal-open')); if(m){ m.showModal ? m.showModal() : m.setAttribute('open',''); } });
+  });
+  if(vmodal){
+    vmodal.querySelectorAll('[data-modal-close]').forEach(function(c){ c.addEventListener('click', function(){ vmodal.close(); }); });
+    vmodal.addEventListener('click', function(e){ if(e.target===vmodal) vmodal.close(); });
+  }
+  /* ---- cookie-баннер ---- */
+  try{
+    if(!localStorage.getItem('hs_cookie')){
+      var cb=document.getElementById('cookieBar');
+      if(cb){ cb.hidden=false; var ok=cb.querySelector('[data-cookie-accept]'); if(ok) ok.addEventListener('click', function(){ try{localStorage.setItem('hs_cookie','1');}catch(e){} cb.hidden=true; }); }
+    }
+  }catch(e){}
 })();
 </script>
 </body>
