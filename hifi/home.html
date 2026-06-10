@@ -133,6 +133,24 @@ footer .fbottom{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;marg
 .fbottom a{color:#8893B5;text-decoration:none}.fbottom a:hover{color:#fff}
 @media(max-width:980px){footer .fcols{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){footer .fcols{grid-template-columns:1fr}}
+/* ===== ВОССТАНОВЛЕНО: 3 столпа, этапы вуза, вся экосистема ===== */
+.vthree{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+.vcard{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:26px}
+.vico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:22px;background:rgba(129,140,248,.14);border:1px solid rgba(129,140,248,.3);margin-bottom:14px}
+.vcard h4{color:#fff;font-size:18px;font-weight:800}
+.vcard p{color:#9aa4c4;font-size:14px;margin-top:8px;line-height:1.5}
+.lifecycle{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:34px 0 8px}
+.lstage{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:16px;padding:20px}
+.lstage .ln{font-size:13px;font-weight:800;color:#818CF8}
+.lstage h4{color:#fff;font-size:17px;font-weight:800;margin:8px 0 4px}
+.lstage p{color:#8893B5;font-size:13.5px}
+.lstage:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:#4b5573;font-weight:800;z-index:2}
+.ecoband{margin-top:32px;background:linear-gradient(120deg,rgba(49,46,129,.5),rgba(8,12,30,.4));border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px 28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.ecoband h3{color:#fff;font-size:20px;font-weight:800}
+.ecoband p{color:#9aa4c4;font-size:14px;margin-top:4px}
+.ecoband .ecochips{display:flex;gap:8px;margin-left:auto}
+.ecoband .ecochips span{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;font-weight:800;font-size:13px;color:#fff;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06)}
+@media(max-width:980px){.vthree{grid-template-columns:1fr}.lifecycle{grid-template-columns:1fr 1fr}.lstage:not(:last-child)::after{display:none}.ecoband .ecochips{margin-left:0}}
 .eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(99,102,241,.12);border:1px solid rgba(129,140,248,.3);color:#C7D2FE;font-weight:700;font-size:12.5px;letter-spacing:.04em;padding:7px 16px;border-radius:99px;text-transform:uppercase}
 .section{padding:84px 0;position:relative;z-index:1}
 .eyetxt{text-align:center;color:#8893B5;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px}
@@ -331,11 +349,11 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
 
 <!-- HERO -->
 <section class="hero"><div class="wrap">
-  <span class="eyebrow">● Экосистема для университетов и колледжей</span>
-  <h1>Цифровой партнёр <span class="grad">вашего университета</span></h1>
-  <p class="sub">Единая облачная платформа для приёма, учёбы, аналитики и команды — управляйте вузом эффективно в одном месте.</p>
-  <div class="cta"><a class="btn btn-primary" href="consultation.html">Запросить демо →</a><a class="btn btn-glass" data-modal-open="videoModal">▷ Смотреть видео</a></div>
-  <div class="trust"><b>100 000+</b> пользователей · <b>16</b> вузов · <b>3</b> страны</div>
+  <span class="eyebrow" data-i18n="eyebrow">● Экосистема для университетов и колледжей</span>
+  <h1 data-i18n-html="h1">Цифровой партнёр <span class="grad">вашего университета</span></h1>
+  <p class="sub" data-i18n="sub">Единая облачная платформа для приёма, учёбы, аналитики и команды — управляйте вузом эффективно в одном месте.</p>
+  <div class="cta"><a class="btn btn-primary" href="consultation.html" data-i18n="btnDemo">Запросить демо →</a><a class="btn btn-glass" data-modal-open="videoModal" data-i18n="btnVideo">▷ Смотреть видео</a></div>
+  <div class="trust" data-i18n-html="trust"><b>100 000+</b> пользователей · <b>16</b> вузов · <b>3</b> страны</div>
   <div class="panel">
     <div class="pbar"><i></i><i></i><i></i></div>
     <div class="pgrid">
@@ -365,6 +383,16 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
   <div style="text-align:center;margin-top:18px"><a class="arrowlink" href="cases.html">Все клиенты по странам →</a></div>
 </div></section>
 
+<!-- VALUE 3 PILLARS -->
+<section class="section" style="padding-top:40px"><div class="wrap">
+  <h2 class="h2">Управляйте учебным заведением <span class="grad">эффективно и в одном месте</span></h2>
+  <div class="vthree">
+    <div class="vcard"><div class="vico">⚙</div><h4>Автоматизация процессов</h4><p>Приём, учёба, финансы и отчётность — рутина уходит в систему.</p></div>
+    <div class="vcard"><div class="vico">◈</div><h4>Единое цифровое пространство</h4><p>Студенты, преподаватели и администрация — в одной среде.</p></div>
+    <div class="vcard"><div class="vico">📈</div><h4>Аналитика в реальном времени</h4><p>Дашборды и KPI для решений на чистых данных.</p></div>
+  </div>
+</div></section>
+
 <!-- HeRo lockup (значок + слово «HeRo»); цвет значка = color карточки, подпись — <text> Manrope -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <g id="heroMark">
@@ -386,12 +414,26 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
     <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo OS AI" style="color:#06B6D4"><use href="#heroMark"/><text x="74" y="49.5" class="psub">OS AI</text></svg><p>ИИ-помощник в процессах.</p><ul style="color:#06B6D4"><li>Поиск по данным</li><li>Генерация отчётов</li><li>Помощь студентам и ППС</li></ul><a class="more" href="product-ai-assistant.html" style="color:#06B6D4">Подробнее →</a></div>
     <div class="card"><svg class="plogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Workspace" style="color:#78AA00"><use href="#heroMark"/><text x="74" y="49.5" class="psub">WORKSPACE</text></svg><p>Команда и проекты вуза.</p><ul style="color:#78AA00"><li>Задачи и дедлайны</li><li>Проекты и контроль</li><li>Документы команды</li></ul><a class="more" href="product-workspace.html" style="color:#78AA00">Подробнее →</a></div>
   </div>
-  <div style="text-align:center;margin-top:30px"><a class="btn btn-primary btn-sm" href="product-study-space.html">Все продукты экосистемы →</a></div>
+  <div class="ecoband">
+    <div>
+      <h3>Работайте со всей экосистемой</h3>
+      <p>Четыре продукта на одной платформе — данные, процессы и аналитика связаны между собой.</p>
+    </div>
+    <div class="ecochips"><span style="color:#D64388">SS</span><span style="color:#F97316">BI</span><span style="color:#06B6D4">AI</span><span style="color:#78AA00">WS</span></div>
+    <a class="btn btn-primary btn-sm" href="product-study-space.html">Все продукты →</a>
+  </div>
 </div></section>
 
 <!-- POSITIONING / PILLARS -->
 <section class="section"><div class="wrap">
   <h2 class="h2">Не набор инструментов,<br><span class="grad">а операционная система вуза</span></h2>
+  <p class="h2sub">Один контур закрывает весь жизненный цикл — от заявки абитуриента до аналитики ректора.</p>
+  <div class="lifecycle">
+    <div class="lstage"><span class="ln">01</span><h4>Приём</h4><p>Заявки, конкурс, зачисление</p></div>
+    <div class="lstage"><span class="ln">02</span><h4>Обучение</h4><p>LMS, расписание, курсы</p></div>
+    <div class="lstage"><span class="ln">03</span><h4>Управление</h4><p>Студенты, финансы, кадры</p></div>
+    <div class="lstage"><span class="ln">04</span><h4>Аналитика</h4><p>Дашборды, отчётность, прогнозы</p></div>
+  </div>
   <div class="pillars">
     <div class="pill"><div class="n">01</div><h4>Быстрый запуск</h4><p>Внедрение за 30–90 дней: аудит, настройка, обучение.</p></div>
     <div class="pill"><div class="n">02</div><h4>Гибкая архитектура</h4><p>От колледжа до университета с филиалами и кампусами.</p></div>
@@ -542,6 +584,24 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
       if(cb){ cb.hidden=false; var ok=cb.querySelector('[data-cookie-accept]'); if(ok) ok.addEventListener('click', function(){ try{localStorage.setItem('hs_cookie','1');}catch(e){} cb.hidden=true; }); }
     }
   }catch(e){}
+
+  /* ---- мультиязычность (демо: hero) ---- */
+  var I18N={
+    ru:{eyebrow:"● Экосистема для университетов и колледжей",h1:'Цифровой партнёр <span class="grad">вашего университета</span>',sub:"Единая облачная платформа для приёма, учёбы, аналитики и команды — управляйте вузом эффективно в одном месте.",btnDemo:"Запросить демо →",btnVideo:"▷ Смотреть видео",trust:'<b>100 000+</b> пользователей · <b>16</b> вузов · <b>3</b> страны'},
+    en:{eyebrow:"● Ecosystem for universities and colleges",h1:'The digital partner for <span class="grad">your university</span>',sub:"One cloud platform for admissions, learning, analytics and teamwork — run your institution efficiently in one place.",btnDemo:"Request a demo →",btnVideo:"▷ Watch video",trust:'<b>100,000+</b> users · <b>16</b> universities · <b>3</b> countries'},
+    kz:{eyebrow:"● Университеттер мен колледждерге арналған экожүйе",h1:'<span class="grad">Университетіңіздің</span> цифрлық серіктесі',sub:"Қабылдау, оқу, аналитика және команда үшін бірыңғай бұлттық платформа — оқу орнын бір жерден тиімді басқарыңыз.",btnDemo:"Демо сұрау →",btnVideo:"▷ Бейнені көру",trust:'<b>100 000+</b> қолданушы · <b>16</b> ЖОО · <b>3</b> ел'},
+    uz:{eyebrow:"● Universitet va kollejlar uchun ekotizim",h1:'<span class="grad">Universitetingizning</span> raqamli hamkori',sub:"Qabul, oʻqish, tahlil va jamoa uchun yagona bulutli platforma — oliygohni bir joydan samarali boshqaring.",btnDemo:"Demo soʻrash →",btnVideo:"▷ Videoni koʻrish",trust:'<b>100 000+</b> foydalanuvchi · <b>16</b> oliygoh · <b>3</b> davlat'}
+  };
+  function setLang(l){
+    var d=I18N[l]; if(!d) return;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ var k=el.getAttribute('data-i18n'); if(d[k]!=null) el.textContent=d[k]; });
+    document.querySelectorAll('[data-i18n-html]').forEach(function(el){ var k=el.getAttribute('data-i18n-html'); if(d[k]!=null) el.innerHTML=d[k]; });
+    document.documentElement.lang=l;
+    var lbl=document.querySelector('[data-lang-label]'); if(lbl) lbl.textContent=l.toUpperCase();
+    try{localStorage.setItem('hs_lang',l);}catch(e){}
+  }
+  document.querySelectorAll('[data-lang]').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); setLang(a.getAttribute('data-lang')); closeAll(); }); });
+  try{ var sl=localStorage.getItem('hs_lang'); if(sl && I18N[sl] && sl!=='ru') setLang(sl); }catch(e){}
 })();
 </script>
 </body>
