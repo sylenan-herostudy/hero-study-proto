@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HeRo Study 2.0 — вариант C · Editorial Bold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#15161B;--ink2:#444;--mut:#7A7A82;--paper:#F4F1EA;--card:#fff;--line:#E4DFD3;
+--indigo:#4F46E5;--ss:#16A34A;--bi:#EA580C;--ai:#0891B2;--ws:#E11D48;}
+*{box-sizing:border-box;margin:0}
+body{font-family:Manrope,system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.45}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.topbar{border-bottom:1px solid var(--line);font-size:13px;color:var(--ink2)}
+.topbar .wrap{display:flex;align-items:center;gap:18px;height:42px}
+.topbar .chips{display:flex;gap:14px;font-weight:700}
+.topbar .sp{flex:1}
+header.site{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(244,241,234,.85);backdrop-filter:blur(10px);z-index:50}
+header.site .wrap{display:flex;align-items:center;gap:30px;height:78px}
+header.site img.logo{height:30px}
+nav{display:flex;gap:28px;margin-left:6px;flex:1;font-weight:700;font-size:15px}
+nav a{color:var(--ink2)}nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:15px;padding:13px 24px;border-radius:4px;cursor:pointer;border:2px solid var(--ink);transition:.15s}
+.btn-solid{background:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--indigo);border-color:var(--indigo)}
+.btn-out{background:transparent;color:var(--ink)}
+.btn-out:hover{background:var(--ink);color:var(--paper)}
+.hero .wrap{padding:70px 40px 40px}
+.kick{font-weight:800;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--indigo)}
+h1{font-size:84px;line-height:.98;letter-spacing:-.04em;font-weight:800;margin:18px 0 0;max-width:15ch}
+h1 .mark{background:var(--indigo);color:var(--paper);padding:0 .12em;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.row{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;margin-top:34px}
+.sub{font-size:20px;color:var(--ink2);max-width:34ch;line-height:1.55}
+.cta{display:flex;gap:14px;margin-top:26px}
+.heroimg{height:300px;border-radius:10px;border:2px solid var(--ink);background:
+ linear-gradient(135deg,#4F46E5,#0891B2);position:relative;overflow:hidden;box-shadow:10px 10px 0 var(--ink)}
+.heroimg .tagk{position:absolute;left:18px;top:16px;color:#fff;font-weight:800;letter-spacing:.04em}
+.heroimg .bars{position:absolute;left:18px;right:18px;bottom:18px;display:flex;gap:8px;align-items:flex-end;height:150px}
+.heroimg .bars i{flex:1;background:rgba(255,255,255,.85);border-radius:3px 3px 0 0}
+/* big stats strip */
+.stats{border-block:2px solid var(--ink);margin-top:54px;background:var(--ink);color:var(--paper)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+.stat{padding:30px 0;text-align:center;border-left:1px solid rgba(255,255,255,.15)}
+.stat:first-child{border-left:0}
+.stat .n{font-size:46px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stat .l{color:#B9B6AE;font-weight:600;font-size:14px;margin-top:6px}
+.section{padding:72px 0}
+.h2{font-size:48px;font-weight:800;letter-spacing:-.03em;max-width:18ch}
+.h2 em{color:var(--indigo);font-style:normal}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:36px;border:2px solid var(--ink);border-radius:10px;overflow:hidden}
+.card{padding:30px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);background:var(--card)}
+.card:nth-child(2n){border-right:0}.card:nth-child(n+3){border-bottom:0}
+.card .ic{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:8px;color:#fff;font-weight:800;margin-bottom:14px}
+.card h3{font-size:22px;font-weight:800}
+.card p{color:var(--mut);font-size:15px;margin-top:8px;max-width:34ch}
+.card .more{display:inline-block;margin-top:14px;font-weight:800;border-bottom:2px solid currentColor}
+.tag{position:fixed;left:16px;bottom:16px;background:var(--indigo);color:#fff;font-size:12px;font-weight:800;padding:8px 14px;border-radius:99px;z-index:99}
+@media(max-width:900px){h1{font-size:54px}.row{grid-template-columns:1fr}.products{grid-template-columns:1fr}.card{border-right:0}.stats .wrap{grid-template-columns:1fr 1fr}nav{display:none}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><div class="chips"><span>SS</span><span>BI</span><span>AI</span><span>WS</span></div><span class="sp"></span><span>RU ▾</span><span>Партнёрство</span></div></div>
+<header class="site"><div class="wrap">
+  <img class="logo" src="../assets/logo-herostudy.png" alt="HeRo Study">
+  <nav><a>О нас</a><a>Продукты</a><a>Услуги</a><a>Цены</a><a>Поддержка</a></nav>
+  <a class="btn btn-out">Войти</a><a class="btn btn-solid">Запросить демо</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="kick">Экосистема для вузов и колледжей</div>
+  <h1>Операционная <span class="mark">система</span> вашего университета</h1>
+  <div class="row">
+    <p class="sub">Приём, учёба, аналитика и команда — на одной облачной платформе. Управляйте вузом эффективно, в одном месте.
+      <span class="cta" style="display:flex"><a class="btn btn-solid">Запросить демо →</a><a class="btn btn-out">▷ Видео</a></span>
+    </p>
+    <div class="heroimg">
+      <span class="tagk">Дашборд ректора</span>
+      <div class="bars"><i style="height:40%"></i><i style="height:66%"></i><i style="height:52%"></i><i style="height:88%"></i><i style="height:60%"></i><i style="height:100%"></i><i style="height:74%"></i><i style="height:58%"></i></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="stats"><div class="wrap">
+  <div class="stat"><div class="n">100K+</div><div class="l">пользователей</div></div>
+  <div class="stat"><div class="n">16</div><div class="l">вузов</div></div>
+  <div class="stat"><div class="n">3</div><div class="l">страны</div></div>
+  <div class="stat"><div class="n">75+</div><div class="l">модулей</div></div>
+</div></section>
+
+<section class="section"><div class="wrap">
+  <h2 class="h2">Четыре продукта — <em>одна экосистема</em></h2>
+  <div class="products">
+    <div class="card"><div class="ic" style="background:#16A34A">SS</div><h3>Hero Study Space</h3><p>ERP вуза: приём, LMS, студенты, финансы, общежитие, аналитика.</p><span class="more" style="color:#16A34A">Подробнее</span></div>
+    <div class="card"><div class="ic" style="background:#EA580C">BI</div><h3>Hero BI Analytics</h3><p>Дашборды и прогнозы на чистых данных, отчётность для Министерства.</p><span class="more" style="color:#EA580C">Подробнее</span></div>
+    <div class="card"><div class="ic" style="background:#0891B2">AI</div><h3>Hero OS AI</h3><p>ИИ-помощник: поиск по данным, отчёты, помощь студентам и ППС.</p><span class="more" style="color:#0891B2">Подробнее</span></div>
+    <div class="card"><div class="ic" style="background:#E11D48">WS</div><h3>Hero Workspace</h3><p>Задачи, проекты и командная работа внутри вуза.</p><span class="more" style="color:#E11D48">Подробнее</span></div>
+  </div>
+</div></section>
+
+<div class="tag">Вариант C · Editorial Bold</div>
+</body>
+</html>
