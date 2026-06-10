@@ -60,18 +60,16 @@ nav a{color:#A5B0D0;font-weight:600;font-size:15px}nav a:hover{color:#fff}
 /* ===== MEGA панель ===== */
 .mega{position:absolute;top:calc(100% + 10px);left:0;min-width:300px;background:rgba(13,18,38,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.10);border-radius:18px;box-shadow:0 24px 60px -18px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.05);padding:8px;z-index:60;opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s}
 .mega.is-open{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+.mega::after{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
 .mega a{display:block;padding:11px 13px;border-radius:12px;text-decoration:none;border:1px solid transparent;transition:.16s}
 .mega a:hover{background:rgba(129,140,248,.10);border-color:rgba(129,140,248,.28)}
 .mega a b{display:block;color:#fff;font-weight:700;font-size:14.5px;letter-spacing:-.01em}
 .mega a span{display:block;color:#7E8AB0;font-size:12.5px;margin-top:2px}
 .has-mega:last-child .mega{left:auto;right:0}
 .mega--products{min-width:470px;display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.mega--products a{position:relative;padding-left:30px}
-.mega--products a::before{content:"";position:absolute;left:13px;top:16px;width:8px;height:8px;border-radius:50%;box-shadow:0 0 10px 1px currentColor}
-.mega--products a[data-acc="ss"]::before{color:#FB7185;background:#FB7185}
-.mega--products a[data-acc="bi"]::before{color:#FB923C;background:#FB923C}
-.mega--products a[data-acc="ai"]::before{color:#2DD4BF;background:#2DD4BF}
-.mega--products a[data-acc="ws"]::before{color:#A3E635;background:#A3E635}
+.mega--products a{display:flex;align-items:center;gap:11px}
+.mega--products a img{width:28px;height:28px;border-radius:8px;flex:none}
+.mega--products a b{font-size:14px}
 .mega--lang{min-width:200px;top:calc(100% + 8px);left:auto;right:0;border-radius:14px}
 .mega--lang a{display:flex;align-items:baseline;gap:8px;padding:9px 12px}
 .mega--lang a b{font-size:13px}.mega--lang a span{margin-top:0;font-size:12.5px}
@@ -233,10 +231,10 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
 <!-- ===== TOP BAR ===== -->
 <div class="topbar"><div class="wrap">
   <div class="chips" aria-label="Продукты экосистемы">
-    <a class="pchip" href="../product-study-space.html"  title="Hero Study Space">SS</a>
-    <a class="pchip" href="../product-bi-analytics.html" title="Hero BI Analytics">BI</a>
-    <a class="pchip" href="../product-ai-assistant.html" title="Hero OS AI">AI</a>
-    <a class="pchip" href="../product-workspace.html"    title="Hero Workspace">WS</a>
+    <a class="pchip" href="../product-study-space.html"  title="HeRo Study Space">SS</a>
+    <a class="pchip" href="../product-bi-analytics.html" title="HeRo BI Analytics">BI</a>
+    <a class="pchip" href="../product-ai-assistant.html" title="HeRo OS AI">AI</a>
+    <a class="pchip" href="../product-workspace.html"    title="HeRo Work Space">WS</a>
   </div>
   <span class="sp"></span>
   <div class="lang" data-lang-switch>
@@ -264,10 +262,10 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
       <li class="has-mega">
         <button class="nav-link" data-menu-trigger="products" aria-haspopup="true" aria-expanded="false">Продукты <span class="caret" aria-hidden="true">▾</span></button>
         <div class="mega mega--products" data-menu-panel="products" role="menu">
-          <a role="menuitem" href="../product-study-space.html"  data-acc="ss"><b>Hero Study Space</b><span>LMS/ERP вуза</span></a>
-          <a role="menuitem" href="../product-bi-analytics.html" data-acc="bi"><b>Hero BI Analytics</b><span>Аналитика и отчётность</span></a>
-          <a role="menuitem" href="../product-ai-assistant.html" data-acc="ai"><b>Hero OS AI</b><span>ИИ-помощник</span></a>
-          <a role="menuitem" href="../product-workspace.html"   data-acc="ws"><b>Hero Workspace</b><span>Задачи и проекты</span></a>
+          <a role="menuitem" href="../product-study-space.html"><img src="../assets/marks/ss.svg" alt=""><span><b>HeRo Study Space</b><span>LMS/ERP вуза</span></span></a>
+          <a role="menuitem" href="../product-bi-analytics.html"><img src="../assets/marks/bi.svg" alt=""><span><b>HeRo BI Analytics</b><span>Аналитика и отчётность</span></span></a>
+          <a role="menuitem" href="../product-ai-assistant.html"><img src="../assets/marks/ai.svg" alt=""><span><b>HeRo OS AI</b><span>ИИ-помощник</span></span></a>
+          <a role="menuitem" href="../product-workspace.html"><img src="../assets/marks/ws.svg" alt=""><span><b>HeRo Work Space</b><span>Задачи и проекты</span></span></a>
         </div>
       </li>
       <li class="has-mega">
@@ -318,10 +316,10 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
   <nav class="drawer-nav" aria-label="Мобильная навигация">
     <a class="d-link" href="../about.html">О нас</a>
     <details><summary>Продукты</summary><div class="d-sub">
-      <a href="../product-study-space.html">Hero Study Space</a>
-      <a href="../product-bi-analytics.html">Hero BI Analytics</a>
-      <a href="../product-ai-assistant.html">Hero OS AI</a>
-      <a href="../product-workspace.html">Hero Workspace</a>
+      <a href="../product-study-space.html">HeRo Study Space</a>
+      <a href="../product-bi-analytics.html">HeRo BI Analytics</a>
+      <a href="../product-ai-assistant.html">HeRo OS AI</a>
+      <a href="../product-workspace.html">HeRo Work Space</a>
     </div></details>
     <details><summary>Услуги</summary><div class="d-sub">
       <a href="../ss-implementation.html">Сопровождение Study Space</a>
@@ -352,7 +350,7 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
   <span class="eyebrow" data-i18n="eyebrow">● Экосистема для университетов и колледжей</span>
   <h1 data-i18n-html="h1">Цифровой партнёр <span class="grad">вашего университета</span></h1>
   <p class="sub" data-i18n="sub">Единая облачная платформа для приёма, учёбы, аналитики и команды — управляйте вузом эффективно в одном месте.</p>
-  <div class="cta"><a class="btn btn-primary" href="../consultation.html" data-i18n="btnDemo">Запросить демо →</a><a class="btn btn-glass" data-modal-open="videoModal" data-i18n="btnVideo">▷ Смотреть видео</a></div>
+  <div class="cta"><a class="btn btn-primary" href="../consultation.html" data-i18n="btnDemo">Запросить демо →</a><a class="btn btn-glass" data-modal-open="videoModal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8.5 16 12 10 15.5 10 8.5" fill="currentColor" stroke="none"/></svg><span data-i18n="btnVideo">Смотреть видео</span></a></div>
   <div class="trust" data-i18n-html="trust"><b>100 000+</b> пользователей · <b>16</b> вузов · <b>3</b> страны</div>
   <div class="panel">
     <div class="pbar"><i></i><i></i><i></i></div>
@@ -387,9 +385,9 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
 <section class="section" style="padding-top:40px"><div class="wrap">
   <h2 class="h2">Управляйте учебным заведением <span class="grad">эффективно и в одном месте</span></h2>
   <div class="vthree">
-    <div class="vcard"><div class="vico">⚙</div><h4>Автоматизация процессов</h4><p>Приём, учёба, финансы и отчётность — рутина уходит в систему.</p></div>
-    <div class="vcard"><div class="vico">◈</div><h4>Единое цифровое пространство</h4><p>Студенты, преподаватели и администрация — в одной среде.</p></div>
-    <div class="vcard"><div class="vico">📈</div><h4>Аналитика в реальном времени</h4><p>Дашборды и KPI для решений на чистых данных.</p></div>
+    <div class="vcard"><div class="vico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div><h4>Автоматизация процессов</h4><p>Приём, учёба, финансы и отчётность — рутина уходит в систему.</p></div>
+    <div class="vcard"><div class="vico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 12 12 17 22 12"/><polyline points="2 17 12 22 22 17"/></svg></div><h4>Единое цифровое пространство</h4><p>Студенты, преподаватели и администрация — в одной среде.</p></div>
+    <div class="vcard"><div class="vico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A5B4FC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><h4>Аналитика в реальном времени</h4><p>Дашборды и KPI для решений на чистых данных.</p></div>
   </div>
 </div></section>
 
@@ -419,7 +417,7 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
       <h3>Работайте со всей экосистемой</h3>
       <p>Четыре продукта на одной платформе — данные, процессы и аналитика связаны между собой.</p>
     </div>
-    <div class="ecochips"><span style="color:#FB7185">SS</span><span style="color:#FB923C">BI</span><span style="color:#2DD4BF">AI</span><span style="color:#A3E635">WS</span></div>
+    <div class="ecochips"><img src="../assets/marks/ss.svg" alt="Study Space"><img src="../assets/marks/bi.svg" alt="BI Analytics"><img src="../assets/marks/ai.svg" alt="OS AI"><img src="../assets/marks/ws.svg" alt="Work Space"></div>
     <a class="btn btn-primary btn-sm" href="../product-study-space.html">Все продукты →</a>
   </div>
 </div></section>
@@ -494,7 +492,7 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
         <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.92 3.78-3.92 1.1 0 2.24.2 2.24.2v2.47H15.2c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.9h-2.33V22c4.78-.76 8.43-4.92 8.43-9.94z"/></svg></a>
       </div>
     </div>
-    <div><h5>Продукты</h5><a class="fl" href="../product-study-space.html">Hero Study Space</a><a class="fl" href="../product-bi-analytics.html">Hero BI Analytics</a><a class="fl" href="../product-ai-assistant.html">Hero OS AI</a><a class="fl" href="../product-workspace.html">Hero Workspace</a></div>
+    <div><h5>Продукты</h5><a class="fl" href="../product-study-space.html">HeRo Study Space</a><a class="fl" href="../product-bi-analytics.html">HeRo BI Analytics</a><a class="fl" href="../product-ai-assistant.html">HeRo OS AI</a><a class="fl" href="../product-workspace.html">HeRo Work Space</a></div>
     <div><h5>Для вузов и колледжей</h5><a class="fl" href="../ss-implementation.html">Сопровождение</a><a class="fl" href="../consultation.html">Консультация и оценка</a><a class="fl" href="../support.html">Тех. поддержка</a><a class="fl" href="../pricing.html">Тарифы</a></div>
     <div><h5>Компания</h5><a class="fl" href="../about.html">О нас</a><a class="fl" href="../cases.html">Кейсы</a><a class="fl" href="../partners.html">Партнёрам</a><a class="fl" href="../resources-news.html">Новости</a><a class="fl" href="../resources-blog.html">Блог</a></div>
     <div><h5>Ресурсы</h5><a class="fl" href="../help-center.html">Справочный центр</a><a class="fl" href="../legal-privacy.html">Политика конфиденциальности</a><a class="fl" href="../legal-cookie.html">Использование cookie</a><a class="fl" href="../legal-terms.html">Условия использования</a></div>
@@ -503,15 +501,15 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
     <span>© 2026 HeRo Study</span>
     <span>+7 (700) 000-00-00 (KZ) · +998 (00) 000-00-00 (UZ) · sales@hero.study</span>
     <span>Алматы · Ташкент · Сингапур</span>
-    <span><a href="../legal-privacy.html">Политика</a> · <a href="../legal-terms.html">Условия</a> · <a href="../sitemap.html">🗺 Карта прототипа</a></span>
+    <span><a href="../legal-privacy.html">Политика</a> · <a href="../legal-terms.html">Условия</a> · <a href="../sitemap.html" style="display:inline-flex;align-items:center;gap:5px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 8 3 16 6 23 3 23 18 16 21 8 18 1 21 1 6"/><line x1="8" y1="3" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="21"/></svg>Карта прототипа</a></span>
   </div>
 </div></footer>
 
 <!-- VIDEO MODAL -->
 <dialog class="vmodal" id="videoModal">
   <div class="vbox">
-    <div class="vhead"><h3>Презентация экосистемы HeRo Study</h3><button class="vclose" data-modal-close aria-label="Закрыть">✕</button></div>
-    <div class="vframe"><div class="vplay">▶</div></div>
+    <div class="vhead"><h3>Презентация экосистемы HeRo Study</h3><button class="vclose" data-modal-close aria-label="Закрыть"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+    <div class="vframe"><div class="vplay"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="8 5.5 19 12 8 18.5 8 5.5"/></svg></div></div>
     <p class="vnote">Видео-презентация платформы (версии KZ / EN / UZ). В прототипе — плейсхолдер ролика.</p>
   </div>
 </dialog>
@@ -530,6 +528,7 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
 (function(){
   var DESKTOP = window.matchMedia('(min-width:981px)');
   var triggers = [].slice.call(document.querySelectorAll('[data-menu-trigger],[data-lang-trigger]'));
+  var hoverTimer = null;
   function panelFor(btn){
     if(btn.hasAttribute('data-lang-trigger')) return document.querySelector('[data-lang-menu]');
     return document.querySelector('[data-menu-panel="'+btn.getAttribute('data-menu-trigger')+'"]');
@@ -546,8 +545,8 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
     btn.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); toggle(btn); });
     var li = btn.closest('.has-mega') || btn.closest('.lang');
     if(li){
-      li.addEventListener('mouseenter', function(){ if(DESKTOP.matches) open(btn); });
-      li.addEventListener('mouseleave', function(){ if(DESKTOP.matches) closeAll(); });
+      li.addEventListener('mouseenter', function(){ if(DESKTOP.matches){ clearTimeout(hoverTimer); open(btn); } });
+      li.addEventListener('mouseleave', function(){ if(DESKTOP.matches){ clearTimeout(hoverTimer); hoverTimer = setTimeout(closeAll, 250); } });
     }
   });
   document.addEventListener('click', function(e){
@@ -592,10 +591,10 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
 
   /* ---- мультиязычность (демо: hero) ---- */
   var I18N={
-    ru:{eyebrow:"● Экосистема для университетов и колледжей",h1:'Цифровой партнёр <span class="grad">вашего университета</span>',sub:"Единая облачная платформа для приёма, учёбы, аналитики и команды — управляйте вузом эффективно в одном месте.",btnDemo:"Запросить демо →",btnVideo:"▷ Смотреть видео",trust:'<b>100 000+</b> пользователей · <b>16</b> вузов · <b>3</b> страны'},
-    en:{eyebrow:"● Ecosystem for universities and colleges",h1:'The digital partner for <span class="grad">your university</span>',sub:"One cloud platform for admissions, learning, analytics and teamwork — run your institution efficiently in one place.",btnDemo:"Request a demo →",btnVideo:"▷ Watch video",trust:'<b>100,000+</b> users · <b>16</b> universities · <b>3</b> countries'},
-    kz:{eyebrow:"● Университеттер мен колледждерге арналған экожүйе",h1:'<span class="grad">Университетіңіздің</span> цифрлық серіктесі',sub:"Қабылдау, оқу, аналитика және команда үшін бірыңғай бұлттық платформа — оқу орнын бір жерден тиімді басқарыңыз.",btnDemo:"Демо сұрау →",btnVideo:"▷ Бейнені көру",trust:'<b>100 000+</b> қолданушы · <b>16</b> ЖОО · <b>3</b> ел'},
-    uz:{eyebrow:"● Universitet va kollejlar uchun ekotizim",h1:'<span class="grad">Universitetingizning</span> raqamli hamkori',sub:"Qabul, oʻqish, tahlil va jamoa uchun yagona bulutli platforma — oliygohni bir joydan samarali boshqaring.",btnDemo:"Demo soʻrash →",btnVideo:"▷ Videoni koʻrish",trust:'<b>100 000+</b> foydalanuvchi · <b>16</b> oliygoh · <b>3</b> davlat'}
+    ru:{eyebrow:"● Экосистема для университетов и колледжей",h1:'Цифровой партнёр <span class="grad">вашего университета</span>',sub:"Единая облачная платформа для приёма, учёбы, аналитики и команды — управляйте вузом эффективно в одном месте.",btnDemo:"Запросить демо →",btnVideo:"Смотреть видео",trust:'<b>100 000+</b> пользователей · <b>16</b> вузов · <b>3</b> страны'},
+    en:{eyebrow:"● Ecosystem for universities and colleges",h1:'The digital partner for <span class="grad">your university</span>',sub:"One cloud platform for admissions, learning, analytics and teamwork — run your institution efficiently in one place.",btnDemo:"Request a demo →",btnVideo:"Watch video",trust:'<b>100,000+</b> users · <b>16</b> universities · <b>3</b> countries'},
+    kz:{eyebrow:"● Университеттер мен колледждерге арналған экожүйе",h1:'<span class="grad">Университетіңіздің</span> цифрлық серіктесі',sub:"Қабылдау, оқу, аналитика және команда үшін бірыңғай бұлттық платформа — оқу орнын бір жерден тиімді басқарыңыз.",btnDemo:"Демо сұрау →",btnVideo:"Бейнені көру",trust:'<b>100 000+</b> қолданушы · <b>16</b> ЖОО · <b>3</b> ел'},
+    uz:{eyebrow:"● Universitet va kollejlar uchun ekotizim",h1:'<span class="grad">Universitetingizning</span> raqamli hamkori',sub:"Qabul, oʻqish, tahlil va jamoa uchun yagona bulutli platforma — oliygohni bir joydan samarali boshqaring.",btnDemo:"Demo soʻrash →",btnVideo:"Videoni koʻrish",trust:'<b>100 000+</b> foydalanuvchi · <b>16</b> oliygoh · <b>3</b> davlat'}
   };
   function setLang(l){
     var d=I18N[l]; if(!d) return;
