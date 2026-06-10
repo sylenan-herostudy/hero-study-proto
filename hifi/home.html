@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HeRo Study 2.0 — главная (Premium Dark)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ss:#34D399;--bi:#FB923C;--ai:#22D3EE;--ws:#FB7185;--indigo:#818CF8;}
+*{box-sizing:border-box;margin:0}
+body{font-family:Manrope,system-ui,sans-serif;color:#E5E9F5;background:#070A18;-webkit-font-smoothing:antialiased;line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px}
+.bgmesh{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+ radial-gradient(50% 38% at 16% 4%,rgba(99,102,241,.34),transparent 70%),
+ radial-gradient(44% 38% at 90% 8%,rgba(34,211,238,.20),transparent 70%),
+ radial-gradient(55% 45% at 78% 70%,rgba(124,58,237,.20),transparent 70%)}
+.grid-ov{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(circle at 50% 22%,#000,transparent 75%)}
+.page{position:relative;z-index:1}
+.topbar{font-size:13px;color:#A5B0D0}
+.topbar .wrap{display:flex;align-items:center;gap:18px;height:42px}
+.topbar .chips{display:flex;gap:6px}
+.topbar .chips span{border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:2px 9px;font-weight:700;font-size:11px}
+.topbar .sp{flex:1}
+header.site{position:sticky;top:0;z-index:50;background:rgba(7,10,24,.62);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+header.site .wrap{display:flex;align-items:center;gap:28px;height:74px}
+header.site img.logo{height:30px}
+nav{display:flex;gap:26px;margin-left:10px;flex:1}
+nav a{color:#A5B0D0;font-weight:600;font-size:15px}nav a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:12px 22px;border-radius:12px;cursor:pointer;border:1px solid transparent;transition:.18s}
+.btn-primary{background:linear-gradient(135deg,#818CF8,#22D3EE);color:#06121f;box-shadow:0 0 0 1px rgba(255,255,255,.1),0 14px 40px -10px rgba(99,102,241,.7)}
+.btn-primary:hover{transform:translateY(-1px);filter:brightness(1.06)}
+.btn-glass{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#fff}
+.btn-glass:hover{background:rgba(255,255,255,.12)}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(99,102,241,.12);border:1px solid rgba(129,140,248,.3);color:#C7D2FE;font-weight:700;font-size:12.5px;letter-spacing:.04em;padding:7px 16px;border-radius:99px;text-transform:uppercase}
+.section{padding:84px 0;position:relative;z-index:1}
+.eyetxt{text-align:center;color:#8893B5;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px}
+.h2{font-size:42px;font-weight:800;letter-spacing:-.025em;text-align:center;color:#fff;line-height:1.1}
+.h2sub{text-align:center;color:#8893B5;font-size:18px;margin:12px auto 0;max-width:60ch}
+.grad{background:linear-gradient(110deg,#A5B4FC,#22D3EE 60%,#7DD3FC);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* HERO */
+.hero .wrap{padding:88px 32px 60px;text-align:center;display:flex;flex-direction:column;align-items:center}
+h1{font-size:64px;line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:24px 0 20px;max-width:15ch}
+.sub{font-size:20px;color:#A5B0D0;max-width:48ch;line-height:1.6}
+.cta{display:flex;gap:14px;margin:32px 0 14px}
+.trust{color:#8893B5;font-size:14px;font-weight:600}.trust b{color:#fff}
+.panel{position:relative;margin:50px auto 0;max-width:940px;width:100%;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:22px;box-shadow:0 50px 120px -40px rgba(34,211,238,.35),0 30px 70px -30px rgba(99,102,241,.5);padding:18px;backdrop-filter:blur(8px)}
+.pbar{display:flex;gap:6px;margin-bottom:14px}.pbar i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.18)}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px}
+.kpi{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px;text-align:left}
+.kpi .l{font-size:11px;color:#8893B5;font-weight:600}.kpi .v{font-size:22px;font-weight:800;margin-top:3px}
+.chartbox{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.chart{display:flex;align-items:flex-end;gap:12px;height:150px}
+.chart i{flex:1;border-radius:6px 6px 0 0;background:linear-gradient(180deg,#818CF8,#4F46E5);box-shadow:0 0 16px rgba(99,102,241,.5)}
+.chart i:nth-child(even){background:linear-gradient(180deg,#67E8F9,#06B6D4);box-shadow:0 0 16px rgba(34,211,238,.5)}
+/* CLIENTS */
+.logos{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-items:center}
+.lchip{background:#fff;border-radius:12px;height:60px;min-width:120px;display:flex;align-items:center;justify-content:center;padding:0 18px;box-shadow:0 10px 30px -16px rgba(0,0,0,.6)}
+.lchip img{max-height:34px;max-width:120px;object-fit:contain}
+.lmore{color:#8893B5;font-weight:700;font-size:14px;align-self:center}
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:24px;transition:.2s}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,255,255,.22)}
+.card .ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;color:#06121f;font-weight:800;margin-bottom:14px;box-shadow:0 0 24px -4px currentColor}
+.card h3{font-size:18px;font-weight:800;color:#fff}
+.card p{color:#9aa4c4;font-size:14px;margin-top:6px;line-height:1.5}
+.card ul{list-style:none;padding:0;margin:12px 0 0}
+.card li{color:#aab3d0;font-size:13px;padding:5px 0 5px 18px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:currentColor}
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.pill{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:24px}
+.pill .n{font-size:13px;font-weight:800;color:#818CF8}
+.pill h4{font-size:17px;font-weight:800;color:#fff;margin:8px 0 6px}
+.pill p{color:#8893B5;font-size:14px;line-height:1.5}
+/* STATS band */
+.statsband{background:linear-gradient(120deg,rgba(49,46,129,.6),rgba(8,12,30,.4));border-block:1px solid rgba(255,255,255,.08)}
+.statsrow{display:grid;grid-template-columns:repeat(4,1fr)}
+.statc{text-align:center;padding:44px 0;border-left:1px solid rgba(255,255,255,.08)}
+.statc:first-child{border-left:0}
+.statc .n{font-size:48px;font-weight:800;letter-spacing:-.02em;background:linear-gradient(110deg,#A5B4FC,#22D3EE);-webkit-background-clip:text;background-clip:text;color:transparent}
+.statc .l{color:#8893B5;font-weight:600;font-size:14px;margin-top:4px}
+/* INTEGRATIONS */
+.intsplit{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+.intchips{display:flex;flex-wrap:wrap;gap:10px}
+.intchips span{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 14px;font-weight:600;font-size:14px;color:#cdd5ec}
+/* CASES */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.case{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:26px}
+.case .big{font-size:34px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.case .lbl{display:inline-block;background:#fff;border-radius:8px;padding:4px 10px;margin-bottom:14px}
+.case .lbl img{height:22px;max-width:110px;object-fit:contain;display:block}
+.case p{color:#9aa4c4;font-size:14px;margin-top:8px}
+/* CTA */
+.ctaband{position:relative;text-align:center;background:linear-gradient(135deg,rgba(99,102,241,.18),rgba(34,211,238,.12));border:1px solid rgba(255,255,255,.12);border-radius:28px;padding:64px 32px;margin:0 32px;overflow:hidden}
+.ctaband h2{font-size:40px}
+/* FOOTER */
+footer{border-top:1px solid rgba(255,255,255,.08);padding:54px 0 40px;position:relative;z-index:1}
+.fcols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
+footer img.logo{height:30px}
+footer p.about{color:#8893B5;font-size:14px;margin-top:14px;max-width:32ch}
+footer h5{color:#E0E7FF;font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;margin-bottom:12px}
+footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl:hover{color:#fff}
+.fbottom{border-top:1px solid rgba(255,255,255,.08);margin-top:40px;padding-top:22px;color:#566089;font-size:13px;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+@media(max-width:980px){h1{font-size:46px}.products,.pillars,.cases{grid-template-columns:1fr 1fr}.intsplit,.fcols{grid-template-columns:1fr}.statsrow{grid-template-columns:1fr 1fr}nav{display:none}}
+</style>
+</head>
+<body>
+<div class="bgmesh"></div><div class="grid-ov"></div>
+<div class="page">
+
+<div class="topbar"><div class="wrap"><div class="chips"><span>SS</span><span>BI</span><span>AI</span><span>WS</span></div><span class="sp"></span><span>RU ▾</span><span>Партнёрство</span></div></div>
+<header class="site"><div class="wrap">
+  <img class="logo" src="../assets/logo-herostudy-white.svg" alt="HeRo Study">
+  <nav><a>О нас</a><a>Продукты</a><a>Услуги</a><a>Цены</a><a>Поддержка</a><a>Ещё</a></nav>
+  <a class="btn btn-glass">Войти</a><a class="btn btn-primary">Запросить демо</a>
+</div></header>
+
+<!-- HERO -->
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">● Экосистема для университетов и колледжей</span>
+  <h1>Цифровой партнёр <span class="grad">вашего университета</span></h1>
+  <p class="sub">Единая облачная платформа для приёма, учёбы, аналитики и команды — управляйте вузом эффективно в одном месте.</p>
+  <div class="cta"><a class="btn btn-primary">Запросить демо →</a><a class="btn btn-glass">▷ Смотреть видео</a></div>
+  <div class="trust"><b>100 000+</b> пользователей · <b>16</b> вузов · <b>3</b> страны</div>
+  <div class="panel">
+    <div class="pbar"><i></i><i></i><i></i></div>
+    <div class="pgrid">
+      <div class="kpi"><div class="l">Приём</div><div class="v" style="color:#34D399">+24%</div></div>
+      <div class="kpi"><div class="l">GPA</div><div class="v" style="color:#A5B4FC">3.6</div></div>
+      <div class="kpi"><div class="l">Финансы</div><div class="v" style="color:#FB923C">98%</div></div>
+      <div class="kpi"><div class="l">Студенты</div><div class="v" style="color:#22D3EE">12k</div></div>
+    </div>
+    <div class="chartbox"><div class="chart"><i style="height:42%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:92%"></i><i style="height:60%"></i><i style="height:100%"></i><i style="height:78%"></i></div></div>
+  </div>
+</div></section>
+
+<!-- CLIENTS -->
+<section class="section" style="padding-top:30px"><div class="wrap">
+  <div class="eyetxt">Нам доверяют 16 вузов в Казахстане и Узбекистане</div>
+  <div class="logos">
+    <div class="lchip"><img src="../assets/logos/caspian.png" alt="Caspian"></div>
+    <div class="lchip"><img src="../assets/logos/atu.png" alt="АТУ"></div>
+    <div class="lchip"><img src="../assets/logos/ablaikhan.png" alt="Абылай хана"></div>
+    <div class="lchip"><img src="../assets/logos/meta.png" alt="META"></div>
+    <div class="lchip"><img src="../assets/logos/kaznior.png" alt="KazIOR"></div>
+    <div class="lchip"><img src="../assets/logos/newuu.png" alt="New Uzbekistan"></div>
+    <div class="lchip"><img src="../assets/logos/tiu.png" alt="Tashkent IU"></div>
+    <div class="lchip"><img src="../assets/logos/kokand.png" alt="Kokand"></div>
+    <span class="lmore">+8 вузов →</span>
+  </div>
+</div></section>
+
+<!-- PRODUCTS -->
+<section class="section"><div class="wrap">
+  <h2 class="h2">Четыре продукта — <span class="grad">одна экосистема</span></h2>
+  <p class="h2sub">Каждый со своим акцентом, вместе — как единый организм вуза.</p>
+  <div class="products">
+    <div class="card"><div class="ic" style="background:#34D399">SS</div><h3>Hero Study Space</h3><p>Операционная система вуза (ERP).</p><ul style="color:#34D399"><li>Приём · LMS · студенты</li><li>Финансы · общежитие</li><li>Документооборот · KPI</li></ul></div>
+    <div class="card"><div class="ic" style="background:#FB923C">BI</div><h3>Hero BI Analytics</h3><p>Поддержка решений на данных.</p><ul style="color:#FB923C"><li>Дашборды без кода</li><li>Прогнозы и KPI</li><li>Отчётность Министерства</li></ul></div>
+    <div class="card"><div class="ic" style="background:#22D3EE">AI</div><h3>Hero OS AI</h3><p>ИИ-помощник в процессах.</p><ul style="color:#22D3EE"><li>Поиск по данным</li><li>Генерация отчётов</li><li>Помощь студентам и ППС</li></ul></div>
+    <div class="card"><div class="ic" style="background:#FB7185">WS</div><h3>Hero Workspace</h3><p>Команда и проекты вуза.</p><ul style="color:#FB7185"><li>Задачи и дедлайны</li><li>Проекты и контроль</li><li>Документы команды</li></ul></div>
+  </div>
+</div></section>
+
+<!-- POSITIONING / PILLARS -->
+<section class="section"><div class="wrap">
+  <h2 class="h2">Не набор инструментов,<br><span class="grad">а операционная система вуза</span></h2>
+  <div class="pillars">
+    <div class="pill"><div class="n">01</div><h4>Быстрый запуск</h4><p>Внедрение за 30–90 дней: аудит, настройка, обучение.</p></div>
+    <div class="pill"><div class="n">02</div><h4>Гибкая архитектура</h4><p>От колледжа до университета с филиалами и кампусами.</p></div>
+    <div class="pill"><div class="n">03</div><h4>Бесшовные интеграции</h4><p>Госсервисы, 1С, Office 365, прокторинг — через API.</p></div>
+    <div class="pill"><div class="n">04</div><h4>Защита данных</h4><p>Шифрование, резервные копии, ISO/IEC 27001.</p></div>
+  </div>
+</div></section>
+
+<!-- STATS -->
+<section class="statsband"><div class="wrap"><div class="statsrow">
+  <div class="statc"><div class="n">100K+</div><div class="l">активных пользователей</div></div>
+  <div class="statc"><div class="n">16</div><div class="l">вузов и колледжей</div></div>
+  <div class="statc"><div class="n">3</div><div class="l">страны присутствия</div></div>
+  <div class="statc"><div class="n">75+</div><div class="l">модулей экосистемы</div></div>
+</div></div></section>
+
+<!-- INTEGRATIONS -->
+<section class="section"><div class="wrap"><div class="intsplit">
+  <div>
+    <span class="eyebrow">Open University API</span>
+    <h2 class="h2" style="text-align:left;font-size:36px;margin-top:18px">Подключаем всё, что нужно вузу</h2>
+    <p class="h2sub" style="text-align:left;margin-left:0">Готовые коннекторы к государственным и корпоративным системам — без боли и долгих доработок.</p>
+  </div>
+  <div class="intchips">
+    <span>ЕПВО</span><span>НОБД</span><span>ГБДФЛ</span><span>ЭЦП / e-Imzo</span><span>1С</span><span>Office 365</span><span>Антиплагиат</span><span>Прокторинг</span><span>ZOOM</span><span>Educhain</span><span>СКУД</span><span>Библиотеки</span>
+  </div>
+</div></div></section>
+
+<!-- CASES -->
+<section class="section" style="padding-top:0"><div class="wrap">
+  <h2 class="h2">Реальные вузы. Реальные числа.</h2>
+  <div class="cases">
+    <div class="case"><div class="lbl"><img src="../assets/logos/aung.svg" alt="АУНГ"></div><div class="big">5+ лет</div><p>Атырауский университет нефти и газа — непрерывного использования платформы.</p></div>
+    <div class="case"><div class="lbl"><img src="../assets/logos/coventry.png" alt="Coventry"></div><div class="big">миграция</div><p>Coventry Kazakhstan перешёл от Platonus без потери британской системы.</p></div>
+    <div class="case"><div class="lbl"><img src="../assets/logos/kaznior.png" alt="KazIOR"></div><div class="big">4 дня → 20 мин</div><p>Подготовка гос. отчётности после внедрения BI Analytics.</p></div>
+  </div>
+</div></section>
+
+<!-- CTA -->
+<section class="section" style="padding-top:0"><div class="ctaband">
+  <h2 class="h2">Покажем, как HeRo Study работает <span class="grad">в вашем вузе</span></h2>
+  <p class="h2sub">Бесплатная ZOOM-консультация и персональная демонстрация платформы.</p>
+  <div class="cta" style="justify-content:center;margin-top:28px"><a class="btn btn-primary">Оставить заявку →</a><a class="btn btn-glass">Скачать презентацию</a></div>
+</div></section>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="fcols">
+    <div>
+      <img class="logo" src="../assets/logo-herostudy-white.svg" alt="HeRo Study">
+      <p class="about">Экосистема цифровых продуктов для университетов и колледжей. Алматы · Ташкент · Сингапур.</p>
+    </div>
+    <div><h5>Продукты</h5><a class="fl">Study Space</a><a class="fl">BI Analytics</a><a class="fl">Hero OS AI</a><a class="fl">Workspace</a></div>
+    <div><h5>Компания</h5><a class="fl">О нас</a><a class="fl">Кейсы</a><a class="fl">Партнёрам</a><a class="fl">Контакты</a></div>
+    <div><h5>Ресурсы</h5><a class="fl">Цены</a><a class="fl">Поддержка</a><a class="fl">Справочный центр</a><a class="fl">Блог</a></div>
+  </div>
+  <div class="fbottom"><span>© 2026 HeRo Study</span><span>sales@hero.study · +7 (700) 000-00-00</span><span>hero.study</span></div>
+</div></footer>
+
+</div>
+</body>
+</html>
