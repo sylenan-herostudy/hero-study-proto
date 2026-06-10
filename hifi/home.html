@@ -34,6 +34,70 @@ nav a{color:#A5B0D0;font-weight:600;font-size:15px}nav a:hover{color:#fff}
 .btn-primary:hover{transform:translateY(-1px);filter:brightness(1.06)}
 .btn-glass{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#fff}
 .btn-glass:hover{background:rgba(255,255,255,.12)}
+/* ===== BRAND LOGO (инлайн-локап: значок + HeRo + STUDY) ===== */
+.brand{display:inline-flex;align-items:center;text-decoration:none}
+.brandlogo{height:36px;width:auto;display:block}
+.bsub{font-family:Manrope,system-ui,sans-serif;font-size:11px;font-weight:600;letter-spacing:10px;fill:#E6EAF5}
+/* ===== TOPBAR chips + язык ===== */
+.topbar .chips{display:flex;gap:6px}
+.topbar .chips .pchip{border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:2px 9px;font-weight:700;font-size:11px;color:#A5B0D0;text-decoration:none;transition:.18s}
+.topbar .chips .pchip:hover{color:#fff;border-color:rgba(255,255,255,.32);background:rgba(255,255,255,.05)}
+.topbar .lang{position:relative}
+.topbar .tnav-link{display:inline-flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;color:#A5B0D0;font:inherit;font-size:13px;padding:4px 6px;border-radius:8px;transition:.18s}
+.topbar .tnav-link:hover{color:#fff}
+.topbar .tnav-plain{color:#A5B0D0;font-size:13px;text-decoration:none;transition:.18s}
+.topbar .tnav-plain:hover{color:#fff}
+.caret{font-size:9px;line-height:1;transition:transform .2s}
+[aria-expanded="true"] .caret{transform:rotate(180deg)}
+/* ===== NAV ===== */
+.nav{display:flex;flex:1}
+.nav .navlist{display:flex;align-items:center;gap:2px;list-style:none;margin:0;padding:0}
+.has-mega{position:relative}
+.nav-link{display:inline-flex;align-items:center;gap:6px;padding:9px 14px;border-radius:10px;color:#A5B0D0;font-weight:600;font-size:15px;cursor:pointer;background:none;border:0;font-family:inherit;text-decoration:none;transition:.18s}
+.nav-link:hover{color:#fff;background:rgba(255,255,255,.06)}
+.nav-link.is-active,.nav-link[aria-current="page"]{color:#fff}
+.nav-link[aria-expanded="true"]{color:#fff;background:rgba(255,255,255,.06)}
+.header__actions{display:flex;align-items:center;gap:10px}
+/* ===== MEGA панель ===== */
+.mega{position:absolute;top:calc(100% + 10px);left:0;min-width:300px;background:rgba(13,18,38,.94);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.10);border-radius:18px;box-shadow:0 24px 60px -18px rgba(0,0,0,.75),0 0 0 1px rgba(255,255,255,.05);padding:8px;z-index:60;opacity:0;visibility:hidden;transform:translateY(8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s}
+.mega.is-open{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+.mega a{display:block;padding:11px 13px;border-radius:12px;text-decoration:none;border:1px solid transparent;transition:.16s}
+.mega a:hover{background:rgba(129,140,248,.10);border-color:rgba(129,140,248,.28)}
+.mega a b{display:block;color:#fff;font-weight:700;font-size:14.5px;letter-spacing:-.01em}
+.mega a span{display:block;color:#7E8AB0;font-size:12.5px;margin-top:2px}
+.has-mega:last-child .mega{left:auto;right:0}
+.mega--products{min-width:470px;display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.mega--products a{position:relative;padding-left:30px}
+.mega--products a::before{content:"";position:absolute;left:13px;top:16px;width:8px;height:8px;border-radius:50%;box-shadow:0 0 10px 1px currentColor}
+.mega--products a[data-acc="ss"]::before{color:#D64388;background:#D64388}
+.mega--products a[data-acc="bi"]::before{color:#F97316;background:#F97316}
+.mega--products a[data-acc="ai"]::before{color:#06B6D4;background:#06B6D4}
+.mega--products a[data-acc="ws"]::before{color:#78AA00;background:#78AA00}
+.mega--lang{min-width:200px;top:calc(100% + 8px);left:auto;right:0;border-radius:14px}
+.mega--lang a{display:flex;align-items:baseline;gap:8px;padding:9px 12px}
+.mega--lang a b{font-size:13px}.mega--lang a span{margin-top:0;font-size:12.5px}
+/* ===== кнопки + бургер + drawer ===== */
+.btn-sm{padding:9px 16px;font-size:14px;border-radius:10px}
+.btn-block{display:flex;width:100%;justify-content:center}
+.burger{display:none;margin-left:auto;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.14);border-radius:11px;background:rgba(255,255,255,.06);color:#fff;cursor:pointer}
+.burger:hover{background:rgba(255,255,255,.12)}
+.drawer{position:fixed;inset:0;z-index:80;background:rgba(7,10,24,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:none;flex-direction:column;padding:20px;overflow:auto;opacity:0;transition:opacity .22s ease}
+.drawer.is-open{display:flex;opacity:1}
+.drawer[hidden]{display:none}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.drawer-head .burger{display:inline-flex}
+.drawer-nav{display:flex;flex-direction:column;flex:1}
+.drawer-nav .d-link,.drawer-nav summary{display:block;padding:15px 4px;color:#E6EAF5;font-weight:600;font-size:17px;border-bottom:1px solid rgba(255,255,255,.08);list-style:none;cursor:pointer;text-decoration:none}
+.drawer-nav summary{display:flex;align-items:center;justify-content:space-between}
+.drawer-nav summary::-webkit-details-marker{display:none}
+.drawer-nav summary::after{content:"▾";font-size:12px;color:#7E8AB0;transition:transform .2s}
+.drawer-nav details[open] summary::after{transform:rotate(180deg)}
+.drawer-nav .d-sub{padding:4px 0 12px}
+.drawer-nav .d-sub a{display:block;padding:10px 12px;color:#A5B0D0;font-size:15px;border-radius:10px;text-decoration:none}
+.drawer-nav .d-sub a:hover{color:#fff;background:rgba(255,255,255,.06)}
+.drawer-foot{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+@media(max-width:980px){.nav,.header__actions{display:none}.burger{display:inline-flex}}
+@media(prefers-reduced-motion:reduce){.mega,.caret,.drawer{transition:none}}
 .eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(99,102,241,.12);border:1px solid rgba(129,140,248,.3);color:#C7D2FE;font-weight:700;font-size:12.5px;letter-spacing:.04em;padding:7px 16px;border-radius:99px;text-transform:uppercase}
 .section{padding:84px 0;position:relative;z-index:1}
 .eyetxt{text-align:center;color:#8893B5;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:26px}
@@ -113,12 +177,122 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
 <div class="bgmesh"></div><div class="grid-ov"></div>
 <div class="page">
 
-<div class="topbar"><div class="wrap"><div class="chips"><span>SS</span><span>BI</span><span>AI</span><span>WS</span></div><span class="sp"></span><span>RU ▾</span><span>Партнёрство</span></div></div>
+<!-- ===== TOP BAR ===== -->
+<div class="topbar"><div class="wrap">
+  <div class="chips" aria-label="Продукты экосистемы">
+    <a class="pchip" href="product-study-space.html"  title="Hero Study Space">SS</a>
+    <a class="pchip" href="product-bi-analytics.html" title="Hero BI Analytics">BI</a>
+    <a class="pchip" href="product-ai-assistant.html" title="Hero OS AI">AI</a>
+    <a class="pchip" href="product-workspace.html"    title="Hero Workspace">WS</a>
+  </div>
+  <span class="sp"></span>
+  <div class="lang" data-lang-switch>
+    <button class="tnav-link" data-lang-trigger aria-haspopup="true" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg>
+      <span data-lang-label>RU</span><span class="caret" aria-hidden="true">▾</span>
+    </button>
+    <div class="mega mega--lang" data-lang-menu role="menu">
+      <a role="menuitem" href="#" data-lang="ru"><b>RU</b><span>Русский</span></a>
+      <a role="menuitem" href="#" data-lang="en"><b>EN</b><span>English</span></a>
+      <a role="menuitem" href="#" data-lang="kz"><b>KZ</b><span>Қазақша</span></a>
+      <a role="menuitem" href="#" data-lang="uz"><b>UZ</b><span>Oʻzbekcha</span></a>
+    </div>
+  </div>
+  <a class="tnav-plain" href="partners.html">Партнёрство</a>
+</div></div>
+
+<!-- ===== HEADER ===== -->
 <header class="site"><div class="wrap">
-  <img class="logo" src="../assets/logo-herostudy-white.svg" alt="HeRo Study">
-  <nav><a>О нас</a><a>Продукты</a><a>Услуги</a><a>Цены</a><a>Поддержка</a><a>Ещё</a></nav>
-  <a class="btn btn-glass">Войти</a><a class="btn btn-primary">Запросить демо</a>
+  <a class="brand" href="index.html"><svg class="brandlogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Study" style="color:#2D68C4"><use href="#heroMark"/><text x="74" y="50" class="bsub">STUDY</text></svg></a>
+
+  <nav class="nav" aria-label="Основная навигация">
+    <ul class="navlist">
+      <li><a class="nav-link" href="about.html">О нас</a></li>
+      <li class="has-mega">
+        <button class="nav-link" data-menu-trigger="products" aria-haspopup="true" aria-expanded="false">Продукты <span class="caret" aria-hidden="true">▾</span></button>
+        <div class="mega mega--products" data-menu-panel="products" role="menu">
+          <a role="menuitem" href="product-study-space.html"  data-acc="ss"><b>Hero Study Space</b><span>LMS/ERP вуза</span></a>
+          <a role="menuitem" href="product-bi-analytics.html" data-acc="bi"><b>Hero BI Analytics</b><span>Аналитика и отчётность</span></a>
+          <a role="menuitem" href="product-ai-assistant.html" data-acc="ai"><b>Hero OS AI</b><span>ИИ-помощник</span></a>
+          <a role="menuitem" href="product-workspace.html"   data-acc="ws"><b>Hero Workspace</b><span>Задачи и проекты</span></a>
+        </div>
+      </li>
+      <li class="has-mega">
+        <button class="nav-link" data-menu-trigger="services" aria-haspopup="true" aria-expanded="false">Услуги <span class="caret" aria-hidden="true">▾</span></button>
+        <div class="mega" data-menu-panel="services" role="menu">
+          <a role="menuitem" href="ss-implementation.html"><b>Сопровождение Study Space</b><span>Внедрение, поддержка, обучение</span></a>
+          <a role="menuitem" href="consultation.html"><b>Консультация и оценка</b><span>Аудит процессов вуза</span></a>
+          <a role="menuitem" href="consultation.html"><b>Отдел продаж</b><span>Связаться с менеджером</span></a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="pricing.html">Цены</a></li>
+      <li class="has-mega">
+        <button class="nav-link" data-menu-trigger="support" aria-haspopup="true" aria-expanded="false">Поддержка и связь <span class="caret" aria-hidden="true">▾</span></button>
+        <div class="mega" data-menu-panel="support" role="menu">
+          <a role="menuitem" href="consultation.html"><b>Консультация</b><span>Запись на демо</span></a>
+          <a role="menuitem" href="help-center.html"><b>Справочный центр</b><span>База знаний и статьи</span></a>
+          <a role="menuitem" href="support.html"><b>Тех. поддержка</b><span>Тикеты и чат-бот</span></a>
+        </div>
+      </li>
+      <li class="has-mega">
+        <button class="nav-link" data-menu-trigger="more" aria-haspopup="true" aria-expanded="false">Ещё <span class="caret" aria-hidden="true">▾</span></button>
+        <div class="mega" data-menu-panel="more" role="menu">
+          <a role="menuitem" href="partners.html"><b>Партнёрская программа</b><span>Стать партнёром</span></a>
+          <a role="menuitem" href="resources-news.html"><b>Новости</b><span>Анонсы и события</span></a>
+          <a role="menuitem" href="resources-blog.html"><b>Блог</b><span>Статьи и практики</span></a>
+          <a role="menuitem" href="cases.html"><b>Истории клиентов</b><span>Кейсы вузов</span></a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="header__actions">
+    <a class="btn btn-glass btn-sm" href="account-login.html">Войти</a>
+    <a class="btn btn-primary btn-sm" href="consultation.html">Запросить демо</a>
+  </div>
+
+  <button class="burger" data-drawer-open aria-label="Открыть меню" aria-controls="hs-drawer" aria-expanded="false">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
 </div></header>
+
+<!-- ===== MOBILE DRAWER ===== -->
+<div class="drawer" id="hs-drawer" data-drawer role="dialog" aria-modal="true" aria-label="Меню" hidden>
+  <div class="drawer-head">
+    <a class="brand" href="index.html"><svg class="brandlogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Study" style="color:#2D68C4"><use href="#heroMark"/><text x="74" y="50" class="bsub">STUDY</text></svg></a>
+    <button class="burger" data-drawer-close aria-label="Закрыть меню"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <nav class="drawer-nav" aria-label="Мобильная навигация">
+    <a class="d-link" href="about.html">О нас</a>
+    <details><summary>Продукты</summary><div class="d-sub">
+      <a href="product-study-space.html">Hero Study Space</a>
+      <a href="product-bi-analytics.html">Hero BI Analytics</a>
+      <a href="product-ai-assistant.html">Hero OS AI</a>
+      <a href="product-workspace.html">Hero Workspace</a>
+    </div></details>
+    <details><summary>Услуги</summary><div class="d-sub">
+      <a href="ss-implementation.html">Сопровождение Study Space</a>
+      <a href="consultation.html">Консультация и оценка</a>
+      <a href="consultation.html">Отдел продаж</a>
+    </div></details>
+    <a class="d-link" href="pricing.html">Цены</a>
+    <details><summary>Поддержка и связь</summary><div class="d-sub">
+      <a href="consultation.html">Консультация</a>
+      <a href="help-center.html">Справочный центр</a>
+      <a href="support.html">Тех. поддержка</a>
+    </div></details>
+    <details><summary>Ещё</summary><div class="d-sub">
+      <a href="partners.html">Партнёрская программа</a>
+      <a href="resources-news.html">Новости</a>
+      <a href="resources-blog.html">Блог</a>
+      <a href="cases.html">Истории клиентов</a>
+    </div></details>
+  </nav>
+  <div class="drawer-foot">
+    <a class="btn btn-primary btn-block" href="consultation.html">Заполнить анкету</a>
+    <a class="btn btn-glass btn-block" href="account-login.html">Вход / Регистрация</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero"><div class="wrap">
@@ -230,7 +404,7 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
 <footer><div class="wrap">
   <div class="fcols">
     <div>
-      <img class="logo" src="../assets/logo-herostudy-white.svg" alt="HeRo Study">
+      <a class="brand" href="index.html"><svg class="brandlogo" viewBox="0 0 173 60" role="img" aria-label="HeRo Study" style="color:#2D68C4"><use href="#heroMark"/><text x="74" y="50" class="bsub">STUDY</text></svg></a>
       <p class="about">Экосистема цифровых продуктов для университетов и колледжей. Алматы · Ташкент · Сингапур.</p>
     </div>
     <div><h5>Продукты</h5><a class="fl">Study Space</a><a class="fl">BI Analytics</a><a class="fl">Hero OS AI</a><a class="fl">Workspace</a></div>
@@ -241,5 +415,53 @@ footer a.fl{display:block;color:#8893B5;font-size:14px;padding:5px 0}footer a.fl
 </div></footer>
 
 </div>
+<script>
+(function(){
+  var DESKTOP = window.matchMedia('(min-width:981px)');
+  var triggers = [].slice.call(document.querySelectorAll('[data-menu-trigger],[data-lang-trigger]'));
+  function panelFor(btn){
+    if(btn.hasAttribute('data-lang-trigger')) return document.querySelector('[data-lang-menu]');
+    return document.querySelector('[data-menu-panel="'+btn.getAttribute('data-menu-trigger')+'"]');
+  }
+  function closeAll(except){
+    triggers.forEach(function(b){
+      var p=panelFor(b);
+      if(p && p!==except){ p.classList.remove('is-open'); b.setAttribute('aria-expanded','false'); }
+    });
+  }
+  function open(btn){ var p=panelFor(btn); if(!p) return; closeAll(p); p.classList.add('is-open'); btn.setAttribute('aria-expanded','true'); }
+  function toggle(btn){ var p=panelFor(btn); if(!p) return; p.classList.contains('is-open') ? closeAll() : open(btn); }
+  triggers.forEach(function(btn){
+    btn.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); toggle(btn); });
+    var li = btn.closest('.has-mega') || btn.closest('.lang');
+    if(li){
+      li.addEventListener('mouseenter', function(){ if(DESKTOP.matches) open(btn); });
+      li.addEventListener('mouseleave', function(){ if(DESKTOP.matches) closeAll(); });
+    }
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.mega') && !e.target.closest('[data-menu-trigger]') && !e.target.closest('[data-lang-trigger]')) closeAll();
+  });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeAll(); closeDrawer(); } });
+  /* ---- мобильный drawer ---- */
+  var drawer = document.querySelector('[data-drawer]');
+  var openBtn = document.querySelector('[data-drawer-open]');
+  var closeBtn = document.querySelector('[data-drawer-close]');
+  function openDrawer(){
+    if(!drawer) return; drawer.hidden=false; requestAnimationFrame(function(){ drawer.classList.add('is-open'); });
+    document.body.style.overflow='hidden'; if(openBtn) openBtn.setAttribute('aria-expanded','true'); if(closeBtn) closeBtn.focus();
+  }
+  function closeDrawer(){
+    if(!drawer || !drawer.classList.contains('is-open')) return;
+    drawer.classList.remove('is-open'); document.body.style.overflow='';
+    if(openBtn){ openBtn.setAttribute('aria-expanded','false'); openBtn.focus(); }
+    setTimeout(function(){ drawer.hidden=true; }, 220);
+  }
+  if(openBtn) openBtn.addEventListener('click', openDrawer);
+  if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if(drawer) drawer.querySelectorAll('a[href]').forEach(function(a){ a.addEventListener('click', closeDrawer); });
+  DESKTOP.addEventListener('change', function(m){ if(m.matches) closeDrawer(); });
+})();
+</script>
 </body>
 </html>
