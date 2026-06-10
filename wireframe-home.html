@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero Study — цифровой партнёр вузов · Hero Study 2.0 (proto)</title>
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/wireframe.css">
+</head>
+<body>
+<hs-topbar></hs-topbar>
+<hs-header active="home"></hs-header>
+
+<main>
+  <!-- 1. HERO -->
+  <section class="hero section">
+    <div class="container grid">
+      <div class="lg:col-6 col-6">
+        <p class="eyebrow">Экосистема для университетов и колледжей</p>
+        <h1 data-i18n
+            data-i18n-en="Digital partner for universities and colleges. Run your institution efficiently in one place."
+            data-i18n-kz="Университеттер мен колледждерге арналған цифрлық серіктес. Оқу орнын бір жерден тиімді басқарыңыз."
+            data-i18n-uz="Universitetlar va kollejlar uchun raqamli hamkor. Oliygohingizni bir joydan samarali boshqaring.">Цифровой партнёр для университетов и колледжей. Управляйте вузом эффективно в одном месте.</h1>
+        <p class="sub mt-4">Четыре продукта Hero Study закрывают приём, учебный процесс, аналитику и командную работу — как единая операционная система вуза.</p>
+        <div class="cluster">
+          <a class="btn btn--primary btn--lg" href="consultation.html">Запросить демо</a>
+          <button class="btn btn--lg" data-modal-open="videoModal">Смотреть видео ▷</button>
+        </div>
+        <p class="note note--margin">Кнопка видео открывает модалку с роликом-презентацией экосистемы (KZ/EN/UZ уже сняты).</p>
+      </div>
+      <div class="lg:col-6 col-6">
+        <div class="ph ph--video">Hero-видео / изометрия интерфейса</div>
+      </div>
+    </div>
+    <!-- лента логотипов вузов (часть карусели) -->
+    <div class="container mt-6">
+      <div class="between mb-3"><p class="eyebrow" style="margin:0">Нам доверяют 16 вузов в 2 странах</p><a class="arrow-link" href="cases.html">Все клиенты →</a></div>
+      <div class="logos">
+        <div class="logo-box"><img src="assets/logos/caspian.png" alt="Каспийский университет"></div>
+        <div class="logo-box"><img src="assets/logos/atu.png" alt="АТУ"></div>
+        <div class="logo-box"><img src="assets/logos/ablaikhan.png" alt="Университет Абылай хана"></div>
+        <div class="logo-box"><img src="assets/logos/agz.png" alt="Академия МЧС"></div>
+        <div class="logo-box"><img src="assets/logos/coventry.png" alt="Coventry Kazakhstan"></div>
+        <div class="logo-box"><img src="assets/logos/newuu.png" alt="Новый университет Узбекистана"></div>
+        <div class="logo-box"><img src="assets/logos/tiu.png" alt="Ташкентский международный университет"></div>
+        <a class="ph ph--logo" href="cases.html" style="text-decoration:none;color:var(--ink-1)">+ ещё 9 →</a>
+      </div>
+      <p class="note note--margin mt-3">На главной — только часть карусели; полный список по странам 🇰🇿 🇺🇿 — в «Кейсах» и «О компании».</p>
+    </div>
+  </section>
+
+  <!-- 2. ПРОМО -->
+  <section class="section section--tint">
+    <div class="container">
+      <div class="section-head center" style="margin-inline:auto">
+        <h2>Начните управлять вашим учебным заведением эффективно и в одном месте</h2>
+      </div>
+      <div class="grid">
+        <div class="col-4"><div class="card card--flat"><div class="card__icon">⚙</div><h3>Автоматизация процессов</h3><p class="lines mt-3"><i></i><i></i></p></div></div>
+        <div class="col-4"><div class="card card--flat"><div class="card__icon">◈</div><h3>Единое цифровое пространство</h3><p class="lines mt-3"><i></i><i></i></p></div></div>
+        <div class="col-4"><div class="card card--flat"><div class="card__icon">📈</div><h3>Аналитика в реальном времени</h3><p class="lines mt-3"><i></i><i></i></p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ПРОДУКТЫ (табы поочерёдного раскрытия) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><p class="eyebrow">Экосистема</p><h2>Четыре продукта — одно решение</h2></div>
+      <div data-tabset>
+        <div class="tabs">
+          <button class="tab" data-tab="ss" aria-selected="true">Study Space</button>
+          <button class="tab" data-tab="bi" aria-selected="false">BI Analytics</button>
+          <button class="tab" data-tab="ws" aria-selected="false">Workspace</button>
+          <button class="tab" data-tab="ai" aria-selected="false">OS AI</button>
+          <button class="tab" data-tab="all" aria-selected="false">Вся экосистема</button>
+        </div>
+        <div data-panel="ss"><div class="grid">
+          <div class="col-6"><span class="note note--accent">accent: green · SS</span><h3 class="mt-3">Hero Study Space</h3><p class="lines mt-3"><i></i><i></i><i></i></p><a class="arrow-link mt-4" href="product-study-space.html">Подробнее →</a></div>
+          <div class="col-6"><div class="ph ph--screen">Скриншот Study Space</div></div>
+        </div></div>
+        <div data-panel="bi" hidden><div class="grid">
+          <div class="col-6"><span class="note note--accent">accent: orange · BI</span><h3 class="mt-3">Hero BI Analytics</h3><p class="lines mt-3"><i></i><i></i></p><a class="arrow-link mt-4" href="product-bi-analytics.html">Подробнее →</a></div>
+          <div class="col-6"><div class="ph ph--chart">Дашборд BI</div></div>
+        </div></div>
+        <div data-panel="ws" hidden><div class="grid">
+          <div class="col-6"><span class="note note--accent">accent: coral · WS</span><h3 class="mt-3">Hero Workspace</h3><p class="lines mt-3"><i></i><i></i></p><a class="arrow-link mt-4" href="product-workspace.html">Подробнее →</a></div>
+          <div class="col-6"><div class="ph ph--screen">Доска задач Workspace</div></div>
+        </div></div>
+        <div data-panel="ai" hidden><div class="grid">
+          <div class="col-6"><span class="note note--accent">accent: cyan · OS AI</span><h3 class="mt-3">Hero OS AI</h3><p class="lines mt-3"><i></i><i></i></p><a class="arrow-link mt-4" href="product-ai-assistant.html">Подробнее →</a></div>
+          <div class="col-6"><div class="ph ph--screen">Окно AI-чата</div></div>
+        </div></div>
+        <div data-panel="all" hidden><div class="card center" style="background:var(--paper-2)">
+          <h3>Работайте со всей экосистемой</h3>
+          <div class="cluster" style="justify-content:center;margin:16px 0"><span class="chip">SS</span><span class="chip">BI</span><span class="chip">WS</span><span class="chip">AI</span></div>
+          <a class="btn btn--primary" href="product-study-space.html">Все продукты</a>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ПОЗИЦИОНИРОВАНИЕ -->
+  <section class="section section--dark">
+    <div class="container center">
+      <h2 style="max-width:20ch;margin-inline:auto">Hero Study — это не набор инструментов. Это операционная система вашего вуза.</h2>
+      <div class="grid mt-6">
+        <div class="col-3"><div class="card card--flat" style="background:transparent;border-color:#3f3f46"><div class="card__icon" style="background:#27272a;border-color:#3f3f46;color:#a1a1aa">①</div><h3 style="color:#fff">Приём</h3></div></div>
+        <div class="col-3"><div class="card card--flat" style="background:transparent;border-color:#3f3f46"><div class="card__icon" style="background:#27272a;border-color:#3f3f46;color:#a1a1aa">②</div><h3 style="color:#fff">Обучение</h3></div></div>
+        <div class="col-3"><div class="card card--flat" style="background:transparent;border-color:#3f3f46"><div class="card__icon" style="background:#27272a;border-color:#3f3f46;color:#a1a1aa">③</div><h3 style="color:#fff">Управление</h3></div></div>
+        <div class="col-3"><div class="card card--flat" style="background:transparent;border-color:#3f3f46"><div class="card__icon" style="background:#27272a;border-color:#3f3f46;color:#a1a1aa">④</div><h3 style="color:#fff">Аналитика</h3></div></div>
+      </div>
+      <a class="btn mt-6" href="about.html" style="background:#fff;border-color:#fff">Узнать больше →</a>
+    </div>
+  </section>
+
+  <!-- 5. КЕЙСЫ ПРЕВЬЮ -->
+  <section class="section">
+    <div class="container">
+      <div class="between mb-5"><div class="section-head" style="margin:0"><p class="eyebrow">Доказательства</p><h2>Реальные вузы. Реальные числа.</h2></div><a class="arrow-link" href="cases.html">Все кейсы →</a></div>
+      <div class="grid">
+        <div class="col-4"><div class="card"><div class="ph ph--logo mb-3">АУНГ</div><div class="card__kpi">5+ лет</div><p class="muted">непрерывного использования платформы</p></div></div>
+        <div class="col-4"><div class="card"><div class="ph ph--logo mb-3">Coventry</div><div class="card__kpi">миграция</div><p class="muted">переход от Platonus без потери британской системы</p></div></div>
+        <div class="col-4"><div class="card"><div class="ph ph--logo mb-3">🇰🇿 🇺🇿</div><div class="card__kpi">100 000+</div><p class="muted">активных пользователей в 16 вузах</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CTA БАННЕР -->
+  <section class="section section--tint">
+    <div class="container center">
+      <h2>Покажем, как Hero Study работает в вашем вузе</h2>
+      <div class="cluster mt-5" style="justify-content:center">
+        <a class="btn btn--primary btn--lg" href="consultation.html">Оставить заявку / Запрос демо</a>
+        <a class="btn btn--lg" href="#" data-modal-open="videoModal">Скачать презентацию</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<hs-footer></hs-footer>
+<hs-stickycta label="Запросить демо"></hs-stickycta>
+
+<!-- видео-модалка -->
+<dialog id="videoModal" class="dialog--video">
+  <div class="dlg__head"><h3>Презентация экосистемы Hero Study</h3><button class="x" data-modal-close aria-label="Закрыть">×</button></div>
+  <div class="dlg__body"><div class="ph ph--video">Видео-плеер (KZ / EN / UZ)</div></div>
+</dialog>
+
+<script defer src="js/nav-data.js"></script>
+<script defer src="js/components.js"></script>
+<script defer src="js/interactions.js"></script>
+<script defer src="js/i18n.js"></script>
+</body>
+</html>
