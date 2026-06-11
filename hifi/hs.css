@@ -147,7 +147,8 @@ footer .fbottom{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;marg
 .grad{background:linear-gradient(110deg,#A5B4FC,#22D3EE 60%,#7DD3FC);-webkit-background-clip:text;background-clip:text;color:transparent}
 /* HERO */
 .hero .wrap{padding:88px 32px 60px;text-align:center;display:flex;flex-direction:column;align-items:center}
-h1{font-size:64px;line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:24px 0 20px;max-width:15ch}
+h1{font-size:64px;line-height:1.04;letter-spacing:-.03em;font-weight:800;margin:24px 0 20px}
+.hero h1{max-width:15ch;margin-left:auto;margin-right:auto}
 .sub{font-size:20px;color:#A5B0D0;max-width:48ch;line-height:1.6}
 .cta{display:flex;gap:14px;margin:32px 0 14px}
 .trust{color:#8893B5;font-size:14px;font-weight:600}.trust b{color:#fff}
