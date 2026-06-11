@@ -146,7 +146,7 @@
         '<div><h5>Ресурсы</h5><a class="fl" href="help-center.html">Справочный центр</a><a class="fl" href="legal-privacy.html">Политика конфиденциальности</a><a class="fl" href="legal-cookie.html">Использование cookie</a><a class="fl" href="legal-terms.html">Условия использования</a></div>' +
         '</div>' +
         '<div class="fbottom">' +
-        '<span>© 2026 HeRo Study</span>' +
+        '<span>© 2026 HERO STUDY PTE. LTD.</span>' +
         '<span>+7 771 378 78 62 (KZ) · +998 97 734 64 61 (UZ) · sale@hero.study</span>' +
         '<span>Алматы · Ташкент · Сингапур</span>' +
         '<span><a href="legal-privacy.html">Политика</a> · <a href="legal-terms.html">Условия</a> · <a href="../sitemap.html" style="display:inline-flex;align-items:center;gap:5px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 8 3 16 6 23 3 23 18 16 21 8 18 1 21 1 6"/><line x1="8" y1="3" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="21"/></svg>Карта прототипа</a></span>' +
