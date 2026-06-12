@@ -297,3 +297,9 @@ section.hero .wrap{position:relative;z-index:1}
   .statc .n{font-size:34px}
   .wrap{padding:0 20px}
 }
+
+/* полоса резидентства технопарков */
+.parksrow{display:flex;gap:54px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:22px}
+.parksrow img{height:42px;width:auto;opacity:.9;transition:opacity .2s}
+.parksrow img:hover{opacity:1}
+@media(max-width:560px){.parksrow{gap:30px}.parksrow img{height:34px}}
