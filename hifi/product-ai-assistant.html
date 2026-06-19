@@ -48,6 +48,24 @@
 .pillars--ai .pill .n{color:#2DD4BF}
 .stkarrow{display:flex;justify-content:center;margin:12px 0;color:#2DD4BF}
 @media(max-width:980px){.feats{grid-template-columns:1fr 1fr}.feats .card,.feats .card:nth-last-child(2),.feats .card:last-child{grid-column:auto}.steps3{grid-template-columns:1fr}.scens{grid-template-columns:1fr}.chatwin{padding:16px}}
+.agents{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.agents .card{display:flex;flex-direction:column}
+.agents .card ul{margin:12px 0 0}
+.agents .amet{margin-top:auto;padding-top:14px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:baseline;gap:8px}
+.agents .amet b{color:#5EEAD4;font-size:20px;font-weight:800;letter-spacing:-.02em}
+.agents .amet span{color:#8893B5;font-size:12.5px}
+.arch{display:grid;grid-template-columns:1fr 34px auto 34px 1fr;gap:14px;align-items:center;margin-top:40px}
+.arch .col{display:grid;gap:9px}
+.arch .acol-h{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8893B5;margin-bottom:3px}
+.arch .arow{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:11px;padding:11px 14px;color:#cdd5ec;font-weight:600;font-size:13.5px;display:flex;align-items:center;gap:10px}
+.arch .arow i{width:7px;height:7px;border-radius:50%;background:#2DD4BF;flex:none;box-shadow:0 0 8px rgba(45,212,191,.7)}
+.arch .core{text-align:center;padding:24px 18px;border-radius:20px;background:radial-gradient(120% 120% at 50% 0%,rgba(45,212,191,.2),transparent),rgba(45,212,191,.06);border:1px solid rgba(45,212,191,.32);min-width:172px}
+.arch .core img{width:52px;height:52px;border-radius:14px;margin:0 auto 10px;display:block}
+.arch .core b{display:block;color:#fff;font-size:16px;font-weight:800}
+.arch .core span{color:#8893B5;font-size:12px}
+.arch .ar{display:flex;align-items:center;justify-content:center;color:#2DD4BF}
+.steps5{grid-template-columns:repeat(5,1fr)}.steps5 .ln{color:#2DD4BF}
+@media(max-width:980px){.agents{grid-template-columns:1fr}.arch{grid-template-columns:1fr}.arch .ar{transform:rotate(90deg);margin:2px 0}.steps5{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body data-theme="ai">
@@ -67,7 +85,7 @@
     <span class="tagchip tag-ea">Early access</span>
   </div>
   <h1 style="max-width:20ch;margin-left:auto;margin-right:auto">ИИ-помощник <span class="grad grad--ai">внутри экосистемы</span> вашего вуза</h1>
-  <p class="sub">Поиск по данным, генерация отчётов и документов, подсказки преподавателю и помощь студенту — на естественном языке.</p>
+  <p class="sub">Автономные AI-агенты для процессов вуза — приёмная кампания, ректорат, тьютор, кабинет ППС, стипендии. Работают поверх данных Study Space: отвечают и действуют на естественном языке.</p>
   <div class="cta" style="justify-content:center">
     <a class="btn btn-primary" href="consultation.html">Записаться в ранний доступ →</a>
     <a class="btn btn-glass" data-modal-open="videoModal"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><polygon points="10 8.5 16 12 10 15.5 10 8.5" fill="currentColor" stroke="none"/></svg><span>Смотреть видео</span></a>
@@ -124,6 +142,51 @@
   </div>
 </div></div></section>
 
+<!-- ПОЛОСА ЦИФР ПЛАТФОРМЫ -->
+<section class="statsband"><div class="wrap"><div class="statsrow">
+  <div class="statc"><div class="n">6</div><div class="l">AI-агентов автономных</div></div>
+  <div class="statc"><div class="n">848</div><div class="l">процессов в BPMN</div></div>
+  <div class="statc"><div class="n">&lt;2 мин</div><div class="l">отклик абитуриенту</div></div>
+  <div class="statc"><div class="n">12 ч/нед</div><div class="l">экономия времени ППС</div></div>
+</div></div></section>
+
+<!-- AI-АГЕНТЫ -->
+<section class="section"><div class="wrap">
+  <div class="secthead"><span class="eyebrow eyebrow--ai">AI-агенты · модули</span></div>
+  <h2 class="h2">Не один бот, а <span class="grad grad--ai">платформа AI-агентов</span></h2>
+  <p class="h2sub">Каждый агент автоматизирует свой контур процессов вуза — с полным циклом «данные → анализ → действие».</p>
+  <div class="agents">
+    <div class="card"><div class="vico vico--ai"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 4 2 4 9.5 12.5 9.5 19 14.5 21 14.5 12.5 22 4"/></svg></div><h4>AI-рекрутер</h4><p>Полный цикл приёмной кампании — от первого контакта до зачисления. Предиктивная модель конверсии и автоматические follow-up.</p><ul style="color:#2DD4BF"><li>Скоринг абитуриентов (ML)</li><li>Мульти-канальная воронка</li><li>AI-чат для абитуриентов</li><li>Прогноз набора</li></ul><div class="amet"><b>&lt; 2 мин</b><span>время отклика лиду</span></div></div>    <div class="card"><div class="vico vico--ai"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.5 6.5 15.5 11M8.5 17.5 15.5 13"/></svg></div><h4>Цифровой ректорат</h4><p>Полная карта процессов вуза в BPMN с real-time статусом, нагрузкой и узкими местами. Проактивные рекомендации от AI.</p><ul style="color:#2DD4BF"><li>BPMN-карта процессов</li><li>SLA-мониторинг</li><li>Bottleneck AI-детекция</li><li>Цифровая зрелость</li></ul><div class="amet"><b>848</b><span>процессов оцифровано</span></div></div>    <div class="card"><div class="vico vico--ai"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><polyline points="8.5 14.5 7 23 12 20.2 17 23 15.5 14.5"/></svg></div><h4>Аккредитация и рейтинги</h4><p>Единый хаб для аккредитационных стандартов, рейтинговых индикаторов и стратегического позиционирования. Аудит и gap-анализ.</p><ul style="color:#2DD4BF"><li>Gap-анализ с AI</li><li>Трекер QS / THE</li><li>Аудит индикаторов</li><li>Подготовка к аккредитации</li></ul><div class="amet"><b>QS / THE</b><span>трекер позиций</span></div></div>    <div class="card"><div class="vico vico--ai"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.4 2.7 3 6 3s6-1.6 6-3v-5"/></svg></div><h4>AI-тьютор</h4><p>Персональный AI-репетитор 24/7, который знает учебный план студента. Генерация тестов, разбор задач, рекомендации по подготовке.</p><ul style="color:#2DD4BF"><li>Адаптивные тесты</li><li>Разбор задач step-by-step</li><li>Подготовка к экзаменам</li><li>Прогресс-аналитика</li></ul><div class="amet"><b>24/7</b><span>адаптивное обучение</span></div></div>    <div class="card"><div class="vico vico--ai"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h4>Кабинет ППС</h4><p>Личный кабинет преподавателя с AI-слоем: AI генерирует силлабусы, тесты и рекомендации, считает KPI и нагрузку, даёт аналитику по группам.</p><ul style="color:#2DD4BF"><li>Генерация силлабусов и тестов</li><li>Аналитика по группам</li><li>KPI и нагрузка</li><li>Рекомендации AI</li></ul><div class="amet"><b>12 ч/нед</b><span>экономия времени</span></div></div>    <div class="card"><div class="vico vico--ai"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 9.2c-.5-.8-1.5-1.2-2.5-1.2-1.4 0-2.5.9-2.5 2s1.1 1.7 2.5 2 2.5.9 2.5 2-1.1 2-2.5 2c-1 0-2-.4-2.5-1.2M12 6.5v11"/></svg></div><h4>Стипендии</h4><p>Автоматический подбор стипендий по правилам: успеваемость, льготы, гражданство. Полная прозрачность и аудит каждого решения.</p><ul style="color:#2DD4BF"><li>Транскрипт-валидация</li><li>Гибкие пороги</li><li>Аудит решений</li><li>Прозрачность назначений</li></ul><div class="amet"><b>Аудит</b><span>каждого решения</span></div></div>  </div>
+</div></section>
+
+<!-- АРХИТЕКТУРА -->
+<section class="section" style="padding-top:0"><div class="wrap">
+  <div class="secthead"><span class="eyebrow eyebrow--ai">Архитектура платформы</span></div>
+  <h2 class="h2">Данные вуза — <span class="grad grad--ai">в действия и решения</span></h2>
+  <p class="h2sub">AI-ядро собирает данные из систем вуза и возвращает готовые задачи, прогнозы и документы.</p>
+  <div class="arch">
+    <div class="col">
+      <div class="acol-h">Источники данных</div>
+      <div class="arow"><i></i>LMS / Учебный портал</div>
+      <div class="arow"><i></i>СКУД / Посещаемость</div>
+      <div class="arow"><i></i>1С / Финансы</div>
+      <div class="arow"><i></i>CRM / Абитуриенты</div>
+    </div>
+    <div class="ar"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></div>
+    <div class="core"><img src="../assets/marks/ai.svg" alt="HeRo OS AI"><b>HeRo OS AI</b><span>AI-ядро · 6 агентов</span></div>
+    <div class="ar"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="20" y2="12"/><polyline points="14 6 20 12 14 18"/></svg></div>
+    <div class="col">
+      <div class="acol-h">Результат</div>
+      <div class="arow"><i></i>Задачи и уведомления</div>
+      <div class="arow"><i></i>Прогнозы и алерты</div>
+      <div class="arow"><i></i>Автоматические действия</div>
+      <div class="arow"><i></i>Отчёты и аналитика</div>
+      <div class="arow"><i></i>AI-рекомендации</div>
+      <div class="arow"><i></i>Коммуникации</div>
+    </div>
+  </div>
+</div></section>
+
 <!-- ОСНОВНЫЕ ФУНКЦИИ -->
 <section class="section" style="padding-top:0"><div class="wrap">
   <div class="secthead"><span class="eyebrow eyebrow--ai">Основные функции</span></div>
@@ -158,14 +221,17 @@
   </div>
 </div></section>
 
-<!-- КАК РАБОТАЕТ -->
+<!-- ЦИКЛ РАБОТЫ АГЕНТА -->
 <section class="section" style="padding-top:0"><div class="wrap">
-  <div class="secthead"><span class="eyebrow eyebrow--ai">Как работает</span></div>
-  <h2 class="h2">Три шага от вопроса <span class="grad grad--ai">до результата</span></h2>
-  <div class="lifecycle steps3">
-    <div class="lstage"><span class="ln">01</span><h4>Подключается к данным</h4><p>HeRo OS AI работает поверх Study Space: контингент, учёба, финансы, расписание — без ручных выгрузок.</p></div>
-    <div class="lstage"><span class="ln">02</span><h4>Понимает контекст вуза</h4><p>Знает структуру, роли и регламенты университета — отвечает в вашей терминологии.</p></div>
-    <div class="lstage"><span class="ln">03</span><h4>Отвечает и создаёт</h4><p>Даёт ответ с цифрами в чате или генерирует готовый отчёт и документ.</p></div>
+  <div class="secthead"><span class="eyebrow eyebrow--ai">Цикл работы агента</span></div>
+  <h2 class="h2">Полный цикл <span class="grad grad--ai">автоматизации</span></h2>
+  <p class="h2sub">Каждый AI-агент проходит замкнутый цикл — без ручных выгрузок и переключения между системами.</p>
+  <div class="lifecycle steps5">
+    <div class="lstage"><span class="ln">01</span><h4>Сбор данных</h4><p>Берёт данные из Study Space, СКУД, 1С и CRM в реальном времени.</p></div>
+    <div class="lstage"><span class="ln">02</span><h4>AI-анализ</h4><p>Находит тренды, риски и узкие места с учётом контекста вуза.</p></div>
+    <div class="lstage"><span class="ln">03</span><h4>Решение</h4><p>Предлагает действие по регламентам и правам роли.</p></div>
+    <div class="lstage"><span class="ln">04</span><h4>Действие</h4><p>Создаёт задачу, документ или уведомление автоматически.</p></div>
+    <div class="lstage"><span class="ln">05</span><h4>Обратная связь</h4><p>Учитывает результат и подстраивает следующие шаги.</p></div>
   </div>
 </div></section>
 
