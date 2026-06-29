@@ -72,7 +72,8 @@
         '<a role="menuitem" href="consultation.html"><b>Отдел продаж</b><span>Связаться с менеджером</span></a>' +
         '</div></li>' +
         '<li><a class="nav-link' + on('pricing') + '" href="pricing.html">Цены</a></li>' +
-        '<li class="has-mega"><button class="nav-link' + onBtn('support') + '" data-menu-trigger="support" aria-haspopup="true" aria-expanded="false">Поддержка и связь' + CARET + '</button>' +
+        '<li><a class="nav-link' + on('clients') + '" href="cases.html">Клиенты</a></li>' +
+        '<li class="has-mega"><button class="nav-link' + onBtn('support') + '" data-menu-trigger="support" aria-haspopup="true" aria-expanded="false">Поддержка' + CARET + '</button>' +
         '<div class="mega" data-menu-panel="support" role="menu">' +
         '<a role="menuitem" href="consultation.html"><b>Консультация</b><span>Запись на демо</span></a>' +
         '<a role="menuitem" href="help-center.html"><b>Справочный центр</b><span>База знаний и статьи</span></a>' +
@@ -83,8 +84,7 @@
         '<a role="menuitem" href="partners.html"><b>Партнёрская программа</b><span>Стать партнёром</span></a>' +
         '<a role="menuitem" href="resources-news.html"><b>Новости</b><span>Анонсы и события</span></a>' +
         '<a role="menuitem" href="resources-blog.html"><b>Блог</b><span>Статьи и практики</span></a>' +
-        '<a role="menuitem" href="cases.html"><b>Истории клиентов</b><span>Кейсы вузов</span></a>' +
-        '</div></li>' +
+                '</div></li>' +
         '</ul></nav>' +
         '<div class="header__actions">' +
         '<a class="btn btn-glass btn-sm" href="account-login.html">Войти</a>' +
@@ -111,7 +111,8 @@
         '<a href="consultation.html">Отдел продаж</a>' +
         '</div></details>' +
         '<a class="d-link" href="pricing.html">Цены</a>' +
-        '<details><summary>Поддержка и связь</summary><div class="d-sub">' +
+        '<a class="d-link" href="cases.html">Клиенты</a>' +
+        '<details><summary>Поддержка</summary><div class="d-sub">' +
         '<a href="consultation.html">Консультация</a>' +
         '<a href="help-center.html">Справочный центр</a>' +
         '<a href="support.html">Тех. поддержка</a>' +
@@ -120,8 +121,7 @@
         '<a href="partners.html">Партнёрская программа</a>' +
         '<a href="resources-news.html">Новости</a>' +
         '<a href="resources-blog.html">Блог</a>' +
-        '<a href="cases.html">Истории клиентов</a>' +
-        '</div></details>' +
+                '</div></details>' +
         '</nav>' +
         '<div class="drawer-foot">' +
         '<a class="btn btn-primary btn-block" href="consultation.html">Заполнить анкету</a>' +
