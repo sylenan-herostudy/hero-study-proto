@@ -321,61 +321,7 @@
       cio.observe(el);
     });
 
-    /* canvas: цифровые импульсы по сети узлов (hero/продукт) */
-    var hero = document.querySelector('section.hero') ||
-               (document.body.hasAttribute('data-theme') ? document.querySelector('.pagehero') : null);
-    if (hero && window.innerWidth > 760) {
-      var accVar = getComputedStyle(document.body).getPropertyValue('--acc-rgb').trim();
-      var COL = accVar || '129,140,248';
-      var COL2 = accVar ? '129,140,248' : '34,211,238';
-      var cv = document.createElement('canvas'); cv.className = 'herofx';
-      hero.insertBefore(cv, hero.firstChild);
-      var ctx = cv.getContext('2d'), running = true, W = 0, H = 0;
-      var DPR = Math.min(2, window.devicePixelRatio || 1);
-      var nodes = [], edges = [], pulses = [];
-      function spawn(f) { var a = nodes[f].adj; if (!a.length) return; pulses.push({ f: f, t2: a[(Math.random() * a.length) | 0], t: 0, sp: 0.010 + Math.random() * 0.012, c: Math.random() < 0.3 ? COL2 : COL }); }
-      function build() {
-        W = hero.offsetWidth; H = hero.offsetHeight;
-        cv.width = W * DPR; cv.height = H * DPR; cv.style.width = W + 'px'; cv.style.height = H + 'px';
-        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-        var N = Math.max(28, Math.min(60, Math.round(W * H / 22000)));
-        nodes = []; edges = []; pulses = [];
-        for (var i = 0; i < N; i++) nodes.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.05, vy: (Math.random() - 0.5) * 0.05, r: Math.random() < 0.2 ? 2.7 : 1.3, glow: 0, adj: [] });
-        for (var i = 0; i < N; i++) {
-          var d = [];
-          for (var j = 0; j < N; j++) if (i !== j) { var dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y; d.push([dx * dx + dy * dy, j]); }
-          d.sort(function (a, b) { return a[0] - b[0]; });
-          var k = nodes[i].r > 2 ? 3 : 2;
-          for (var m = 0; m < k; m++) { var jj = d[m][1]; if (nodes[i].adj.indexOf(jj) < 0) { nodes[i].adj.push(jj); nodes[jj].adj.push(i); edges.push([i, jj]); } }
-        }
-        for (var i = 0; i < 9; i++) spawn((Math.random() * N) | 0);
-      }
-      function frame() {
-        if (!running) return;
-        if (document.hidden) { requestAnimationFrame(frame); return; }
-        var i, p;
-        for (i = 0; i < nodes.length; i++) { var n = nodes[i]; n.x += n.vx; n.y += n.vy; if (n.x < 0 || n.x > W) n.vx *= -1; if (n.y < 0 || n.y > H) n.vy *= -1; if (n.glow > 0) n.glow *= 0.9; }
-        for (p = pulses.length - 1; p >= 0; p--) { var pu = pulses[p]; pu.t += pu.sp; if (pu.t >= 1) { nodes[pu.t2].glow = 1; pulses.splice(p, 1); if (pulses.length < 22 && Math.random() < 0.88) spawn(pu.t2); } }
-        if (pulses.length < 7) spawn((Math.random() * nodes.length) | 0);
-        ctx.clearRect(0, 0, W, H);
-        ctx.lineWidth = 1;
-        for (var e = 0; e < edges.length; e++) { var ea = nodes[edges[e][0]], eb = nodes[edges[e][1]]; ctx.strokeStyle = 'rgba(' + COL + ',.08)'; ctx.beginPath(); ctx.moveTo(ea.x, ea.y); ctx.lineTo(eb.x, eb.y); ctx.stroke(); }
-        for (p = 0; p < pulses.length; p++) {
-          var q = pulses[p], a = nodes[q.f], b = nodes[q.t2];
-          var x = a.x + (b.x - a.x) * q.t, y = a.y + (b.y - a.y) * q.t;
-          var tt = Math.max(0, q.t - 0.22), tx = a.x + (b.x - a.x) * tt, ty = a.y + (b.y - a.y) * tt;
-          var g = ctx.createLinearGradient(tx, ty, x, y); g.addColorStop(0, 'rgba(' + q.c + ',0)'); g.addColorStop(1, 'rgba(' + q.c + ',.85)');
-          ctx.strokeStyle = g; ctx.lineWidth = 2.2; ctx.beginPath(); ctx.moveTo(tx, ty); ctx.lineTo(x, y); ctx.stroke();
-          ctx.shadowColor = 'rgba(' + q.c + ',1)'; ctx.shadowBlur = 12; ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(x, y, 2.3, 0, 6.283); ctx.fill(); ctx.shadowBlur = 0;
-        }
-        for (i = 0; i < nodes.length; i++) { var m2 = nodes[i]; ctx.fillStyle = 'rgba(' + COL + ',' + (0.3 + m2.glow * 0.5).toFixed(3) + ')'; if (m2.glow > 0.05) { ctx.shadowColor = 'rgba(' + COL + ',1)'; ctx.shadowBlur = 14 * m2.glow; } ctx.beginPath(); ctx.arc(m2.x, m2.y, m2.r + m2.glow * 1.6, 0, 6.283); ctx.fill(); ctx.shadowBlur = 0; }
-        requestAnimationFrame(frame);
-      }
-      build(); window.addEventListener('resize', function () { build(); });
-      var hio = new IntersectionObserver(function (es) { es.forEach(function (ev) { var was = running; running = ev.isIntersecting; if (running && !was) requestAnimationFrame(frame); }); });
-      hio.observe(hero);
-      requestAnimationFrame(frame);
-    }
+    /* Анимация «цифровых импульсов» в hero удалена по правке 20.10.2026. */
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
